@@ -1,0 +1,13 @@
+demographic_group,subgroup,total_count,at_risk_count,at_risk_pct,successful_count,successful_pct
+highest_education,No Formal quals,347,219,63.11,128,36.89
+highest_education,Lower Than A Level,13158,7812,59.37,5346,40.63
+highest_education,A Level or Equivalent,14045,7166,51.02,6879,48.98
+highest_education,HE Qualification,4733,1894,40.02,2839,59.98
+highest_education,Post Graduate Qualification,310,117,37.74,193,62.26
+age_band,0-35,22944,12480,54.39,10464,45.61
+age_band,35-55,8857,4334,48.93,4523,51.07
+age_band,55<=,792,394,49.75,398,50.25
+disability,N,29429,15286,51.94,14143,48.06
+disability,Y,3164,1922,60.75,1242,39.25
+gender,M,17875,9588,53.64,8287,46.36
+gender,F,14718,7620,51.77,7098,48.23

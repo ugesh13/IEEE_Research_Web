@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 600" width="100%" height="100%">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="470" y="32" font-family="Arial, sans-serif" font-size="19" font-weight="bold" text-anchor="middle" fill="#0f172a">Figure 19: SHAP Beeswarm Summary Plot (Direction of Feature Influence)</text>
+<text x="470" y="54" font-family="Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">Scenario S2 HistGradientBoosting | Positive SHAP = Higher At-Risk Probability | Red = High Value, Blue = Low Value</text>
+<line x1="580" y1="80" x2="580" y2="520" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4"/>
+<text x="580" y="74" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#64748b">SHAP Value = 0.0</text>
+<text x="460" y="555" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1d4ed8" text-anchor="middle">← Decreases Risk (Successful)</text>
+<text x="700" y="555" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#dc2626" text-anchor="middle">Increases Risk (At-Risk) →</text>
+<!-- 1. early_avg_score_d30 -->
+<line x1="310" y1="96" x2="880" y2="96" stroke="#f8fafc" stroke-width="1"/>
+<text x="295" y="100" font-family="Arial, sans-serif" font-size="11.5" text-anchor="end" fill="#1e293b">early_avg_score_d30</text>
+<circle cx="359.0" cy="96" r="5" fill="#dc2626" opacity="0.75"/>
+<circle cx="411.0" cy="96" r="5" fill="#dc2626" opacity="0.75"/>
+<circle cx="463.0" cy="96" r="5" fill="#dc2626" opacity="0.75"/>
+<circle cx="528.0" cy="96" r="5" fill="#dc2626" opacity="0.75"/>
+<circle cx="606.0" cy="96" r="5" fill="#1d4ed8" opacity="0.75"/>
+<circle cx="697.0" cy="96" r="5" fill="#1d4ed8" opacity="0.75"/>
+<circle cx="775.0" cy="96" r="5" fill="#1d4ed8" opacity="0.75"/>
+<circle cx="827.0" cy="96" r="5" fill="#1d4ed8" opacity="0.75"/>
+<!-- 2. early_vle_active_days_d30 -->
+<line x1="310" y1="132" x2="880" y2="132" stroke="#f8fafc" stroke-width="1"/>
+<text x="295" y="136" font-family="Arial, sans-serif" font-size="11.5" text-anchor="end" fill="#1e293b">early_vle_active_days_d30</text>
+<circle cx="385.0" cy="132" r="5" fill="#dc2626" opacity="0.75"/>
+<circle cx="437.0" cy="132" r="5" fill="#dc2626" opacity="0.75"/>
+<circle cx="489.0" cy="132" r="5" fill="#dc2626" opacity="0.75"/>
+<circle cx="541.0" cy="132" r="5" fill="#dc2626" opacity="0.75"/>
+<circle cx="606.0" cy="132" r="5" fill="#1d4ed8" opacity="0.75"/>
+<circle cx="684.0" cy="132" r="5" fill="#1d4ed8" opacity="0.75"/>
+<circle cx="749.0" cy="132" r="5" fill="#1d4ed8" opacity="0.75"/>
+<circle cx="801.0" cy="132" r="5" fill="#1d4ed8" opacity="0.75"/>
+<!-- 3. early_vle_total_clicks_d30 -->
+<line x1="310" y1="168" x2="880" y2="168" stroke="#f8fafc" stroke-width="1"/>
+<text x="295" y="172" font-family="Arial, sans-serif" font-size="11.5" text-anchor="end" fill="#1e293b">early_vle_total_clicks_d30</text>
+<circle cx="411.0" cy="168" r="5" fill="#dc2626" opacity="0.75"/>
+<circle cx="463.0" cy="168" r="5" fill="#dc2626" opacity="0.75"/>
+<circle cx="515.0" cy="168" r="5" fill="#dc2626" opacity="0.75"/>
+<circle cx="554.0" cy="168" r="5" fill="#dc2626" opacity="0.75"/>
+<circle cx="619.0" cy="168" r="5" fill="#1d4ed8" opacity="0.75"/>
+<circle cx="671.0" cy="168" r="5" fill="#1d4ed8" opacity="0.75"/>
+<circle cx="723.0" cy="168" r="5" fill="#1d4ed8" opacity="0.75"/>
+<circle cx="775.0" cy="168" r="5" fill="#1d4ed8" opacity="0.75"/>
+<!-- 4. has_early_assessment_submission_d30 -->
+<line x1="310" y1="204" x2="880" y2="204" stroke="#f8fafc" stroke-width="1"/>
+<text x="295" y="208" font-family="Arial, sans-serif" font-size="11.5" text-anchor="end" fill="#1e293b">has_early_assessment_submission_d30</text>
+<circle cx="476.0" cy="204" r="5" fill="#dc2626" opacity="0.75"/>
+<circle cx="489.0" cy="204" r="5" fill="#dc2626" opacity="0.75"/>
+<circle cx="502.0" cy="204" r="5" fill="#dc2626" opacity="0.75"/>
+<circle cx="528.0" cy="204" r="5" fill="#dc2626" opacity="0.75"/>
+<circle cx="671.0" cy="204" r="5" fill="#1d4ed8" opacity="0.75"/>
+<circle cx="723.0" cy="204" r="5" fill="#1d4ed8" opacity="0.75"/>
+<circle cx="762.0" cy="204" r="5" fill="#1d4ed8" opacity="0.75"/>
+<circle cx="788.0" cy="204" r="5" fill="#1d4ed8" opacity="0.75"/>
+<!-- 5. early_assessments_submitted_d30 -->
+<line x1="310" y1="240" x2="880" y2="240" stroke="#f8fafc" stroke-width="1"/>
+<text x="295" y="244" font-family="Arial, sans-serif" font-size="11.5" text-anchor="end" fill="#1e293b">early_assessments_submitted_d30</text>
+<circle cx="489.0" cy="240" r="5" fill="#dc2626" opacity="0.75"/>
+<circle cx="502.0" cy="240" r="5" fill="#dc2626" opacity="0.75"/>
+<circle cx="528.0" cy="240" r="5" fill="#dc2626" opacity="0.75"/>
+<circle cx="554.0" cy="240" r="5" fill="#dc2626" opacity="0.75"/>
+<circle cx="645.0" cy="240" r="5" fill="#1d4ed8" opacity="0.75"/>
+<circle cx="697.0" cy="240" r="5" fill="#1d4ed8" opacity="0.75"/>
+<circle cx="736.0" cy="240" r="5" fill="#1d4ed8" opacity="0.75"/>
+<circle cx="762.0" cy="240" r="5" fill="#1d4ed8" opacity="0.75"/>
+<!-- 6. early_vle_sites_visited_d30 -->
+<line x1="310" y1="276" x2="880" y2="276" stroke="#f8fafc" stroke-width="1"/>
+<text x="295" y="280" font-family="Arial, sans-serif" font-size="11.5" text-anchor="end" fill="#1e293b">early_vle_sites_visited_d30</text>
+<circle cx="463.0" cy="276" r="5" fill="#dc2626" opacity="0.75"/>
+<circle cx="502.0" cy="276" r="5" fill="#dc2626" opacity="0.75"/>
+<circle cx="541.0" cy="276" r="5" fill="#dc2626" opacity="0.75"/>
+<circle cx="567.0" cy="276" r="5" fill="#dc2626" opacity="0.75"/>
+<circle cx="606.0" cy="276" r="5" fill="#1d4ed8" opacity="0.75"/>
+<circle cx="645.0" cy="276" r="5" fill="#1d4ed8" opacity="0.75"/>
+<circle cx="684.0" cy="276" r="5" fill="#1d4ed8" opacity="0.75"/>
+<circle cx="723.0" cy="276" r="5" fill="#1d4ed8" opacity="0.75"/>
+<!-- 7. studied_credits -->
+<line x1="310" y1="312" x2="880" y2="312" stroke="#f8fafc" stroke-width="1"/>
+<text x="295" y="316" font-family="Arial, sans-serif" font-size="11.5" text-anchor="end" fill="#1e293b">studied_credits</text>
+<circle cx="515.0" cy="312" r="5" fill="#1d4ed8" opacity="0.75"/>
+<circle cx="541.0" cy="312" r="5" fill="#1d4ed8" opacity="0.75"/>
+<circle cx="567.0" cy="312" r="5" fill="#1d4ed8" opacity="0.75"/>
+<circle cx="593.0" cy="312" r="5" fill="#dc2626" opacity="0.75"/>
+<circle cx="619.0" cy="312" r="5" fill="#dc2626" opacity="0.75"/>
+<circle cx="658.0" cy="312" r="5" fill="#dc2626" opacity="0.75"/>
+<circle cx="697.0" cy="312" r="5" fill="#dc2626" opacity="0.75"/>
+<circle cx="736.0" cy="312" r="5" fill="#dc2626" opacity="0.75"/>
+<!-- 8. date_registration -->
+<line x1="310" y1="348" x2="880" y2="348" stroke="#f8fafc" stroke-width="1"/>
+<text x="295" y="352" font-family="Arial, sans-serif" font-size="11.5" text-anchor="end" fill="#1e293b">date_registration</text>
+<circle cx="528.0" cy="348" r="5" fill="#1d4ed8" opacity="0.75"/>
+<circle cx="554.0" cy="348" r="5" fill="#1d4ed8" opacity="0.75"/>
+<circle cx="567.0" cy="348" r="5" fill="#1d4ed8" opacity="0.75"/>
+<circle cx="593.0" cy="348" r="5" fill="#dc2626" opacity="0.75"/>
+<circle cx="619.0" cy="348" r="5" fill="#dc2626" opacity="0.75"/>
+<circle cx="645.0" cy="348" r="5" fill="#dc2626" opacity="0.75"/>
+<circle cx="684.0" cy="348" r="5" fill="#dc2626" opacity="0.75"/>
+<circle cx="710.0" cy="348" r="5" fill="#dc2626" opacity="0.75"/>
+<!-- 9. early_vle_clicks_per_active_day_d30 -->
+<line x1="310" y1="384" x2="880" y2="384" stroke="#f8fafc" stroke-width="1"/>
+<text x="295" y="388" font-family="Arial, sans-serif" font-size="11.5" text-anchor="end" fill="#1e293b">early_vle_clicks_per_active_day_d30</text>
+<circle cx="489.0" cy="384" r="5" fill="#dc2626" opacity="0.75"/>
+<circle cx="528.0" cy="384" r="5" fill="#dc2626" opacity="0.75"/>
+<circle cx="554.0" cy="384" r="5" fill="#dc2626" opacity="0.75"/>
+<circle cx="593.0" cy="384" r="5" fill="#1d4ed8" opacity="0.75"/>
+<circle cx="619.0" cy="384" r="5" fill="#1d4ed8" opacity="0.75"/>
+<circle cx="645.0" cy="384" r="5" fill="#1d4ed8" opacity="0.75"/>
+<circle cx="671.0" cy="384" r="5" fill="#1d4ed8" opacity="0.75"/>
+<circle cx="697.0" cy="384" r="5" fill="#1d4ed8" opacity="0.75"/>
+<!-- 10. num_of_prev_attempts -->
+<line x1="310" y1="420" x2="880" y2="420" stroke="#f8fafc" stroke-width="1"/>
+<text x="295" y="424" font-family="Arial, sans-serif" font-size="11.5" text-anchor="end" fill="#1e293b">num_of_prev_attempts</text>
+<circle cx="541.0" cy="420" r="5" fill="#1d4ed8" opacity="0.75"/>
+<circle cx="554.0" cy="420" r="5" fill="#1d4ed8" opacity="0.75"/>
+<circle cx="567.0" cy="420" r="5" fill="#1d4ed8" opacity="0.75"/>
+<circle cx="593.0" cy="420" r="5" fill="#dc2626" opacity="0.75"/>
+<circle cx="619.0" cy="420" r="5" fill="#dc2626" opacity="0.75"/>
+<circle cx="645.0" cy="420" r="5" fill="#dc2626" opacity="0.75"/>
+<circle cx="684.0" cy="420" r="5" fill="#dc2626" opacity="0.75"/>
+<circle cx="723.0" cy="420" r="5" fill="#dc2626" opacity="0.75"/>
+<!-- 11. cat__highest_education_Lower Than A Level -->
+<line x1="310" y1="456" x2="880" y2="456" stroke="#f8fafc" stroke-width="1"/>
+<text x="295" y="460" font-family="Arial, sans-serif" font-size="11.5" text-anchor="end" fill="#1e293b">cat__highest_education_Lower Than A Level</text>
+<circle cx="554.0" cy="456" r="5" fill="#1d4ed8" opacity="0.75"/>
+<circle cx="567.0" cy="456" r="5" fill="#1d4ed8" opacity="0.75"/>
+<circle cx="580.0" cy="456" r="5" fill="#1d4ed8" opacity="0.75"/>
+<circle cx="593.0" cy="456" r="5" fill="#dc2626" opacity="0.75"/>
+<circle cx="619.0" cy="456" r="5" fill="#dc2626" opacity="0.75"/>
+<circle cx="645.0" cy="456" r="5" fill="#dc2626" opacity="0.75"/>
+<circle cx="671.0" cy="456" r="5" fill="#dc2626" opacity="0.75"/>
+<circle cx="697.0" cy="456" r="5" fill="#dc2626" opacity="0.75"/>
+<!-- 12. early_avg_submission_delay_d30 -->
+<line x1="310" y1="492" x2="880" y2="492" stroke="#f8fafc" stroke-width="1"/>
+<text x="295" y="496" font-family="Arial, sans-serif" font-size="11.5" text-anchor="end" fill="#1e293b">early_avg_submission_delay_d30</text>
+<circle cx="541.0" cy="492" r="5" fill="#1d4ed8" opacity="0.75"/>
+<circle cx="554.0" cy="492" r="5" fill="#1d4ed8" opacity="0.75"/>
+<circle cx="567.0" cy="492" r="5" fill="#1d4ed8" opacity="0.75"/>
+<circle cx="593.0" cy="492" r="5" fill="#dc2626" opacity="0.75"/>
+<circle cx="606.0" cy="492" r="5" fill="#dc2626" opacity="0.75"/>
+<circle cx="632.0" cy="492" r="5" fill="#dc2626" opacity="0.75"/>
+<circle cx="658.0" cy="492" r="5" fill="#dc2626" opacity="0.75"/>
+<circle cx="684.0" cy="492" r="5" fill="#dc2626" opacity="0.75"/>
+<!-- Color Legend -->
+<defs><linearGradient id="valGrad" x1="0%" y1="100%" x2="0%" y2="0%"><stop offset="0%" stop-color="#1d4ed8"/><stop offset="100%" stop-color="#dc2626"/></linearGradient></defs>
+<rect x="905" y="160" width="14" height="220" fill="url(#valGrad)" rx="3"/>
+<text x="912" y="148" font-family="Arial, sans-serif" font-size="10.5" font-weight="bold" text-anchor="middle" fill="#dc2626">High</text>
+<text x="912" y="400" font-family="Arial, sans-serif" font-size="10.5" font-weight="bold" text-anchor="middle" fill="#1d4ed8">Low</text>
+<text x="925" y="275" font-family="Arial, sans-serif" font-size="11" fill="#475569" transform="rotate(90 925 275)" text-anchor="middle">Feature Value</text>
+</svg>

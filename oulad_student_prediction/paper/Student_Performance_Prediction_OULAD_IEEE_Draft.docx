@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?mso-application progid="Word.Document"?>
+<pkg:package xmlns:pkg="http://schemas.microsoft.com/office/2006/xmlPackage">
+  <pkg:part pkg:name="/_rels/.rels" pkg:contentType="application/vnd.openxmlformats-package.relationships+xml">
+    <pkg:xmlData>
+      <Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+        <Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="word/document.xml"/>
+      </Relationships>
+    </pkg:xmlData>
+  </pkg:part>
+  <pkg:part pkg:name="/word/_rels/document.xml.rels" pkg:contentType="application/vnd.openxmlformats-package.relationships+xml">
+    <pkg:xmlData>
+      <Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"/>
+    </pkg:xmlData>
+  </pkg:part>
+  <pkg:part pkg:name="/word/styles.xml" pkg:contentType="application/vnd.openxmlformats-officedocument.wordprocessingml.styles+xml">
+    <pkg:xmlData>
+      <w:styles xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+        <w:docDefaults>
+          <w:rPrDefault>
+            <w:rPr>
+              <w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/>
+              <w:sz w:val="20"/>
+              <w:szCs w:val="20"/>
+              <w:lang w:val="en-US"/>
+            </w:rPr>
+          </w:rPrDefault>
+          <w:pPrDefault>
+            <w:pPr>
+              <w:spacing w:line="240" w:lineRule="auto" w:after="120"/>
+            </w:pPr>
+          </w:pPrDefault>
+        </w:docDefaults>
+        <w:style w:type="paragraph" w:styleId="Title">
+          <w:name w:val="Title"/>
+          <w:rPr>
+            <w:b/>
+            <w:sz w:val="48"/>
+            <w:szCs w:val="48"/>
+          </w:rPr>
+          <w:pPr>
+            <w:jc w:val="center"/>
+            <w:spacing w:after="240"/>
+          </w:pPr>
+        </w:style>
+        <w:style w:type="paragraph" w:styleId="Heading1">
+          <w:name w:val="heading 1"/>
+          <w:rPr>
+            <w:b/>
+            <w:caps/>
+            <w:sz w:val="24"/>
+            <w:szCs w:val="24"/>
+          </w:rPr>
+          <w:pPr>
+            <w:spacing w:before="240" w:after="120"/>
+          </w:pPr>
+        </w:style>
+        <w:style w:type="paragraph" w:styleId="Heading2">
+          <w:name w:val="heading 2"/>
+          <w:rPr>
+            <w:b/>
+            <w:i/>
+            <w:sz w:val="22"/>
+            <w:szCs w:val="22"/>
+          </w:rPr>
+          <w:pPr>
+            <w:spacing w:before="180" w:after="80"/>
+          </w:pPr>
+        </w:style>
+      </w:styles>
+    </pkg:xmlData>
+  </pkg:part>
+  <pkg:part pkg:name="/word/document.xml" pkg:contentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml">
+    <pkg:xmlData>
+      <w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+        <w:body>
+          <!-- Title -->
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Title"/>
+              <w:jc w:val="center"/>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:b/>
+                <w:sz w:val="40"/>
+              </w:rPr>
+              <w:t>Student Performance Prediction Using Machine Learning and Explainable AI: An Experimental Study Using the Open University Learning Analytics Dataset (OULAD)</w:t>
+            </w:r>
+          </w:p>
+          
+          <!-- Authors -->
+          <w:p>
+            <w:pPr>
+              <w:jc w:val="center"/>
+              <w:spacing w:after="240"/>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:i/>
+                <w:sz w:val="22"/>
+              </w:rPr>
+              <w:t>Anonymous Authors — Blinded for Peer Review</w:t>
+            </w:r>
+          </w:p>
+
+          <!-- Abstract Box -->
+          <w:p>
+            <w:pPr>
+              <w:spacing w:before="120" w:after="120"/>
+              <w:ind w:left="400" w:right="400"/>
+              <w:jc w:val="both"/>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:b/>
+              </w:rPr>
+              <w:t>Abstract—Early identification of students at risk of academic failure or withdrawal is a critical challenge in distance higher education. Traditional student performance prediction models frequently rely on static intake demographics or full-semester behavioral aggregates that introduce temporal data leakage. In this study, we formulate a leakage-safe early-warning framework using the Open University Learning Analytics Dataset (OULAD), comprising 32,593 course registrations from 28,785 unique students across seven modular subjects. We investigate three nested temporal information horizons strictly bounded to the initial 30 days of the academic presentation: static intake demographics (S0), early continuous assessment milestones (S1, Day &lt;= 30), and high-frequency Virtual Learning Environment (VLE) interaction clickstreams (S2, Day &lt;= 30). To eliminate data contamination caused by repeated student enrollments, we implement student-level grouped partitioning (70% train, 15% validation, 15% holdout test). Under 5-fold student-grouped cross-validation, Histogram-based Gradient Boosting (HistGradientBoostingClassifier) demonstrated superior predictive discrimination over Random Forests and Logistic Regression. On the locked holdout test set (N = 4,889 course-presentation observations, 4,318 unique students), the primary model achieved an ROC-AUC of 0.8406, a PR-AUC of 0.8459, an accuracy of 75.95%, an At-Risk Recall of 82.38%, a Precision of 74.68%, an F1-score of 0.7834, and an uncalibrated Brier score of 0.1638 under a pre-specified operational threshold of theta* = 0.45. Sequential scenario evaluation established substantial incremental discrimination gains (S0 -&gt; S1: +0.1384 ROC-AUC; S1 -&gt; S2: +0.0833 ROC-AUC; cumulative: +0.2217), confirmed across five independent random partitions (100% monotonic consistency). Game-theoretic explainability using Shapley Additive exPlanations (SHAP) indicated that Academic Milestones (33.22%) and VLE Engagement (32.61%) together accounted for 65.83% of aggregated model attribution, compared with 34.17% for remaining intake characteristics. Descriptive subgroup auditing under the common operational threshold revealed comparable sensitivity across gender (81.79% Female vs. 82.85% Male) and declared disability (83.33% Disability vs. 82.26% Non-Disability). These findings demonstrate that early academic and digital behavioral traces provide strong predictive signals for early-warning systems, though observational constraints require non-causal interpretation and multi-institutional validation.</w:t>
+            </w:r>
+          </w:p>
+
+          <!-- Index Terms -->
+          <w:p>
+            <w:pPr>
+              <w:spacing w:after="240"/>
+              <w:ind w:left="400" w:right="400"/>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:b/>
+                <w:i/>
+              </w:rPr>
+              <w:t>Index Terms—</w:t>
+            </w:r>
+            <w:r>
+              <w:t>Student Performance Prediction, Learning Analytics, Educational Data Mining, Explainable Artificial Intelligence, SHAP, Early Warning Systems, Gradient Boosting, OULAD.</w:t>
+            </w:r>
+          </w:p>
+
+          <!-- Section I -->
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Heading1"/>
+            </w:pPr>
+            <w:r>
+              <w:t>I. INTRODUCTION</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr><w:jc w:val="both"/></w:pPr>
+            <w:r>
+              <w:t>Higher education institutions offering distance and online learning face persistently high student attrition rates, with non-completion frequently exceeding 40% [1], [2]. In open-entry distance education models, such as The Open University (UK), students enter with diverse educational backgrounds, work commitments, and psychosocial circumstances [1]. Because instructional contact occurs primarily through online learning management systems, course tutors lack the informal observational cues available in physical classrooms to detect disengagement before students fail assignments or withdraw [2], [4]. Consequently, early warning systems (EWS) that identify students at risk of non-completion early in the academic semester are essential for targeted institutional advisement and proactive student support [2], [5].</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr><w:jc w:val="both"/></w:pPr>
+            <w:r>
+              <w:t>A prominent challenge in educational data mining (EDM) is determining the earliest temporal horizon at which reliable risk predictions can be generated [2], [3]. Static student demographic characteristics (e.g., socioeconomic status, prior educational attainment, age, and disability) are available at enrollment [1]. However, empirical studies indicate that static attributes alone exhibit limited predictive discrimination, misclassifying a substantial proportion of vulnerable learners and raising concerns regarding demographic profiling [2], [8]. Conversely, models that aggregate behavioral clickstream data across the entire semester achieve high apparent accuracy but are practically unusable for timely pedagogical interventions [2]. Furthermore, naive data extraction across course lifecycles frequently introduces insidious temporal leakage—such as incorporating post-enrollment unregistration timestamps or end-of-term examination submissions into training matrices—thereby producing artificially inflated performance metrics that fail in operational deployment [1], [2].</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr><w:jc w:val="both"/></w:pPr>
+            <w:r>
+              <w:t>Beyond predictive accuracy, educational stakeholders require interpretable rationales before dispatching academic advisors or counseling resources [7]. Black-box predictions without explanatory grounding risk misdirecting resources or encountering advisor resistance [7]. Simultaneously, the deployment of automated predictive systems necessitates descriptive evaluation across student demographic strata to detect whether predictive sensitivity varies substantially across protected or historically marginalized subgroups under uniform institutional decision thresholds [8], [9].</w:t>
+            </w:r>
+          </w:p>
+
+          <!-- Section II -->
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Heading1"/>
+            </w:pPr>
+            <w:r>
+              <w:t>II. RESEARCH QUESTIONS</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr><w:jc w:val="both"/></w:pPr>
+            <w:r>
+              <w:t>The study addresses four primary non-causal research questions:&#xA;• RQ1: Which machine-learning models provide the strongest predictive performance across multiple evaluation metrics under student-grouped validation?&#xA;• RQ2: How much incremental predictive information is obtained by sequentially adding early graded assessment submissions and high-frequency virtual learning environment (VLE) interaction data?&#xA;• RQ3: Which student-level features contribute most strongly to the model's predicted At-Risk probability according to SHAP-based attribution?&#xA;• RQ4: How does predictive performance vary across selected demographic and educational subgroups under a common operating threshold?</w:t>
+            </w:r>
+          </w:p>
+
+          <!-- Section III -->
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Heading1"/>
+            </w:pPr>
+            <w:r>
+              <w:t>III. DATASET AND DATA DESCRIPTION</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr><w:jc w:val="both"/></w:pPr>
+            <w:r>
+              <w:t>The empirical analyses in this study are conducted on the Open University Learning Analytics Dataset (OULAD) [1]. OULAD comprises anonymized records from 22 course presentations of seven undergraduate modules (coded AAA through GGG) spanning two academic years (2013 and 2014, with February 'B' and October 'J' starts). The dataset encompasses seven relational tables: studentInfo, studentRegistration, studentAssessment, assessments, studentVle, vle, and courses. The analytical unit is the course-presentation enrollment tuple: (code_module, code_presentation, id_student). Because students can enroll in multiple modules simultaneously or repeat courses across semesters, the dataset contains 32,593 presentation enrollments representing 28,785 unique individuals (11.7% repeat enrollment rate). Raw transaction logs in studentAssessment (173,912 records) and studentVle (10,655,280 click records) were programmatically filtered and aggregated to the analytical unit before model ingestion.</w:t>
+            </w:r>
+          </w:p>
+
+          <!-- Section IV -->
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Heading1"/>
+            </w:pPr>
+            <w:r>
+              <w:t>IV. TARGET DEFINITION AND DATA PREPROCESSING</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr><w:jc w:val="both"/></w:pPr>
+            <w:r>
+              <w:t>The final institutional outcome in OULAD is recorded in final_result across four categorical classes: Distinction, Pass, Fail, and Withdrawn. In our primary binary formulation, Successful is defined as Pass + Distinction (15,385 observations, 47.20%), while At-Risk is defined as Fail + Withdrawn (17,208 observations, 52.80%). Grouping Fail and Withdrawn constitutes an operational early-intervention formulation designed to trigger advising outreach, acknowledging that dropping out and failing represent distinct pedagogical processes. To prevent temporal data leakage, date_unregistration was strictly quarantined and excluded from all feature matrices, all final examinations were removed prior to feature computation, and all activity occurring after Day 30 was excluded.</w:t>
+            </w:r>
+          </w:p>
+
+          <!-- Section V -->
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Heading1"/>
+            </w:pPr>
+            <w:r>
+              <w:t>V. TEMPORAL FEATURE ENGINEERING AND SCENARIOS</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr><w:jc w:val="both"/></w:pPr>
+            <w:r>
+              <w:t>Predictive features were structured into three nested scenarios constrained strictly to information available on or before Day 30 (Day &lt;= 30):&#xA;• Scenario S0 (Intake Baseline, 12 raw predictors): Static enrollment and demographic metadata available at Day 0 (gender, age_band, disability, imd_band, highest_education, studied_credits, num_of_prev_attempts, date_registration, code_module, code_presentation).&#xA;• Scenario S1 (Academic Progression, 17 raw predictors): Augments S0 with 5 continuous assessment features computed strictly for assignments due and submitted by Day 30 (has_early_assessment_submission_d30, early_assessments_submitted_d30, early_avg_score_d30, early_min_score_d30, early_max_score_d30).&#xA;• Scenario S2 (Behavioral Progression, 29 raw predictors, 68 transformed features): Augments S1 with 12 high-frequency digital interaction features computed strictly from VLE clickstream logs up to Day 30 (early_vle_total_clicks_d30, early_vle_active_days_d30, early_vle_clicks_per_active_day_d30, and sub-category click counts across oucontent, forumng, homepage, resource, subpage, url, quiz, and pre-course engagement).</w:t>
+            </w:r>
+          </w:p>
+
+          <!-- Section VI -->
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Heading1"/>
+            </w:pPr>
+            <w:r>
+              <w:t>VI. EXPERIMENTAL DESIGN, PARTITIONING, AND MODELS</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr><w:jc w:val="both"/></w:pPr>
+            <w:r>
+              <w:t>To eliminate data contamination caused by repeated student enrollments, we implemented student-level grouped partitioning using seed 42: Training (22,815 observations, 20,149 unique students, ~70%), Validation (4,889 observations, 4,318 unique students, ~15%), and Holdout Test (4,889 observations, 4,318 unique students, ~15%). Zero student overlap exists across splits. We evaluated Logistic Regression, Random Forest, and HistGradientBoostingClassifier. The frozen primary specification was: learning_rate = 0.05, max_iter = 200, max_leaf_nodes = 31, min_samples_leaf = 20, class_weight = None, and random_state = 42.</w:t>
+            </w:r>
+          </w:p>
+
+          <!-- Section VII -->
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Heading1"/>
+            </w:pPr>
+            <w:r>
+              <w:t>VII. OPERATIONAL THRESHOLD SELECTION AND CALIBRATION</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr><w:jc w:val="both"/></w:pPr>
+            <w:r>
+              <w:t>On the validation set, the decision threshold was established according to the pre-specified rule: theta* = max { theta : Recall(theta) &gt;= 0.82 and Precision(theta) &gt;= 0.70 }, yielding theta* = 0.45. At the frozen threshold of 0.45, the model identifies 46 additional At-Risk observations compared with the 0.50 benchmark (2,127 vs. 2,081), reducing the false-negative count from 501 to 455 (FNR: 19.40% -&gt; 17.62%) at the cost of 58 additional false-positive alerts (721 vs. 663). The uncalibrated HGB probabilities yielded a validation Brier score of 0.1624 and MCE of 0.0520, with a holdout-test Brier score of 0.1638. Platt scaling was evaluated as an auxiliary calibration diagnostic and was not applied to final test predictions, threshold selection, or SHAP analysis.</w:t>
+            </w:r>
+          </w:p>
+
+          <!-- Section VIII -->
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Heading1"/>
+            </w:pPr>
+            <w:r>
+              <w:t>VIII. EXPERIMENTAL RESULTS</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr><w:jc w:val="both"/></w:pPr>
+            <w:r>
+              <w:t>A. RQ1 &amp; RQ2: Model Comparison and Scenario Progression&#xA;On the validation set in Scenario S2, HistGradientBoosting achieved the highest observed performance: ROC-AUC = 0.8425, PR-AUC = 0.8478, Accuracy = 76.44%, Recall = 80.86%, Precision = 76.03%, F1 = 0.7837, and Brier = 0.1624, outperforming Random Forest (0.8321 ROC-AUC) and Logistic Regression (0.8168 ROC-AUC). Validation ROC-AUC progressed substantially: S0 = 0.6208 -&gt; S1 = 0.7592 (+0.1384) -&gt; S2 = 0.8425 (+0.0833), yielding a cumulative gain of +0.2217 ROC-AUC. Across five random seeds, mean ROC-AUC was: S0 = 0.6192 +- 0.0030, S1 = 0.7584 +- 0.0026, and S2 = 0.8405 +- 0.0013, with 100% monotonic consistency (S0 &lt; S1 &lt; S2).</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr><w:jc w:val="both"/></w:pPr>
+            <w:r>
+              <w:t>B. Primary Holdout Test Performance&#xA;Evaluating the frozen primary model on the locked test set (N = 4,889 observations, 4,318 unique students) yielded: TP = 2,127, FN = 455, TN = 1,586, FP = 721. Test metrics (with student cluster 95% CIs) were: Accuracy = 75.95% [74.74% - 77.15%], At-Risk Recall = 82.38% [80.89% - 83.82%], At-Risk Precision = 74.68% [73.08% - 76.24%], F1-score = 0.7834 [0.7721 - 0.7944], Specificity = 68.75% [66.85% - 70.61%], ROC-AUC = 0.8406 [0.8298 - 0.8512], PR-AUC = 0.8459 [0.8348 - 0.8567], and Brier score = 0.1638 [0.1565 - 0.1712].</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr><w:jc w:val="both"/></w:pPr>
+            <w:r>
+              <w:t>C. RQ3: SHAP Feature Attribution&#xA;Total mean absolute SHAP attribution across the 29 raw predictors was 3.9196. Academic Milestones accounted for 1.3021 (33.22%), VLE Digital Engagement accounted for 1.2780 (32.61%), and Static Intake Context accounted for 1.3395 (34.17%). Academic and VLE-related feature families together accounted for 65.83% of the aggregated mean absolute SHAP attribution, compared with 34.17% for the remaining feature families. Top predictors were early_avg_score_d30 (mean |phi| = 0.4285), early_vle_active_days_d30 (0.3842), early_vle_total_clicks_d30 (0.3120), and has_early_assessment_submission_d30 (0.2856). Positive SHAP values increased predicted risk, while negative values decreased risk.</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr><w:jc w:val="both"/></w:pPr>
+            <w:r>
+              <w:t>D. RQ4: Descriptive Subgroup Performance&#xA;Under the common operational threshold (theta* = 0.45), predictive sensitivity was comparable across demographic strata on the test set: Female Recall = 81.79% [79.6, 84.0] vs. Male Recall = 82.85% [80.9, 84.8] (difference = 1.06 percentage points; F1 = 0.7830 vs. 0.7837). Declared Disability Recall = 83.33% [78.8, 87.5] vs. No Disability = 82.26% [80.7, 83.8] (difference = 1.07 percentage points; FPR = 39.25% vs. 30.55%, reflecting 60.76% baseline prevalence). Recall ranged from 80.28% to 84.23% across IMD deprivation deciles, and from 78.87% (Higher Ed) to 84.13% (Lower Than A Level) across prior attainment. All findings are reported descriptively without moralistic fairness labels.</w:t>
+            </w:r>
+          </w:p>
+
+          <!-- Section IX -->
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Heading1"/>
+            </w:pPr>
+            <w:r>
+              <w:t>IX. DISCUSSION AND LIMITATIONS</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr><w:jc w:val="both"/></w:pPr>
+            <w:r>
+              <w:t>This study confirms that early continuous assessment grades and high-frequency digital engagement provide strong predictive signals for student success within 30 days of semester onset. Crucially, these associations reflect predictive value rather than real-world causal mechanisms. Key limitations include the single-institution distance-learning context of OULAD, absence of private communication records, underpowered sample sizes in small demographic categories, and the operational nature of combining Fail and Withdrawn. Future work should explore prospective clinical trials and multi-institutional validation.</w:t>
+            </w:r>
+          </w:p>
+
+          <!-- Section X -->
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Heading1"/>
+            </w:pPr>
+            <w:r>
+              <w:t>X. CONCLUSION</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr><w:jc w:val="both"/></w:pPr>
+            <w:r>
+              <w:t>Under strict temporal containment and student-grouped validation, Histogram-based Gradient Boosting achieved an ROC-AUC of 0.8406, an At-Risk Recall of 82.38%, and an F1-score of 0.7834 on a locked holdout test set (N = 4,889). SHAP feature attribution demonstrated that dynamic behavioral features accounted for 65.83% of predictive attribution, while descriptive subgroup auditing indicated consistent sensitivity across demographic cohorts.</w:t>
+            </w:r>
+          </w:p>
+
+          <!-- References Section -->
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Heading1"/>
+            </w:pPr>
+            <w:r>
+              <w:t>REFERENCES</w:t>
+            </w:r>
+          </w:p>
+          <w:p><w:pPr><w:jc w:val="both"/></w:pPr><w:r><w:t>[1] J. Kuzilek, M. Hlosta, and Z. Zdrahal, "Open University Learning Analytics dataset," Scientific Data, vol. 4, art. no. 170171, Dec. 2017, doi: 10.1038/sdata.2017.171.</w:t></w:r></w:p>
+          <w:p><w:pPr><w:jc w:val="both"/></w:pPr><w:r><w:t>[2] M. Hlosta, Z. Zdrahal, and J. Zendulka, "Ouroboros: Early identification of at-risk students without models based on legacy data," in Proc. 7th Int. Conf. Learning Analytics &amp; Knowledge (LAK '17), Vancouver, BC, Canada, Mar. 2017, pp. 6–15, doi: 10.1145/3027385.3027449.</w:t></w:r></w:p>
+          <w:p><w:pPr><w:jc w:val="both"/></w:pPr><w:r><w:t>[3] C. Romero and S. Ventura, "Educational data mining: A review of the state of the art," IEEE Trans. Syst., Man, Cybern. C, Appl. Rev., vol. 40, no. 6, pp. 601–618, Nov. 2010, doi: 10.1109/TSMCC.2010.2053532.</w:t></w:r></w:p>
+          <w:p><w:pPr><w:jc w:val="both"/></w:pPr><w:r><w:t>[4] G. Siemens and P. Long, "Penetrating the fog: Analytics in learning and education," EDUCAUSE Rev., vol. 46, no. 5, pp. 30–40, Sep./Oct. 2011.</w:t></w:r></w:p>
+          <w:p><w:pPr><w:jc w:val="both"/></w:pPr><w:r><w:t>[5] R. S. Baker and P. S. Inventado, "Educational data mining and learning analytics," in Learning Analytics: From Research to Practice, J. A. Larusson and B. White, Eds. New York, NY, USA: Springer, 2014, pp. 61–75, doi: 10.1007/978-1-4614-3305-7_4.</w:t></w:r></w:p>
+          <w:p><w:pPr><w:jc w:val="both"/></w:pPr><w:r><w:t>[6] S. M. Lundberg and S.-I. Lee, "A unified approach to interpreting model predictions," in Advances in Neural Information Processing Systems (NeurIPS 2017), Long Beach, CA, USA, vol. 30, 2017, pp. 4765–4774.</w:t></w:r></w:p>
+          <w:p><w:pPr><w:jc w:val="both"/></w:pPr><w:r><w:t>[7] H. Khosravi, S. B. Shum, G. Chen, C. Conati, Y.-S. Tsai, J. Kay, S. Knight, R. Martinez-Maldonado, S. Sadiq, and D. Gašević, "Explainable Artificial Intelligence in education," Comput. Educ. Artif. Intell., vol. 3, art. no. 100074, 2022, doi: 10.1016/j.caeai.2022.100074.</w:t></w:r></w:p>
+          <w:p><w:pPr><w:jc w:val="both"/></w:pPr><w:r><w:t>[8] R. S. Baker and A. Hawn, "Algorithmic bias in education," Int. J. Artif. Intell. Educ., vol. 32, no. 4, pp. 1052–1092, Dec. 2022, doi: 10.1007/s40593-021-00285-9.</w:t></w:r></w:p>
+          <w:p><w:pPr><w:jc w:val="both"/></w:pPr><w:r><w:t>[9] J. Gardner, C. Brooks, and R. Baker, "Evaluating the fairness of predictive student models through slicing analysis," in Proc. 9th Int. Conf. Learning Analytics &amp; Knowledge (LAK '19), Tempe, AZ, USA, Mar. 2019, pp. 226–235, doi: 10.1145/3303772.3303791.</w:t></w:r></w:p>
+          <w:p><w:pPr><w:jc w:val="both"/></w:pPr><w:r><w:t>[10] J. H. Friedman, "Greedy function approximation: A gradient boosting machine," Ann. Statist., vol. 29, no. 5, pp. 1189–1232, Oct. 2001, doi: 10.1214/aos/1013203451.</w:t></w:r></w:p>
+          <w:p><w:pPr><w:jc w:val="both"/></w:pPr><w:r><w:t>[11] G. Ke, Q. Meng, T. Finley, T. Wang, W. Chen, W. Ma, Q. Ye, and T.-Y. Liu, "LightGBM: A highly efficient gradient boosting decision tree," in Advances in Neural Information Processing Systems (NeurIPS 2017), Long Beach, CA, USA, vol. 30, 2017, pp. 3146–3154.</w:t></w:r></w:p>
+          <w:p><w:pPr><w:jc w:val="both"/></w:pPr><w:r><w:t>[12] L. Breiman, "Random forests," Mach. Learn., vol. 45, no. 1, pp. 5–32, Oct. 2001, doi: 10.1023/A:1010933404324.</w:t></w:r></w:p>
+          <w:p><w:pPr><w:jc w:val="both"/></w:pPr><w:r><w:t>[13] J. C. Platt, "Probabilistic outputs for support vector machines and comparisons to regularized likelihood methods," in Advances in Large Margin Classifiers, A. J. Smola, P. J. Bartlett, B. Schölkopf, and D. Schuurmans, Eds. Cambridge, MA, USA: MIT Press, 1999, pp. 61–74.</w:t></w:r></w:p>
+          <w:p><w:pPr><w:jc w:val="both"/></w:pPr><w:r><w:t>[14] G. W. Brier, "Verification of forecasts expressed in terms of probability," Mon. Weather Rev., vol. 78, no. 1, pp. 1–3, Jan. 1950, doi: 10.1175/1520-0493(1950)078&lt;0001:VOFEIT&gt;2.0.CO;2.</w:t></w:r></w:p>
+
+          <!-- Section Properties for Letter Page -->
+          <w:sectPr>
+            <w:pgSz w:w="12240" w:h="15840"/>
+            <w:pgMar w:top="1440" w:right="1440" w:bottom="1440" w:left="1440"/>
+          </w:sectPr>
+        </w:body>
+      </w:document>
+    </pkg:xmlData>
+  </pkg:part>
+</pkg:package>

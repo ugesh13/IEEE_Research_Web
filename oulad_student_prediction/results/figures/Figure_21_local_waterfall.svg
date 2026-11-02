@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" width="100%" height="100%">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="480" y="30" font-family="Arial, sans-serif" font-size="19" font-weight="bold" text-anchor="middle" fill="#0f172a">Figure 21: Local SHAP Waterfall Contributions Across Decision Quadrants</text>
+<text x="480" y="52" font-family="Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">Representative Real-World Students Evaluated at Frozen Operational Threshold θ* = 0.45</text>
+<!-- Panel A: True Positive -->
+<rect x="50" y="80" width="415" height="230" fill="#ffffff" rx="6" stroke="#86efac" stroke-width="1.5"/>
+<rect x="50" y="80" width="415" height="42" fill="#dcfce7" rx="6"/>
+<text x="65" y="100" font-family="Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#0f172a">(A) True Positive (Correct Early Warning Alert)</text>
+<text x="65" y="116" font-family="Arial, sans-serif" font-size="10.5" fill="#475569">Student 628491: Withdrawn | Pred p = 0.8842 >= 0.45</text>
+<text x="65" y="154" font-family="Arial, sans-serif" font-size="11" fill="#1e293b">No assessment submission by Day 30</text>
+<rect x="310" y="142" width="57.6" height="16" fill="#dc2626" rx="3"/>
+<text x="373.6" y="154" font-family="Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#dc2626">+0.36</text>
+<text x="65" y="192" font-family="Arial, sans-serif" font-size="11" fill="#1e293b">VLE active days = 3 (Disengagement)</text>
+<rect x="310" y="180" width="51.2" height="16" fill="#dc2626" rx="3"/>
+<text x="367.2" y="192" font-family="Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#dc2626">+0.32</text>
+<text x="65" y="230" font-family="Arial, sans-serif" font-size="11" fill="#1e293b">VLE total clicks = 42 (Minimal)</text>
+<rect x="310" y="218" width="40.0" height="16" fill="#dc2626" rx="3"/>
+<text x="356.0" y="230" font-family="Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#dc2626">+0.25</text>
+<text x="65" y="268" font-family="Arial, sans-serif" font-size="11" fill="#1e293b">First-attempt at module (Reassurance)</text>
+<rect x="310" y="256" width="8.0" height="16" fill="#1d4ed8" rx="3"/>
+<text x="324.0" y="268" font-family="Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#1d4ed8">-0.05</text>
+<!-- Panel B: True Negative -->
+<rect x="495" y="80" width="415" height="230" fill="#ffffff" rx="6" stroke="#cbd5e1" stroke-width="1.5"/>
+<rect x="495" y="80" width="415" height="42" fill="#f1f5f9" rx="6"/>
+<text x="510" y="100" font-family="Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#0f172a">(B) True Negative (Correct Academic Reassurance)</text>
+<text x="510" y="116" font-family="Arial, sans-serif" font-size="10.5" fill="#475569">Student 584920: Pass | Pred p = 0.1125 &lt; 0.45</text>
+<text x="510" y="154" font-family="Arial, sans-serif" font-size="11" fill="#1e293b">Early assessment score = 86.0 (High)</text>
+<rect x="755" y="142" width="60.8" height="16" fill="#1d4ed8" rx="3"/>
+<text x="821.8" y="154" font-family="Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#1d4ed8">-0.38</text>
+<text x="510" y="192" font-family="Arial, sans-serif" font-size="11" fill="#1e293b">VLE active days = 24 (Daily habit)</text>
+<rect x="755" y="180" width="54.4" height="16" fill="#1d4ed8" rx="3"/>
+<text x="815.4" y="192" font-family="Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#1d4ed8">-0.34</text>
+<text x="510" y="230" font-family="Arial, sans-serif" font-size="11" fill="#1e293b">VLE total clicks = 740 (Intense)</text>
+<rect x="755" y="218" width="44.8" height="16" fill="#1d4ed8" rx="3"/>
+<text x="805.8" y="230" font-family="Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#1d4ed8">-0.28</text>
+<text x="510" y="268" font-family="Arial, sans-serif" font-size="11" fill="#1e293b">Late registration (Mild risk)</text>
+<rect x="755" y="256" width="6.4" height="16" fill="#dc2626" rx="3"/>
+<text x="767.4" y="268" font-family="Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#dc2626">+0.04</text>
+<!-- Panel C: False Positive -->
+<rect x="50" y="340" width="415" height="230" fill="#ffffff" rx="6" stroke="#fca5a5" stroke-width="1.5"/>
+<rect x="50" y="340" width="415" height="42" fill="#fee2e2" rx="6"/>
+<text x="65" y="360" font-family="Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#0f172a">(C) False Positive (False Alarm / Proactive Outreach)</text>
+<text x="65" y="376" font-family="Arial, sans-serif" font-size="10.5" fill="#475569">Student 541092: Passed | Pred p = 0.6120 >= 0.45</text>
+<text x="65" y="414" font-family="Arial, sans-serif" font-size="11" fill="#1e293b">VLE active days = 4 (Slow start)</text>
+<rect x="310" y="402" width="44.8" height="16" fill="#dc2626" rx="3"/>
+<text x="360.8" y="414" font-family="Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#dc2626">+0.28</text>
+<text x="65" y="452" font-family="Arial, sans-serif" font-size="11" fill="#1e293b">Score = 48 (Borderline score)</text>
+<rect x="310" y="440" width="36.8" height="16" fill="#dc2626" rx="3"/>
+<text x="352.8" y="452" font-family="Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#dc2626">+0.23</text>
+<text x="65" y="490" font-family="Arial, sans-serif" font-size="11" fill="#1e293b">Course load = 120 credits (Heavy load)</text>
+<rect x="310" y="478" width="24.0" height="16" fill="#dc2626" rx="3"/>
+<text x="340.0" y="490" font-family="Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#dc2626">+0.15</text>
+<text x="65" y="528" font-family="Arial, sans-serif" font-size="11" fill="#1e293b">Submitted on time (Positive habit)</text>
+<rect x="310" y="516" width="19.2" height="16" fill="#1d4ed8" rx="3"/>
+<text x="335.2" y="528" font-family="Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#1d4ed8">-0.12</text>
+<!-- Panel D: False Negative -->
+<rect x="495" y="340" width="415" height="230" fill="#ffffff" rx="6" stroke="#fcd34d" stroke-width="1.5"/>
+<rect x="495" y="340" width="415" height="42" fill="#fef3c7" rx="6"/>
+<text x="510" y="360" font-family="Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#0f172a">(D) False Negative (Missed Alert / Exogenous Shock)</text>
+<text x="510" y="376" font-family="Arial, sans-serif" font-size="10.5" fill="#475569">Student 671204: Failed | Pred p = 0.2840 &lt; 0.45</text>
+<text x="510" y="414" font-family="Arial, sans-serif" font-size="11" fill="#1e293b">Early assessment score = 82 (Strong start)</text>
+<rect x="755" y="402" width="52.8" height="16" fill="#1d4ed8" rx="3"/>
+<text x="813.8" y="414" font-family="Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#1d4ed8">-0.33</text>
+<text x="510" y="452" font-family="Arial, sans-serif" font-size="11" fill="#1e293b">VLE active days = 19 (Regular study)</text>
+<rect x="755" y="440" width="41.6" height="16" fill="#1d4ed8" rx="3"/>
+<text x="802.6" y="452" font-family="Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#1d4ed8">-0.26</text>
+<text x="510" y="490" font-family="Arial, sans-serif" font-size="11" fill="#1e293b">Prior failed attempt on module</text>
+<rect x="755" y="478" width="12.8" height="16" fill="#dc2626" rx="3"/>
+<text x="773.8" y="490" font-family="Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#dc2626">+0.08</text>
+<text x="510" y="528" font-family="Arial, sans-serif" font-size="11" fill="#1e293b">Lower than A-Level education</text>
+<rect x="755" y="516" width="11.2" height="16" fill="#dc2626" rx="3"/>
+<text x="772.2" y="528" font-family="Arial, sans-serif" font-size="10.5" font-weight="bold" fill="#dc2626">+0.07</text>
+</svg>

@@ -1,0 +1,4 @@
+group,has_submission_count,has_submission_pct,no_submission_count,no_submission_pct,total
+Successful (0),10862,70.60,4523,29.40,15385
+At-Risk (1),5984,34.77,11224,65.23,17208
+Overall Cohort,16846,51.69,15747,48.31,32593

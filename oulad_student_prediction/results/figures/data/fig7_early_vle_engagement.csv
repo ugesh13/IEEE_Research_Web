@@ -1,0 +1,6 @@
+metric,successful_group,at_risk_group,overall_cohort
+median_early_clicks,245.0,84.0,152.0
+mean_early_clicks,412.3,169.5,284.1
+iqr_25th_percentile,82.0,12.0,32.0
+iqr_75th_percentile,560.0,242.0,396.0
+unengaged_zero_clicks_pct,9.4,29.8,20.2

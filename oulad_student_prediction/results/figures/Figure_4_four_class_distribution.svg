@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 450" width="100%" height="100%">
+  <defs>
+    <style>
+      .title { font-family: Arial, sans-serif; font-size: 15px; font-weight: bold; fill: #111827; text-anchor: middle; }
+      .axis-label { font-family: Arial, sans-serif; font-size: 12px; font-weight: bold; fill: #374151; }
+      .bar-label { font-family: Arial, sans-serif; font-size: 11.5px; font-weight: bold; fill: #111827; text-anchor: middle; }
+      .tick { font-family: Arial, sans-serif; font-size: 11px; fill: #4b5563; }
+      .grid { stroke: #e5e7eb; stroke-dasharray: 3,3; }
+    </style>
+  </defs>
+  <rect width="700" height="450" fill="#ffffff" />
+  <text x="350" y="32" class="title">Figure 4: Four-Class Ground-Truth Outcome Distribution (final_result)</text>
+  <text x="350" y="50" font-family="Arial, sans-serif" font-size="11px" fill="#6b7280" text-anchor="middle">Preserved for secondary classification benchmarks &amp; robustness analysis</text>
+
+  <!-- Grid lines -->
+  <line x1="80" y1="360" x2="650" y2="360" stroke="#9ca3af" stroke-width="1.2" />
+  <line x1="80" y1="300" x2="650" y2="300" class="grid" />
+  <line x1="80" y1="240" x2="650" y2="240" class="grid" />
+  <line x1="80" y1="180" x2="650" y2="180" class="grid" />
+  <line x1="80" y1="120" x2="650" y2="120" class="grid" />
+  <line x1="80" y1="60" x2="650" y2="60" class="grid" />
+
+  <!-- Y Ticks -->
+  <text x="70" y="364" class="tick" text-anchor="end">0</text>
+  <text x="70" y="304" class="tick" text-anchor="end">3,000</text>
+  <text x="70" y="244" class="tick" text-anchor="end">6,000</text>
+  <text x="70" y="184" class="tick" text-anchor="end">9,000</text>
+  <text x="70" y="124" class="tick" text-anchor="end">12,000</text>
+  <text x="70" y="64" class="tick" text-anchor="end">15,000</text>
+  <text x="25" y="210" class="axis-label" transform="rotate(-90 25 210)" text-anchor="middle">Number of Student Presentations</text>
+
+  <!-- Scale: 300px = 15,000 -> 1px = 50 rows -->
+  <!-- 1. Distinction: 3,024 -> h = 60.5px -> y = 299.5 -->
+  <rect x="110" y="300" width="100" height="60" rx="3" fill="#2ca02c" stroke="#0f172a" stroke-width="0.8" />
+  <text x="160" y="280" class="bar-label">3,024</text>
+  <text x="160" y="294" font-family="Arial, sans-serif" font-size="10.5px" font-weight="bold" fill="#2ca02c" text-anchor="middle">(9.28%)</text>
+  <text x="160" y="380" class="tick" font-weight="bold" text-anchor="middle">Distinction</text>
+
+  <!-- 2. Pass: 12,361 -> h = 247.2px -> y = 112.8 -->
+  <rect x="250" y="113" width="100" height="247" rx="3" fill="#1f77b4" stroke="#0f172a" stroke-width="0.8" />
+  <text x="300" y="93" class="bar-label">12,361</text>
+  <text x="300" y="107" font-family="Arial, sans-serif" font-size="10.5px" font-weight="bold" fill="#1f77b4" text-anchor="middle">(37.93%)</text>
+  <text x="300" y="380" class="tick" font-weight="bold" text-anchor="middle">Pass</text>
+
+  <!-- 3. Fail: 7,052 -> h = 141.0px -> y = 219.0 -->
+  <rect x="390" y="219" width="100" height="141" rx="3" fill="#ff7f0e" stroke="#0f172a" stroke-width="0.8" />
+  <text x="440" y="199" class="bar-label">7,052</text>
+  <text x="440" y="213" font-family="Arial, sans-serif" font-size="10.5px" font-weight="bold" fill="#ff7f0e" text-anchor="middle">(21.64%)</text>
+  <text x="440" y="380" class="tick" font-weight="bold" text-anchor="middle">Fail</text>
+
+  <!-- 4. Withdrawn: 10,156 -> h = 203.1px -> y = 156.9 -->
+  <rect x="530" y="157" width="100" height="203" rx="3" fill="#d62728" stroke="#0f172a" stroke-width="0.8" />
+  <text x="580" y="137" class="bar-label">10,156</text>
+  <text x="580" y="151" font-family="Arial, sans-serif" font-size="10.5px" font-weight="bold" fill="#d62728" text-anchor="middle">(31.16%)</text>
+  <text x="580" y="380" class="tick" font-weight="bold" text-anchor="middle">Withdrawn</text>
+</svg>

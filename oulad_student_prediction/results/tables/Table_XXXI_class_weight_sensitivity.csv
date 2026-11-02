@@ -1,0 +1,5 @@
+Partition,Specification,roc_auc,pr_auc,accuracy,recall,precision,f1,specificity,brier
+Validation (Dev),class_weight = None (Primary),0.8425,0.8478,0.7617,0.8260,0.7486,0.7854,0.6898,0.1624
+Validation (Dev),class_weight = "balanced",0.8422,0.8475,0.7545,0.8452,0.7312,0.7841,0.6529,0.1631
+Holdout Test,class_weight = None (Frozen Primary),0.8406,0.8459,0.7595,0.8238,0.7468,0.7834,0.6875,0.1638
+Holdout Test,class_weight = "balanced" (Sensitivity),0.8404,0.8456,0.7547,0.8453,0.7315,0.7842,0.6531,0.1643

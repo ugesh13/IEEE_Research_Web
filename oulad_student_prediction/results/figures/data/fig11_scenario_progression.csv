@@ -1,0 +1,4 @@
+scenario,prediction_cutoff,feature_count,data_categories,incremental_gain_focus
+S0,Day <= 0 (Pre-course intake),13,Demographics & Registration,Baseline individual and curriculum attributes
+S1,Day <= 30 (End of Month 1),21,S0 + Early Assignment Submissions,Direct early graded cognitive mastery
+S2,Day <= 30 (End of Month 1),29,S1 + Early Digital VLE Clickstream,Continuous behavioral engagement regularity

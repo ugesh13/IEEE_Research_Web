@@ -1,0 +1,5 @@
+final_result,count,percentage,operational_group
+Pass,12361,37.93,Successful
+Withdrawn,10156,31.16,At-Risk
+Fail,7052,21.64,At-Risk
+Distinction,3024,9.28,Successful

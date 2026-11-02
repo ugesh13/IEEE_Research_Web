@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620" width="100%" height="100%">
+  <defs>
+    <style>
+      .title { font-family: Arial, sans-serif; font-size: 20px; font-weight: bold; fill: #111827; }
+      .subtitle { font-family: Arial, sans-serif; font-size: 13px; fill: #4b5563; }
+      .phase-title { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; fill: #1e3a8a; }
+      .box-label { font-family: Arial, sans-serif; font-size: 12px; font-weight: bold; fill: #1f2937; }
+      .box-desc { font-family: Arial, sans-serif; font-size: 10.5px; fill: #4b5563; }
+      .tag { font-family: Arial, sans-serif; font-size: 10px; font-weight: bold; fill: #ffffff; }
+      .arrow { stroke: #2563eb; stroke-width: 2; marker-end: url(#arrowhead); fill: none; }
+    </style>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2563eb" />
+    </marker>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.1" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="620" fill="#f8fafc" />
+
+  <!-- Header -->
+  <text x="50" y="45" class="title">Figure 1: End-to-End Research Methodology &amp; Temporal Scenario Architecture</text>
+  <text x="50" y="68" class="subtitle">Sequential pipeline preserving strict temporal cutoffs and zero post-outcome data leakage on OULAD</text>
+
+  <!-- Pipeline Stages -->
+
+  <!-- Stage 1: Data Integration & Cleaning -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="100" width="260" height="220" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" />
+    <rect x="50" y="100" width="260" height="35" rx="8" fill="#eff6ff" />
+    <text x="65" y="123" class="phase-title">1. Data Integration &amp; Cleaning</text>
+    <text x="65" y="155" class="box-label">Raw OULAD CSV Tables (7)</text>
+    <text x="65" y="172" class="box-desc">• studentInfo, courses, registration</text>
+    <text x="65" y="188" class="box-desc">• studentAssessment, studentVle, vle</text>
+    <text x="65" y="215" class="box-label">Unit of Analysis</text>
+    <text x="65" y="232" class="box-desc">• (code_module, presentation, student)</text>
+    <text x="65" y="248" class="box-desc">• Exactly 32,593 enrollment records</text>
+    <text x="65" y="275" class="box-label">Strict Leakage Quarantining</text>
+    <text x="65" y="292" class="box-desc">• date_unregistration isolated</text>
+    <text x="65" y="308" class="box-desc">• Final examination records barred</text>
+  </g>
+
+  <!-- Arrow 1 -> 2 -->
+  <path d="M 310 210 L 360 210" class="arrow" />
+
+  <!-- Stage 2: Temporal Scenario Construction -->
+  <g filter="url(#shadow)">
+    <rect x="370" y="100" width="260" height="220" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" />
+    <rect x="370" y="100" width="260" height="35" rx="8" fill="#eff6ff" />
+    <text x="385" y="123" class="phase-title">2. Nested Scenarios (S0, S1, S2)</text>
+    
+    <!-- S0 Badge -->
+    <rect x="385" y="145" width="45" height="18" rx="4" fill="#64748b" />
+    <text x="397" y="158" class="tag">S0</text>
+    <text x="440" y="158" class="box-desc"><tspan font-weight="bold">Baseline (Day ≤ 0)</tspan>: 13 features</text>
+
+    <!-- S1 Badge -->
+    <rect x="385" y="180" width="45" height="18" rx="4" fill="#2563eb" />
+    <text x="397" y="193" class="tag">S1</text>
+    <text x="440" y="193" class="box-desc"><tspan font-weight="bold">Early Academic (Day ≤ 30)</tspan>: 21 feat.</text>
+    <text x="440" y="208" class="box-desc">• S0 + 8 early TMA/CMA features</text>
+
+    <!-- S2 Badge -->
+    <rect x="385" y="225" width="45" height="18" rx="4" fill="#059669" />
+    <text x="397" y="238" class="tag">S2</text>
+    <text x="440" y="238" class="box-desc"><tspan font-weight="bold">Early Behavioral (Day ≤ 30)</tspan>: 29 feat.</text>
+    <text x="440" y="253" class="box-desc">• S1 + 8 early VLE clickstream features</text>
+
+    <text x="385" y="285" class="box-label">Primary Operational Target</text>
+    <text x="385" y="302" class="box-desc">• At-Risk (52.8%) vs Successful (47.2%)</text>
+  </g>
+
+  <!-- Arrow 2 -> 3 -->
+  <path d="M 630 210 L 680 210" class="arrow" />
+
+  <!-- Stage 3: Student-Grouped Validation & Pipeline -->
+  <g filter="url(#shadow)">
+    <rect x="690" y="100" width="260" height="220" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" />
+    <rect x="690" y="100" width="260" height="35" rx="8" fill="#eff6ff" />
+    <text x="705" y="123" class="phase-title">3. Evaluation &amp; ML Modeling</text>
+    <text x="705" y="155" class="box-label">Student-Grouped Partitioning</text>
+    <text x="705" y="172" class="box-desc">• GroupShuffleSplit on id_student</text>
+    <text x="705" y="188" class="box-desc">• 70% Train, 15% Val, 15% Test</text>
+    <text x="705" y="215" class="box-label">Algorithms Evaluated</text>
+    <text x="705" y="232" class="box-desc">• Logistic Reg, Decision Tree, RF</text>
+    <text x="705" y="248" class="box-desc">• Gradient Boosting, XGBoost, LightGBM</text>
+    <text x="705" y="275" class="box-label">Performance Metrics</text>
+    <text x="705" y="292" class="box-desc">• Accuracy, Macro-F1, ROC-AUC</text>
+    <text x="705" y="308" class="box-desc">• At-Risk Recall, PR-AUC, Calibration</text>
+  </g>
+
+  <!-- Downward Arrow to Stage 4 & 5 -->
+  <path d="M 820 320 L 820 370 L 520 370 L 520 400" class="arrow" />
+
+  <!-- Stage 4: Statistical Validation & Explainable AI -->
+  <g filter="url(#shadow)">
+    <rect x="180" y="410" width="640" height="170" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" />
+    <rect x="180" y="410" width="640" height="35" rx="8" fill="#f0fdf4" />
+    <text x="195" y="433" class="phase-title" fill="#166534">4. Statistical Validation &amp; Explainable AI (SHAP)</text>
+
+    <!-- Sub-block 1: Statistical Tests -->
+    <rect x="200" y="460" width="290" height="100" rx="6" fill="#f8fafc" stroke="#e2e8f0" />
+    <text x="215" y="482" class="box-label">Formal Hypothesis Testing</text>
+    <text x="215" y="502" class="box-desc">• Mann-Whitney U test (Scores, Clicks, Days)</text>
+    <text x="215" y="520" class="box-desc">• Chi-Square tests of independence (Demographics)</text>
+    <text x="215" y="538" class="box-desc">• Effect sizes: Rank-biserial r &amp; Cramér's V</text>
+
+    <!-- Sub-block 2: Explainable AI -->
+    <rect x="510" y="460" width="290" height="100" rx="6" fill="#f8fafc" stroke="#e2e8f0" />
+    <text x="525" y="482" class="box-label">Explainable AI (TreeSHAP)</text>
+    <text x="525" y="502" class="box-desc">• Global feature importance hierarchies</text>
+    <text x="525" y="520" class="box-desc">• SHAP beeswarm &amp; dependence interactions</text>
+    <text x="525" y="538" class="box-desc">• Local risk attributions for student interventions</text>
+  </g>
+</svg>

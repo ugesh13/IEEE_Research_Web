@@ -1,0 +1,10 @@
+feature,studied_credits,num_prev_attempts,date_reg,early_asm_count,early_avg_score,early_vle_clicks,early_active_days,early_sites,is_at_risk
+studied_credits,1.00,-0.04,0.01,-0.02,-0.03,-0.03,-0.04,-0.03,0.06
+num_prev_attempts,-0.04,1.00,-0.01,-0.04,-0.06,-0.03,-0.04,-0.04,0.08
+date_reg,0.01,-0.01,1.00,-0.03,-0.02,-0.02,-0.03,-0.03,0.04
+early_asm_count,-0.02,-0.04,-0.03,1.00,0.48,0.44,0.52,0.48,-0.36
+early_avg_score,-0.03,-0.06,-0.02,0.48,1.00,0.38,0.42,0.39,-0.41
+early_vle_clicks,-0.03,-0.03,-0.02,0.44,0.38,1.00,0.79,0.74,-0.28
+early_active_days,-0.04,-0.04,-0.03,0.52,0.42,0.79,1.00,0.85,-0.32
+early_sites,-0.03,-0.04,-0.03,0.48,0.39,0.74,0.85,1.00,-0.29
+is_at_risk,0.06,0.08,0.04,-0.36,-0.41,-0.28,-0.32,-0.29,1.00

@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 600" width="100%" height="100%">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="460" y="32" font-family="Arial, sans-serif" font-size="19" font-weight="bold" text-anchor="middle" fill="#0f172a">Figure 16: Probability Calibration Curves (Reliability Diagram)</text>
+<text x="460" y="54" font-family="Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">Scenario S2 Gradient Boosting | Uncalibrated (Brier = 0.1624) vs Sigmoid Calibrated (Brier = 0.1610)</text>
+<line x1="90" y1="520" x2="610" y2="520" stroke="#94a3b8" stroke-width="2"/>
+<line x1="90" y1="520" x2="90" y2="90" stroke="#94a3b8" stroke-width="2"/>
+<line x1="90.0" y1="520" x2="90.0" y2="90" stroke="#f1f5f9" stroke-width="1"/>
+<line x1="90" y1="520.0" x2="610" y2="520.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="90.0" y="540" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#64748b">0.0</text>
+<text x="75" y="524.0" font-family="Arial, sans-serif" font-size="12" text-anchor="end" fill="#64748b">0.0</text>
+<line x1="194.0" y1="520" x2="194.0" y2="90" stroke="#f1f5f9" stroke-width="1"/>
+<line x1="90" y1="434.0" x2="610" y2="434.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="194.0" y="540" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#64748b">0.2</text>
+<text x="75" y="438.0" font-family="Arial, sans-serif" font-size="12" text-anchor="end" fill="#64748b">0.2</text>
+<line x1="298.0" y1="520" x2="298.0" y2="90" stroke="#f1f5f9" stroke-width="1"/>
+<line x1="90" y1="348.0" x2="610" y2="348.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="298.0" y="540" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#64748b">0.4</text>
+<text x="75" y="352.0" font-family="Arial, sans-serif" font-size="12" text-anchor="end" fill="#64748b">0.4</text>
+<line x1="402.0" y1="520" x2="402.0" y2="90" stroke="#f1f5f9" stroke-width="1"/>
+<line x1="90" y1="262.0" x2="610" y2="262.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="402.0" y="540" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#64748b">0.6</text>
+<text x="75" y="266.0" font-family="Arial, sans-serif" font-size="12" text-anchor="end" fill="#64748b">0.6</text>
+<line x1="506.0" y1="520" x2="506.0" y2="90" stroke="#f1f5f9" stroke-width="1"/>
+<line x1="90" y1="176.0" x2="610" y2="176.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="506.0" y="540" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#64748b">0.8</text>
+<text x="75" y="180.0" font-family="Arial, sans-serif" font-size="12" text-anchor="end" fill="#64748b">0.8</text>
+<line x1="610.0" y1="520" x2="610.0" y2="90" stroke="#f1f5f9" stroke-width="1"/>
+<line x1="90" y1="90.0" x2="610" y2="90.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="610.0" y="540" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#64748b">1.0</text>
+<text x="75" y="94.0" font-family="Arial, sans-serif" font-size="12" text-anchor="end" fill="#64748b">1.0</text>
+<text x="350" y="565" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#1e293b">Mean Predicted Probability</text>
+<text x="35" y="305" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#1e293b" transform="rotate(-90 35 305)">Observed Fraction of Positives</text>
+<!-- Diagonal -->
+<line x1="90" y1="520" x2="610" y2="90" stroke="#94a3b8" stroke-width="2" stroke-dasharray="5,5"/>
+<!-- Uncalibrated -->
+<circle cx="131.6" cy="468.4" r="4" fill="#f59e0b"/>
+<circle cx="183.6" cy="429.7" r="4" fill="#f59e0b"/>
+<circle cx="235.6" cy="386.7" r="4" fill="#f59e0b"/>
+<circle cx="287.6" cy="343.7" r="4" fill="#f59e0b"/>
+<circle cx="344.8" cy="296.4" r="4" fill="#f59e0b"/>
+<circle cx="391.6" cy="266.3" r="4" fill="#f59e0b"/>
+<circle cx="448.8" cy="231.9" r="4" fill="#f59e0b"/>
+<circle cx="495.6" cy="193.2" r="4" fill="#f59e0b"/>
+<circle cx="547.6" cy="158.8" r="4" fill="#f59e0b"/>
+<circle cx="589.2" cy="128.7" r="4" fill="#f59e0b"/>
+<path d="M 131.6 468.4 L 183.6 429.7 L 235.6 386.7 L 287.6 343.7 L 344.8 296.4 L 391.6 266.3 L 448.8 231.9 L 495.6 193.2 L 547.6 158.8 L 589.2 128.7" fill="none" stroke="#f59e0b" stroke-width="2.5"/>
+<!-- Calibrated -->
+<circle cx="136.8" cy="477.0" r="4" fill="#1d4ed8"/>
+<circle cx="188.8" cy="434.0" r="4" fill="#1d4ed8"/>
+<circle cx="240.8" cy="391.0" r="4" fill="#1d4ed8"/>
+<circle cx="292.8" cy="348.0" r="4" fill="#1d4ed8"/>
+<circle cx="350.0" cy="300.7" r="4" fill="#1d4ed8"/>
+<circle cx="396.8" cy="266.3" r="4" fill="#1d4ed8"/>
+<circle cx="443.6" cy="227.6" r="4" fill="#1d4ed8"/>
+<circle cx="490.4" cy="188.9" r="4" fill="#1d4ed8"/>
+<circle cx="537.2" cy="154.5" r="4" fill="#1d4ed8"/>
+<circle cx="573.6" cy="124.4" r="4" fill="#1d4ed8"/>
+<path d="M 136.8 477.0 L 188.8 434.0 L 240.8 391.0 L 292.8 348.0 L 350.0 300.7 L 396.8 266.3 L 443.6 227.6 L 490.4 188.9 L 537.2 154.5 L 573.6 124.4" fill="none" stroke="#1d4ed8" stroke-width="3"/>
+<!-- Legend Box -->
+<rect x="640" y="90" width="260" height="430" fill="#f8fafc" rx="8" stroke="#e2e8f0"/>
+<text x="655" y="115" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0f172a">Calibration Legend</text>
+<line x1="655" y1="145" x2="685" y2="145" stroke="#94a3b8" stroke-width="2" stroke-dasharray="4,4"/>
+<text x="695" y="149" font-family="Arial, sans-serif" font-size="12" fill="#1e293b">Perfect Calibration</text>
+<line x1="655" y1="180" x2="685" y2="180" stroke="#f59e0b" stroke-width="2.5"/>
+<circle cx="670" cy="180" r="3.5" fill="#f59e0b"/>
+<text x="695" y="184" font-family="Arial, sans-serif" font-size="12" fill="#1e293b">Uncalibrated (Brier=0.1624)</text>
+<line x1="655" y1="215" x2="685" y2="215" stroke="#1d4ed8" stroke-width="3"/>
+<circle cx="670" cy="215" r="3.5" fill="#1d4ed8"/>
+<text x="695" y="219" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1d4ed8">Platt / Sigmoid (Brier=0.1610)</text>
+<rect x="650" y="255" width="240" height="245" fill="#eff6ff" rx="6" stroke="#bfdbfe"/>
+<text x="660" y="280" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1e3a8a">Calibration Diagnostics:</text>
+<text x="660" y="305" font-family="Arial, sans-serif" font-size="11" fill="#1e40af">• Method: Platt Sigmoid scaling</text>
+<text x="660" y="325" font-family="Arial, sans-serif" font-size="11" fill="#1e40af">• Fitted on Training Folds</text>
+<text x="660" y="345" font-family="Arial, sans-serif" font-size="11" fill="#1e40af">• Evaluated on Validation Set</text>
+<text x="660" y="375" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#0f172a">Clinical Value:</text>
+<text x="660" y="395" font-family="Arial, sans-serif" font-size="10.5" fill="#334155">Sigmoidal calibration prevents</text>
+<text x="660" y="412" font-family="Arial, sans-serif" font-size="10.5" fill="#334155">histogram binning artifacts at the</text>
+<text x="660" y="429" font-family="Arial, sans-serif" font-size="10.5" fill="#334155">probability extremes, ensuring</text>
+<text x="660" y="446" font-family="Arial, sans-serif" font-size="10.5" fill="#334155">that an estimated 80% risk</text>
+<text x="660" y="463" font-family="Arial, sans-serif" font-size="10.5" fill="#334155">closely matches 80% empirical failure.</text>
+</svg>

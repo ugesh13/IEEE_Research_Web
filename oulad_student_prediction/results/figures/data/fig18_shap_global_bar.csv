@@ -1,0 +1,21 @@
+rank,feature,raw_feature,feature_type,mean_abs_shap,direction
+1,early_avg_score_d30,early_avg_score_d30,Numerical,0.4285,Higher score strongly reduces At-Risk risk
+2,early_vle_active_days_d30,early_vle_active_days_d30,Numerical,0.3842,Higher active days strongly reduces At-Risk risk
+3,early_vle_total_clicks_d30,early_vle_total_clicks_d30,Numerical,0.312,Higher click volume reduces At-Risk risk
+4,has_early_assessment_submission_d30,has_early_assessment_submission_d30,Numerical,0.2856,Missing submission strongly increases At-Risk risk
+5,early_assessments_submitted_d30,early_assessments_submitted_d30,Numerical,0.2418,Zero submissions increases At-Risk risk
+6,early_vle_sites_visited_d30,early_vle_sites_visited_d30,Numerical,0.1984,Broader site exploration reduces At-Risk risk
+7,studied_credits,studied_credits,Numerical,0.1745,Higher course load (>120) increases At-Risk risk
+8,date_registration,date_registration,Numerical,0.162,Late registration increases At-Risk risk
+9,early_vle_clicks_per_active_day_d30,early_vle_clicks_per_active_day_d30,Numerical,0.1482,Higher session intensity reduces At-Risk risk
+10,early_min_score_d30,early_min_score_d30,Numerical,0.1345,Low minimum score increases At-Risk risk
+11,num_of_prev_attempts,num_of_prev_attempts,Numerical,0.121,Prior attempts (>0) increases At-Risk risk
+12,cat__highest_education_Lower Than A Level,highest_education,Categorical One-Hot,0.1154,Lower prior education increases At-Risk risk
+13,early_vle_incourse_clicks_d30,early_vle_incourse_clicks_d30,Numerical,0.1082,In-course clicks reduce At-Risk risk
+14,early_avg_submission_delay_d30,early_avg_submission_delay_d30,Numerical,0.0965,Assignment submission delay increases At-Risk risk
+15,cat__highest_education_HE Qualification,highest_education,Categorical One-Hot,0.0892,Higher education background reduces At-Risk risk
+16,early_vle_precourse_clicks,early_vle_precourse_clicks,Numerical,0.084,Pre-course preparation reduces At-Risk risk
+17,cat__code_module_BBB,code_module,Categorical One-Hot,0.0785,Domain/module specific baseline adjustment
+18,cat__code_module_FFF,code_module,Categorical One-Hot,0.0742,Domain/module specific baseline adjustment
+19,cat__age_band_0-35,age_band,Categorical One-Hot,0.068,Younger cohort mild association with risk
+20,early_max_score_d30,early_max_score_d30,Numerical,0.0652,High peak score reduces At-Risk risk

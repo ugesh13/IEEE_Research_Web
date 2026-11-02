@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 640" width="100%" height="100%">
+  <defs>
+    <style>
+      .title { font-family: Arial, sans-serif; font-size: 20px; font-weight: bold; fill: #111827; }
+      .subtitle { font-family: Arial, sans-serif; font-size: 13px; fill: #4b5563; }
+      .table-header { font-family: Arial, sans-serif; font-size: 13px; font-weight: bold; fill: #ffffff; }
+      .col-pk { font-family: Arial, sans-serif; font-size: 11px; font-weight: bold; fill: #b91c1c; }
+      .col-fk { font-family: Arial, sans-serif; font-size: 11px; font-weight: bold; fill: #1d4ed8; }
+      .col-name { font-family: Arial, sans-serif; font-size: 11px; fill: #374151; }
+      .cardinality { font-family: Arial, sans-serif; font-size: 10px; font-weight: bold; fill: #6b7280; }
+      .link { stroke: #475569; stroke-width: 1.5; fill: none; stroke-dasharray: 4,3; }
+    </style>
+    <filter id="shadow2" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-opacity="0.08" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="640" fill="#f8fafc" />
+
+  <!-- Header -->
+  <text x="50" y="40" class="title">Figure 2: OULAD Multi-Table Relational Schema &amp; Key Linkages</text>
+  <text x="50" y="62" class="subtitle">Structural foreign-key relationships connecting institutional, academic, registration, and clickstream tables</text>
+
+  <!-- COURSES -->
+  <g filter="url(#shadow2)">
+    <rect x="50" y="90" width="220" height="115" rx="6" fill="#ffffff" stroke="#94a3b8" />
+    <path d="M 50 96 A 6 6 0 0 1 56 90 L 264 90 A 6 6 0 0 1 270 96 L 270 118 L 50 118 Z" fill="#0f172a" />
+    <text x="65" y="111" class="table-header">courses.csv (22 rows)</text>
+    <text x="65" y="137" class="col-pk">PK code_module</text>
+    <text x="65" y="155" class="col-pk">PK code_presentation</text>
+    <text x="65" y="173" class="col-name">   module_presentation_length</text>
+  </g>
+
+  <!-- ASSESSMENTS -->
+  <g filter="url(#shadow2)">
+    <rect x="50" y="240" width="220" height="175" rx="6" fill="#ffffff" stroke="#94a3b8" />
+    <path d="M 50 246 A 6 6 0 0 1 56 240 L 264 240 A 6 6 0 0 1 270 246 L 270 268 L 50 268 Z" fill="#1e293b" />
+    <text x="65" y="261" class="table-header">assessments.csv (206 rows)</text>
+    <text x="65" y="287" class="col-pk">PK id_assessment</text>
+    <text x="65" y="305" class="col-fk">FK code_module</text>
+    <text x="65" y="323" class="col-fk">FK code_presentation</text>
+    <text x="65" y="341" class="col-name">   assessment_type</text>
+    <text x="65" y="359" class="col-name">   date (deadline)</text>
+    <text x="65" y="377" class="col-name">   weight</text>
+  </g>
+
+  <!-- STUDENT_INFO (Central Anchor) -->
+  <g filter="url(#shadow2)">
+    <rect x="370" y="90" width="260" height="325" rx="6" fill="#ffffff" stroke="#2563eb" stroke-width="2" />
+    <path d="M 370 96 A 6 6 0 0 1 376 90 L 624 90 A 6 6 0 0 1 630 96 L 630 118 L 370 118 Z" fill="#1d4ed8" />
+    <text x="385" y="111" class="table-header">studentInfo.csv (32,593 rows)</text>
+    <text x="385" y="137" class="col-pk">PK code_module</text>
+    <text x="385" y="155" class="col-pk">PK code_presentation</text>
+    <text x="385" y="173" class="col-pk">PK id_student</text>
+    <text x="385" y="195" class="col-name">   gender</text>
+    <text x="385" y="213" class="col-name">   region (13 areas)</text>
+    <text x="385" y="231" class="col-name">   highest_education</text>
+    <text x="385" y="249" class="col-name">   imd_band (deprivation)</text>
+    <text x="385" y="267" class="col-name">   age_band</text>
+    <text x="385" y="285" class="col-name">   num_of_prev_attempts</text>
+    <text x="385" y="303" class="col-name">   studied_credits</text>
+    <text x="385" y="321" class="col-name">   disability</text>
+    <text x="385" y="343" class="col-pk">TARGET final_result</text>
+  </g>
+
+  <!-- STUDENT_REGISTRATION -->
+  <g filter="url(#shadow2)">
+    <rect x="730" y="90" width="220" height="150" rx="6" fill="#ffffff" stroke="#94a3b8" />
+    <path d="M 730 96 A 6 6 0 0 1 736 90 L 944 90 A 6 6 0 0 1 950 96 L 950 118 L 730 118 Z" fill="#1e293b" />
+    <text x="745" y="111" class="table-header">studentRegistration (32,593)</text>
+    <text x="745" y="137" class="col-pk">PK FK code_module</text>
+    <text x="745" y="155" class="col-pk">PK FK code_presentation</text>
+    <text x="745" y="173" class="col-pk">PK FK id_student</text>
+    <text x="745" y="195" class="col-name">   date_registration</text>
+    <text x="745" y="213" class="col-pk" fill="#dc2626">   date_unregistration [LEAK]</text>
+  </g>
+
+  <!-- STUDENT_ASSESSMENT -->
+  <g filter="url(#shadow2)">
+    <rect x="50" y="450" width="240" height="160" rx="6" fill="#ffffff" stroke="#94a3b8" />
+    <path d="M 50 456 A 6 6 0 0 1 56 450 L 284 450 A 6 6 0 0 1 290 456 L 290 478 L 50 478 Z" fill="#334155" />
+    <text x="65" y="471" class="table-header">studentAssessment (173.9k)</text>
+    <text x="65" y="497" class="col-pk">PK FK id_assessment</text>
+    <text x="65" y="515" class="col-pk">PK FK id_student</text>
+    <text x="65" y="535" class="col-name">   date_submitted</text>
+    <text x="65" y="553" class="col-name">   is_banked</text>
+    <text x="65" y="571" class="col-name">   score (0 - 100)</text>
+  </g>
+
+  <!-- VLE -->
+  <g filter="url(#shadow2)">
+    <rect x="370" y="450" width="240" height="160" rx="6" fill="#ffffff" stroke="#94a3b8" />
+    <path d="M 370 456 A 6 6 0 0 1 376 450 L 604 450 A 6 6 0 0 1 610 456 L 610 478 L 370 478 Z" fill="#334155" />
+    <text x="385" y="471" class="table-header">vle.csv (6,364 rows)</text>
+    <text x="385" y="497" class="col-pk">PK id_site</text>
+    <text x="385" y="515" class="col-fk">FK code_module</text>
+    <text x="385" y="533" class="col-fk">FK code_presentation</text>
+    <text x="385" y="551" class="col-name">   activity_type (20 types)</text>
+    <text x="385" y="569" class="col-name">   week_from / week_to</text>
+  </g>
+
+  <!-- STUDENT_VLE -->
+  <g filter="url(#shadow2)">
+    <rect x="690" y="430" width="260" height="180" rx="6" fill="#ffffff" stroke="#94a3b8" />
+    <path d="M 690 436 A 6 6 0 0 1 696 430 L 944 430 A 6 6 0 0 1 950 436 L 950 458 L 690 458 Z" fill="#047857" />
+    <text x="705" y="451" class="table-header">studentVle.csv (10.65M rows)</text>
+    <text x="705" y="477" class="col-fk">FK code_module</text>
+    <text x="705" y="495" class="col-fk">FK code_presentation</text>
+    <text x="705" y="513" class="col-fk">FK id_student</text>
+    <text x="705" y="531" class="col-fk">FK id_site</text>
+    <text x="705" y="549" class="col-name">   date (interaction day)</text>
+    <text x="705" y="567" class="col-name">   sum_click (daily intensity)</text>
+  </g>
+
+  <!-- Connectors -->
+  <!-- courses to student_info -->
+  <line x1="270" y1="140" x2="370" y2="140" stroke="#2563eb" stroke-width="1.5" />
+  <text x="310" y="133" class="cardinality">1 : N</text>
+
+  <!-- student_info to studentRegistration -->
+  <line x1="630" y1="140" x2="730" y2="140" stroke="#2563eb" stroke-width="1.5" />
+  <text x="670" y="133" class="cardinality">1 : 1</text>
+
+  <!-- assessments to student_assessment -->
+  <line x1="160" y1="415" x2="160" y2="450" stroke="#475569" stroke-width="1.5" />
+  <text x="168" y="435" class="cardinality">1 : N</text>
+
+  <!-- student_info to student_assessment -->
+  <path d="M 400 415 L 400 440 L 220 440 L 220 450" class="link" />
+
+  <!-- vle to student_vle -->
+  <line x1="610" y1="520" x2="690" y2="520" stroke="#047857" stroke-width="1.5" />
+  <text x="640" y="513" class="cardinality">1 : N</text>
+
+  <!-- student_info to student_vle -->
+  <path d="M 600 415 L 600 435 L 750 435 L 750 430" class="link" />
+</svg>

@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 560" width="100%" height="100%">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="470" y="32" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#0f172a">Figure 24: At-Risk Precision Across Key Demographic Subgroups</text>
+<text x="470" y="54" font-family="Arial, sans-serif" font-size="12.5" fill="#64748b" text-anchor="middle">Operational Threshold θ* = 0.45 | Error Bars: Student-Clustered 95% Bootstrap CIs</text>
+<line x1="110" y1="470.0" x2="890" y2="470.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="98" y="474.0" font-family="Arial, sans-serif" font-size="11.5" text-anchor="end" fill="#64748b">0.50</text>
+<line x1="110" y1="375.0" x2="890" y2="375.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="98" y="379.0" font-family="Arial, sans-serif" font-size="11.5" text-anchor="end" fill="#64748b">0.60</text>
+<line x1="110" y1="280.0" x2="890" y2="280.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="98" y="284.0" font-family="Arial, sans-serif" font-size="11.5" text-anchor="end" fill="#64748b">0.70</text>
+<line x1="110" y1="185.0" x2="890" y2="185.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="98" y="189.0" font-family="Arial, sans-serif" font-size="11.5" text-anchor="end" fill="#64748b">0.80</text>
+<line x1="110" y1="90.0" x2="890" y2="90.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="98" y="94.0" font-family="Arial, sans-serif" font-size="11.5" text-anchor="end" fill="#64748b">0.90</text>
+<line x1="110" y1="470" x2="890" y2="470" stroke="#94a3b8" stroke-width="1.5"/>
+<line x1="110" y1="470" x2="110" y2="90" stroke="#94a3b8" stroke-width="1.5"/>
+<text x="40" y="280" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#1e293b" transform="rotate(-90 40 280)">At-Risk Precision (Positive Predictive Value)</text>
+
+<!-- Reference Line for Global Test Precision = 0.7468 -->
+<line x1="110" y1="235.5" x2="890" y2="235.5" stroke="#64748b" stroke-width="1.2" stroke-dasharray="4,4"/>
+<text x="880" y="228.0" font-family="Arial, sans-serif" font-size="10.5" fill="#64748b" text-anchor="end">Overall Test Precision: 0.747</text>
+
+<!-- 1. Female -->
+<rect x="132" y="231.5" width="46" height="238.5" fill="#16a34a" rx="3" opacity="0.88"/>
+<text x="155" y="212.5" font-family="Arial, sans-serif" font-size="10.5" font-weight="bold" text-anchor="middle" fill="#1e293b">0.751</text>
+<line x1="155" y1="253.4" x2="155" y2="209.7" stroke="#0f172a" stroke-width="1.5"/>
+<line x1="150" y1="253.4" x2="160" y2="253.4" stroke="#0f172a" stroke-width="1.5"/>
+<line x1="150" y1="209.7" x2="160" y2="209.7" stroke="#0f172a" stroke-width="1.5"/>
+<text x="155" y="488" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#1e293b">Female</text>
+<text x="155" y="502" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#64748b">(gender)</text>
+
+<!-- 2. Male -->
+<rect x="206" y="238.8" width="46" height="231.2" fill="#16a34a" rx="3" opacity="0.88"/>
+<text x="229" y="219.8" font-family="Arial, sans-serif" font-size="10.5" font-weight="bold" text-anchor="middle" fill="#1e293b">0.743</text>
+<line x1="229" y1="258.1" x2="229" y2="219.2" stroke="#0f172a" stroke-width="1.5"/>
+<line x1="224" y1="258.1" x2="234" y2="258.1" stroke="#0f172a" stroke-width="1.5"/>
+<line x1="224" y1="219.2" x2="234" y2="219.2" stroke="#0f172a" stroke-width="1.5"/>
+<text x="229" y="488" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#1e293b">Male</text>
+<text x="229" y="502" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#64748b">(gender)</text>
+
+<!-- 3. Age 0-35 -->
+<rect x="280" y="230.3" width="46" height="239.7" fill="#16a34a" rx="3" opacity="0.88"/>
+<text x="303" y="211.3" font-family="Arial, sans-serif" font-size="10.5" font-weight="bold" text-anchor="middle" fill="#1e293b">0.752</text>
+<line x1="303" y1="248.6" x2="303" y2="211.6" stroke="#0f172a" stroke-width="1.5"/>
+<line x1="298" y1="248.6" x2="308" y2="248.6" stroke="#0f172a" stroke-width="1.5"/>
+<line x1="298" y1="211.6" x2="308" y2="211.6" stroke="#0f172a" stroke-width="1.5"/>
+<text x="303" y="488" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#1e293b">0-35</text>
+<text x="303" y="502" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#64748b">(age)</text>
+
+<!-- 4. Age 35-55 -->
+<rect x="354" y="243.1" width="46" height="226.9" fill="#16a34a" rx="3" opacity="0.88"/>
+<text x="377" y="224.1" font-family="Arial, sans-serif" font-size="10.5" font-weight="bold" text-anchor="middle" fill="#1e293b">0.739</text>
+<line x1="377" y1="274.3" x2="377" y2="212.5" stroke="#0f172a" stroke-width="1.5"/>
+<line x1="372" y1="274.3" x2="382" y2="274.3" stroke="#0f172a" stroke-width="1.5"/>
+<line x1="372" y1="212.5" x2="382" y2="212.5" stroke="#0f172a" stroke-width="1.5"/>
+<text x="377" y="488" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#1e293b">35-55</text>
+<text x="377" y="502" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#64748b">(age)</text>
+
+<!-- 5. Disability No -->
+<rect x="428" y="236.7" width="46" height="233.3" fill="#16a34a" rx="3" opacity="0.88"/>
+<text x="451" y="217.7" font-family="Arial, sans-serif" font-size="10.5" font-weight="bold" text-anchor="middle" fill="#1e293b">0.746</text>
+<line x1="451" y1="252.5" x2="451" y2="221.1" stroke="#0f172a" stroke-width="1.5"/>
+<line x1="446" y1="252.5" x2="456" y2="252.5" stroke="#0f172a" stroke-width="1.5"/>
+<line x1="446" y1="221.1" x2="456" y2="221.1" stroke="#0f172a" stroke-width="1.5"/>
+<text x="451" y="488" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#1e293b">Disability: N</text>
+<text x="451" y="502" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#64748b">(disability)</text>
+
+<!-- 6. Disability Yes -->
+<rect x="502" y="218.9" width="46" height="251.1" fill="#16a34a" rx="3" opacity="0.88"/>
+<text x="525" y="199.9" font-family="Arial, sans-serif" font-size="10.5" font-weight="bold" text-anchor="middle" fill="#1e293b">0.764</text>
+<line x1="525" y1="262.9" x2="525" y2="174.6" stroke="#0f172a" stroke-width="1.5"/>
+<line x1="520" y1="262.9" x2="530" y2="262.9" stroke="#0f172a" stroke-width="1.5"/>
+<line x1="520" y1="174.6" x2="530" y2="174.6" stroke="#0f172a" stroke-width="1.5"/>
+<text x="525" y="488" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#1e293b">Disability: Y</text>
+<text x="525" y="502" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#64748b">(disability)</text>
+
+<!-- 7. Lower Than A Level -->
+<rect x="576" y="212.1" width="46" height="257.9" fill="#16a34a" rx="3" opacity="0.88"/>
+<text x="599" y="193.1" font-family="Arial, sans-serif" font-size="10.5" font-weight="bold" text-anchor="middle" fill="#1e293b">0.772</text>
+<line x1="599" y1="234.4" x2="599" y2="189.7" stroke="#0f172a" stroke-width="1.5"/>
+<line x1="594" y1="234.4" x2="604" y2="234.4" stroke="#0f172a" stroke-width="1.5"/>
+<line x1="594" y1="189.7" x2="604" y2="189.7" stroke="#0f172a" stroke-width="1.5"/>
+<text x="599" y="488" font-family="Arial, sans-serif" font-size="9.5" text-anchor="middle" fill="#1e293b">&lt; A Level</text>
+<text x="599" y="502" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#64748b">(education)</text>
+
+<!-- 8. A Level -->
+<rect x="650" y="237.2" width="46" height="232.8" fill="#16a34a" rx="3" opacity="0.88"/>
+<text x="673" y="218.2" font-family="Arial, sans-serif" font-size="10.5" font-weight="bold" text-anchor="middle" fill="#1e293b">0.745</text>
+<line x1="673" y1="261.0" x2="673" y2="213.5" stroke="#0f172a" stroke-width="1.5"/>
+<line x1="668" y1="261.0" x2="678" y2="261.0" stroke="#0f172a" stroke-width="1.5"/>
+<line x1="668" y1="213.5" x2="678" y2="213.5" stroke="#0f172a" stroke-width="1.5"/>
+<text x="673" y="488" font-family="Arial, sans-serif" font-size="9.5" text-anchor="middle" fill="#1e293b">A Level</text>
+<text x="673" y="502" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#64748b">(education)</text>
+
+<!-- 9. HE Qual -->
+<rect x="724" y="300.1" width="46" height="169.9" fill="#16a34a" rx="3" opacity="0.88"/>
+<text x="747" y="281.1" font-family="Arial, sans-serif" font-size="10.5" font-weight="bold" text-anchor="middle" fill="#1e293b">0.679</text>
+<line x1="747" y1="348.4" x2="747" y2="251.5" stroke="#0f172a" stroke-width="1.5"/>
+<line x1="742" y1="348.4" x2="752" y2="348.4" stroke="#0f172a" stroke-width="1.5"/>
+<line x1="742" y1="251.5" x2="752" y2="251.5" stroke="#0f172a" stroke-width="1.5"/>
+<text x="747" y="488" font-family="Arial, sans-serif" font-size="9.5" text-anchor="middle" fill="#1e293b">HE Qual</text>
+<text x="747" y="502" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#64748b">(education)</text>
+
+<!-- 10. IMD 0-10% -->
+<rect x="798" y="218.1" width="46" height="251.9" fill="#16a34a" rx="3" opacity="0.88"/>
+<text x="821" y="199.1" font-family="Arial, sans-serif" font-size="10.5" font-weight="bold" text-anchor="middle" fill="#1e293b">0.765</text>
+<line x1="821" y1="261.9" x2="821" y2="174.6" stroke="#0f172a" stroke-width="1.5"/>
+<line x1="816" y1="261.9" x2="826" y2="261.9" stroke="#0f172a" stroke-width="1.5"/>
+<line x1="816" y1="174.6" x2="826" y2="174.6" stroke="#0f172a" stroke-width="1.5"/>
+<text x="821" y="488" font-family="Arial, sans-serif" font-size="9.5" text-anchor="middle" fill="#1e293b">IMD 0-10%</text>
+<text x="821" y="502" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#64748b">(deprivation)</text>
+
+</svg>

@@ -1,0 +1,60 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+.env
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# IDE and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Large Datasets (> 100MB violates GitHub limits)
+# OULAD raw CSV files (can be retrieved from https://analyse.kmi.open.ac.uk/open_dataset)
+oulad_student_prediction/data/raw/*.csv
+!oulad_student_prediction/data/raw/README.md
+!oulad_student_prediction/data/raw/OULAD.names
+
+# Processed parquet/csv intermediates if generated locally
+oulad_student_prediction/data/processed/*.parquet
+oulad_student_prediction/data/processed/*.csv
+!oulad_student_prediction/data/processed/README.md
+
+# Large model artifacts if saved locally (>100MB)
+oulad_student_prediction/models/*.joblib
+oulad_student_prediction/models/*.pkl
+!oulad_student_prediction/models/README.md
