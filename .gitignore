@@ -58,3 +58,19 @@ oulad_student_prediction/data/processed/*.csv
 oulad_student_prediction/models/*.joblib
 oulad_student_prediction/models/*.pkl
 !oulad_student_prediction/models/README.md
+
+# Node / Frontend build artifacts
+node_modules/
+**/node_modules/
+dist/
+**/dist/
+dist-ssr/
+**/dist-ssr/
+.vite/
+**/.vite/
+
+# Run logs & partition assignment files with local paths
+*.log
+oulad_student_prediction/results/run_logs/
+oulad_student_prediction/results/splits/student_partition_assignment.csv
+
