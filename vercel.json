@@ -1,6 +1,8 @@
 {
+  "framework": "vite",
+  "installCommand": "npm --prefix website install",
   "buildCommand": "npm --prefix website run build",
-  "outputDirectory": "website/dist",
-  "framework": "vite"
+  "outputDirectory": "website/dist"
 }
+
 
