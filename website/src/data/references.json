@@ -1,0 +1,152 @@
+[
+  {
+    "id": 1,
+    "citation": "V. Tinto, Leaving College: Rethinking the Causes and Cures of Student Attrition, 2nd ed. Univ. Chicago Press, 1993.",
+    "url": "https://scholar.google.com/scholar?q=Tinto%20Leaving%20College%3A%20Rethinking%20the%20Causes%20and%20Cures%20of%20Student%20Attrition"
+  },
+  {
+    "id": 2,
+    "citation": "S. B. Kotsiantis, C. J. Pierrakeas, and P. E. Pintelas, \"Preventing student dropout in distance learning using machine learning techniques,\" KES, 2003.",
+    "url": "https://doi.org/10.1007/978-3-540-45226-3_37"
+  },
+  {
+    "id": 3,
+    "citation": "I. Lykourentzou et al., \"Dropout prediction in e-learning courses through the combination of machine learning techniques,\" Comput. Educ., 2009.",
+    "url": "https://doi.org/10.1016/j.compedu.2009.05.010"
+  },
+  {
+    "id": 4,
+    "citation": "J. Kuzilek, M. Hlosta, and Z. Zdrahal, \"Open University Learning Analytics dataset,\" Sci. Data, 2017.",
+    "url": "https://doi.org/10.1038/sdata.2017.171"
+  },
+  {
+    "id": 5,
+    "citation": "K. E. Arnold and M. D. Pistilli, \"Course Signals at Purdue: Using learning analytics to increase student success,\" LAK, 2012.",
+    "url": "https://doi.org/10.1145/2330601.2330666"
+  },
+  {
+    "id": 6,
+    "citation": "M. Hlosta, Z. Zdrahal, and J. Zendulka, \"Ouroboros: Early identification of at-risk students without models based on legacy data,\" LAK, 2017.",
+    "url": "https://doi.org/10.1145/3027385.3027449"
+  },
+  {
+    "id": 7,
+    "citation": "C. Herodotou et al., \"A large-scale implementation of predictive learning analytics in higher education: The teachers' role and perspective,\" Educ. Technol. Res. Develop., 2019.",
+    "url": "https://doi.org/10.1007/s11423-019-09685-0"
+  },
+  {
+    "id": 8,
+    "citation": "C. Herodotou et al., \"Empowering online teachers through predictive learning analytics,\" Brit. J. Educ. Technol., 2019.",
+    "url": "https://doi.org/10.1111/bjet.12853"
+  },
+  {
+    "id": 9,
+    "citation": "G. Siemens and P. Long, \"Penetrating the fog: Analytics in learning and education,\" EDUCAUSE Rev., 2011.",
+    "url": "https://er.educause.edu/articles/2011/9/penetrating-the-fog-analytics-in-learning-and-education"
+  },
+  {
+    "id": 10,
+    "citation": "R. S. Baker and P. S. Inventado, \"Educational data mining and learning analytics,\" in Learning Analytics, Springer, 2014.",
+    "url": "https://doi.org/10.1007/978-1-4614-3305-7_4"
+  },
+  {
+    "id": 11,
+    "citation": "C. Romero and S. Ventura, \"Educational data mining and learning analytics: An updated survey,\" WIREs Data Mining Knowl. Discovery, 2020.",
+    "url": "https://doi.org/10.1002/widm.1355"
+  },
+  {
+    "id": 12,
+    "citation": "L. Kemper, G. Vorhoff, and B. U. Wigger, \"Predicting student dropout: A machine learning approach,\" Eur. J. Higher Educ., 2020.",
+    "url": "https://doi.org/10.1080/21568235.2020.1718520"
+  },
+  {
+    "id": 13,
+    "citation": "H. Waheed et al., \"Predicting academic performance of students from VLE big data using deep learning models,\" Comput. Hum. Behav., 2020.",
+    "url": "https://doi.org/10.1016/j.chb.2019.106189"
+  },
+  {
+    "id": 14,
+    "citation": "S. Kaufman, S. Rosset, C. Perlich, and O. Stitelman, \"Leakage in data mining: Formulation, detection, and avoidance,\" ACM TKDD, 2012.",
+    "url": "https://doi.org/10.1145/2382577.2382579"
+  },
+  {
+    "id": 15,
+    "citation": "S. Kapoor and A. Narayanan, \"Leakage and the reproducibility crisis in machine-learning-based science,\" Patterns, 2023.",
+    "url": "https://doi.org/10.1016/j.patter.2023.100804"
+  },
+  {
+    "id": 16,
+    "citation": "F. Doshi-Velez and B. Kim, \"Towards a rigorous science of interpretable machine learning,\" arXiv:1702.08608, 2017.",
+    "url": "https://arxiv.org/abs/1702.08608"
+  },
+  {
+    "id": 17,
+    "citation": "H. Khosravi et al., \"Explainable artificial intelligence in education,\" Comput. Educ., Artif. Intell., 2022.",
+    "url": "https://doi.org/10.1016/j.caeai.2022.100074"
+  },
+  {
+    "id": 18,
+    "citation": "S. M. Lundberg and S.-I. Lee, \"A unified approach to interpreting model predictions,\" NeurIPS, 2017.",
+    "url": "https://arxiv.org/abs/1705.07874"
+  },
+  {
+    "id": 19,
+    "citation": "M. Hardt, E. Price, and N. Srebro, \"Equality of opportunity in supervised learning,\" NeurIPS, 2016.",
+    "url": "https://arxiv.org/abs/1610.02413"
+  },
+  {
+    "id": 20,
+    "citation": "N. Mehrabi et al., \"A survey on bias and fairness in machine learning,\" ACM Comput. Surv., 2021.",
+    "url": "https://doi.org/10.1145/3457607"
+  },
+  {
+    "id": 21,
+    "citation": "R. S. Baker and A. Hawn, \"Algorithmic bias in education,\" Int. J. Artif. Intell. Educ., 2022.",
+    "url": "https://doi.org/10.1007/s40593-021-00285-9"
+  },
+  {
+    "id": 22,
+    "citation": "J. Gardner, C. Brooks, and R. Baker, \"Evaluating the fairness of predictive student models through slicing analysis,\" LAK, 2019.",
+    "url": "https://doi.org/10.1145/3303772.3303791"
+  },
+  {
+    "id": 23,
+    "citation": "C. Romero and S. Ventura, \"Educational data mining: A review of the state of the art,\" IEEE Trans. SMC-C, 2010.",
+    "url": "https://doi.org/10.1109/TSMCC.2010.2053532"
+  },
+  {
+    "id": 24,
+    "citation": "L. Breiman, \"Random forests,\" Mach. Learn., 2001.",
+    "url": "https://doi.org/10.1023/A:1010933404324"
+  },
+  {
+    "id": 25,
+    "citation": "J. H. Friedman, \"Greedy function approximation: A gradient boosting machine,\" Ann. Statist., 2001.",
+    "url": "https://doi.org/10.1214/aos/1013203451"
+  },
+  {
+    "id": 26,
+    "citation": "G. Ke et al., \"LightGBM: A highly efficient gradient boosting decision tree,\" NeurIPS, 2017.",
+    "url": "https://proceedings.neurips.cc/paper/2017/hash/6449f44a102fde848669bdd9eb6b76fa-Abstract.html"
+  },
+  {
+    "id": 27,
+    "citation": "F. Pedregosa et al., \"Scikit-learn: Machine learning in Python,\" J. Mach. Learn. Res., 2011.",
+    "url": "https://jmlr.org/papers/v12/pedregosa11a.html"
+  },
+  {
+    "id": 28,
+    "citation": "G. W. Brier, \"Verification of forecasts expressed in terms of probability,\" Monthly Weather Rev., 1950.",
+    "url": "https://doi.org/10.1175/1520-0493(1950)078%3C0001:VOFEIT%3E2.0.CO;2"
+  },
+  {
+    "id": 29,
+    "citation": "A. Niculescu-Mizil and R. Caruana, \"Predicting good probabilities with supervised learning,\" ICML, 2005.",
+    "url": "https://doi.org/10.1145/1102351.1102430"
+  },
+  {
+    "id": 30,
+    "citation": "J. C. Platt, \"Probabilistic outputs for support vector machines and comparisons to regularized likelihood methods,\" 1999.",
+    "url": "https://scholar.google.com/scholar?q=Platt%20Probabilistic%20outputs%20for%20support%20vector%20machines%20and%20comparisons%20to%20regularized%20likelihood%20methods"
+  }
+]

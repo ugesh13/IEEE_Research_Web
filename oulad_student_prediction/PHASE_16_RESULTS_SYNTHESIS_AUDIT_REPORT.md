@@ -183,15 +183,15 @@ Nine specific methodological limitations were synthesized and documented:
 ## M. NUMERICAL CONSISTENCY AUDIT
 
 Every quantitative value across `results/FINAL_RESULTS_SYNTHESIS.md`, `results/DISCUSSION_DRAFT.md`, `results/FINAL_EVIDENCE_MATRIX.md`, and `research_log.md` was cross-checked against the authoritative source tables (Tables XIV, XV, XVI, XVII, XVIII, XIX, XXI, XXII, XXIV, XXV, XXVI, XXVIII, XXIX, XXX, XXXI, XXXII):
-- Final Test Confusion Matrix: $\text{TP} = 2,127, \text{FN} = 455, \text{TN} = 1,586, \text{FP} = 721$ ($\Sigma = 4,889$) $\rightarrow$ **100% VERIFIED**
-- Test Metrics: Accuracy $75.95\%$, Recall $82.38\%$, Precision $74.68\%$, $F_1 = 0.7834$, Specificity $68.75\%$, ROC-AUC $0.8406$, PR-AUC $0.8459$, Brier $0.1638$ $\rightarrow$ **100% VERIFIED**
-- Validation Incremental Gains: $S_0 = 0.6208 \rightarrow S_1 = 0.7592$ ($+0.1384$) $\rightarrow S_2 = 0.8425$ ($+0.0833$; Total: $+0.2217$) $\rightarrow$ **100% VERIFIED**
-- Phase 15 Seed Means: $S_0 = 0.6192 \pm 0.0030, S_1 = 0.7584 \pm 0.0026, S_2 = 0.8405 \pm 0.0013$ $\rightarrow$ **100% VERIFIED**
-- SHAP Family Shares: Academic $33.22\%$, VLE $32.61\%$, Combined $65.83\%$, Total $3.9196$ $\rightarrow$ **100% VERIFIED**
-- Subgroup Recall Values: Female $81.79\%$, Male $82.85\%$, Disability $83.33\%$, No Disability $82.26\%$, Lower than A Level $84.13\%$, Higher Ed $78.87\%$ $\rightarrow$ **100% VERIFIED**
-- Threshold Operating Values: $\theta=0.45$ vs $0.50$ Recall ($82.38\%$ vs $80.60\%$), Precision ($74.68\%$ vs $75.84\%$), $F_1$ ($0.7834$ vs $0.7814$), FN ($455$ vs $501$) $\rightarrow$ **100% VERIFIED**
-- Calibration Values: Raw Brier $0.1624$, MCE $0.0520$; Platt Brier $0.1610$, MCE $0.0215$; Isotonic Brier $0.1618$, MCE $0.0384$ $\rightarrow$ **100% VERIFIED**
-- Exploratory Multi-Class: Accuracy $66.42\%$, Withdrawn $F_1 = 0.7140$, Pass $F_1 = 0.6956$, Distinction $F_1 = 0.5774$, Fail $F_1 = 0.5507$ $\rightarrow$ **100% VERIFIED**
+- Final Test Confusion Matrix: $\text{TP} = 2,127, \text{FN} = 455, \text{TN} = 1,586, \text{FP} = 721$ ($\Sigma = 4,889$) $\rightarrow$ **CONFIRMED**
+- Test Metrics: Accuracy $75.95\%$, Recall $82.38\%$, Precision $74.68\%$, $F_1 = 0.7834$, Specificity $68.75\%$, ROC-AUC $0.8406$, PR-AUC $0.8459$, Brier $0.1638$ $\rightarrow$ **CONFIRMED**
+- Validation Incremental Gains: $S_0 = 0.6208 \rightarrow S_1 = 0.7592$ ($+0.1384$) $\rightarrow S_2 = 0.8425$ ($+0.0833$; Total: $+0.2217$) $\rightarrow$ **CONFIRMED**
+- Phase 15 Seed Means: $S_0 = 0.6192 \pm 0.0030, S_1 = 0.7584 \pm 0.0026, S_2 = 0.8405 \pm 0.0013$ $\rightarrow$ **CONFIRMED**
+- SHAP Family Shares: Academic $33.22\%$, VLE $32.61\%$, Combined $65.83\%$, Total $3.9196$ $\rightarrow$ **CONFIRMED**
+- Subgroup Recall Values: Female $81.79\%$, Male $82.85\%$, Disability $83.33\%$, No Disability $82.26\%$, Lower than A Level $84.13\%$, Higher Ed $78.87\%$ $\rightarrow$ **CONFIRMED**
+- Threshold Operating Values: $\theta=0.45$ vs $0.50$ Recall ($82.38\%$ vs $80.60\%$), Precision ($74.68\%$ vs $75.84\%$), $F_1$ ($0.7834$ vs $0.7814$), FN ($455$ vs $501$) $\rightarrow$ **CONFIRMED**
+- Calibration Values: Raw Brier $0.1624$, MCE $0.0520$; Platt Brier $0.1610$, MCE $0.0215$; Isotonic Brier $0.1618$, MCE $0.0384$ $\rightarrow$ **CONFIRMED**
+- Exploratory Multi-Class: Accuracy $66.42\%$, Withdrawn $F_1 = 0.7140$, Pass $F_1 = 0.6956$, Distinction $F_1 = 0.5774$, Fail $F_1 = 0.5507$ $\rightarrow$ **CONFIRMED**
 
 ---
 
@@ -209,11 +209,11 @@ All generated text across the three new synthesis documents and the updated rese
 
 ## O. FILES CREATED
 
-1. [`results/FINAL_RESULTS_SYNTHESIS.md`](file:///c:/Users/ugesh/Desktop/College/College%20Files/CSBS_3rd_%20semester/Design%20thinking/Research/Anitgravity-Research-Paper/oulad_student_prediction/results/FINAL_RESULTS_SYNTHESIS.md)
-2. [`results/DISCUSSION_DRAFT.md`](file:///c:/Users/ugesh/Desktop/College/College%20Files/CSBS_3rd_%20semester/Design%20thinking/Research/Anitgravity-Research-Paper/oulad_student_prediction/results/DISCUSSION_DRAFT.md)
-3. [`results/FINAL_EVIDENCE_MATRIX.md`](file:///c:/Users/ugesh/Desktop/College/College%20Files/CSBS_3rd_%20semester/Design%20thinking/Research/Anitgravity-Research-Paper/oulad_student_prediction/results/FINAL_EVIDENCE_MATRIX.md)
-4. [`research_log.md`](file:///c:/Users/ugesh/Desktop/College/College%20Files/CSBS_3rd_%20semester/Design%20thinking/Research/Anitgravity-Research-Paper/oulad_student_prediction/research_log.md) (Updated with Phase 16 entry)
-5. [`PHASE_16_RESULTS_SYNTHESIS_AUDIT_REPORT.md`](file:///c:/Users/ugesh/Desktop/College/College%20Files/CSBS_3rd_%20semester/Design%20thinking/Research/Anitgravity-Research-Paper/oulad_student_prediction/PHASE_16_RESULTS_SYNTHESIS_AUDIT_REPORT.md)
+1. [`results/FINAL_RESULTS_SYNTHESIS.md`](./oulad_student_prediction/results/FINAL_RESULTS_SYNTHESIS.md)
+2. [`results/DISCUSSION_DRAFT.md`](./oulad_student_prediction/results/DISCUSSION_DRAFT.md)
+3. [`results/FINAL_EVIDENCE_MATRIX.md`](./oulad_student_prediction/results/FINAL_EVIDENCE_MATRIX.md)
+4. [`research_log.md`](./oulad_student_prediction/research_log.md) (Updated with Phase 16 entry)
+5. [`PHASE_16_RESULTS_SYNTHESIS_AUDIT_REPORT.md`](./oulad_student_prediction/PHASE_16_RESULTS_SYNTHESIS_AUDIT_REPORT.md)
 
 ---
 

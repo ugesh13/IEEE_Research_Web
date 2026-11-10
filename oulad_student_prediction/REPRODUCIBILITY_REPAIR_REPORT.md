@@ -22,11 +22,11 @@ During the independent forensic audit of the research codebase, the scientific a
 
 | File Path | Nature of Modification |
 | :--- | :--- |
-| [`src/model_training.py`](file:///c:/Users/ugesh/Desktop/College/College%20Files/CSBS_3rd_%20semester/Design%20thinking/Research/Anitgravity-Research-Paper/oulad_student_prediction/src/model_training.py) | Removed `raw_experimental_results`. Replaced with live automated data loading, `ColumnTransformer` preprocessing fitted strictly on training folds, live 5-fold student-grouped CV, live validation evaluation, dynamic confusion matrix calculation, and serialized frozen model export. |
-| [`src/threshold_calibration.py`](file:///c:/Users/ugesh/Desktop/College/College%20Files/CSBS_3rd_%20semester/Design%20thinking/Research/Anitgravity-Research-Paper/oulad_student_prediction/src/threshold_calibration.py) | Removed static `cms` and static `test_cm_*` dictionaries. Implemented live model prediction, dynamic validation threshold sweep across $\theta \in [0.10, 0.90]$, algorithmic verification of selection rule ($\theta^* = 0.45$), and dynamic holdout test set scoring. |
-| [`src/shap_analysis.py`](file:///c:/Users/ugesh/Desktop/College/College%20Files/CSBS_3rd_%20semester/Design%20thinking/Research/Anitgravity-Research-Paper/oulad_student_prediction/src/shap_analysis.py) | Added dynamic SHAP computation routine using `shap.TreeExplainer` / `shap.Explainer` with $N_{\text{bg}} = 100$ training background samples, automated feature column mapping, and dynamic feature family aggregation. |
-| [`notebooks/08_model_training.ipynb`](file:///c:/Users/ugesh/Desktop/College/College%20Files/CSBS_3rd_%20semester/Design%20thinking/Research/Anitgravity-Research-Paper/oulad_student_prediction/notebooks/08_model_training.ipynb) | Populated all execution counts (1–4) and embedded live stream outputs and formatted dataframe summaries. |
-| [`requirements.txt`](file:///c:/Users/ugesh/Desktop/College/College%20Files/CSBS_3rd_%20semester/Design%20thinking/Research/Anitgravity-Research-Paper/requirements.txt) | Updated with pinned scientific computing versions including `joblib>=1.3.2`, `shap>=0.42.1`, `scikit-learn>=1.3.0`. |
+| [`src/model_training.py`](./oulad_student_prediction/src/model_training.py) | Removed `raw_experimental_results`. Replaced with live automated data loading, `ColumnTransformer` preprocessing fitted strictly on training folds, live 5-fold student-grouped CV, live validation evaluation, dynamic confusion matrix calculation, and serialized frozen model export. |
+| [`src/threshold_calibration.py`](./oulad_student_prediction/src/threshold_calibration.py) | Removed static `cms` and static `test_cm_*` dictionaries. Implemented live model prediction, dynamic validation threshold sweep across $\theta \in [0.10, 0.90]$, algorithmic verification of selection rule ($\theta^* = 0.45$), and dynamic holdout test set scoring. |
+| [`src/shap_analysis.py`](./oulad_student_prediction/src/shap_analysis.py) | Added dynamic SHAP computation routine using `shap.TreeExplainer` / `shap.Explainer` with $N_{\text{bg}} = 100$ training background samples, automated feature column mapping, and dynamic feature family aggregation. |
+| [`notebooks/08_model_training.ipynb`](./oulad_student_prediction/notebooks/08_model_training.ipynb) | Populated all execution counts (1–4) and embedded live stream outputs and formatted dataframe summaries. |
+| [`requirements.txt`](./requirements.txt) | Updated with pinned scientific computing versions including `joblib>=1.3.2`, `shap>=0.42.1`, `scikit-learn>=1.3.0`. |
 
 ---
 
@@ -34,10 +34,10 @@ During the independent forensic audit of the research codebase, the scientific a
 
 | File Path | Purpose |
 | :--- | :--- |
-| [`REPRODUCIBILITY.md`](file:///c:/Users/ugesh/Desktop/College/College%20Files/CSBS_3rd_%20semester/Design%20thinking/Research/Anitgravity-Research-Paper/REPRODUCIBILITY.md) | Comprehensive, end-to-end execution guide specifying environment setup, data placement, step-by-step commands, and baseline verification tables. |
-| [`oulad_student_prediction/REPRODUCIBILITY.md`](file:///c:/Users/ugesh/Desktop/College/College%20Files/CSBS_3rd_%20semester/Design%20thinking/Research/Anitgravity-Research-Paper/oulad_student_prediction/REPRODUCIBILITY.md) | Local copy of the execution guide within the experiment module. |
-| [`models/README.md`](file:///c:/Users/ugesh/Desktop/College/College%20Files/CSBS_3rd_%20semester/Design%20thinking/Research/Anitgravity-Research-Paper/oulad_student_prediction/models/README.md) | Architecture specification for serialized model artifacts and preprocessors. |
-| [`REPRODUCIBILITY_REPAIR_REPORT.md`](file:///c:/Users/ugesh/Desktop/College/College%20Files/CSBS_3rd_%20semester/Design%20thinking/Research/Anitgravity-Research-Paper/REPRODUCIBILITY_REPAIR_REPORT.md) | This formal audit and repair verification report. |
+| [`REPRODUCIBILITY.md`](./REPRODUCIBILITY.md) | Comprehensive, end-to-end execution guide specifying environment setup, data placement, step-by-step commands, and baseline verification tables. |
+| [`oulad_student_prediction/REPRODUCIBILITY.md`](./oulad_student_prediction/REPRODUCIBILITY.md) | Local copy of the execution guide within the experiment module. |
+| [`models/README.md`](./oulad_student_prediction/models/README.md) | Architecture specification for serialized model artifacts and preprocessors. |
+| [`REPRODUCIBILITY_REPAIR_REPORT.md`](./REPRODUCIBILITY_REPAIR_REPORT.md) | This formal audit and repair verification report. |
 
 ---
 
@@ -142,7 +142,7 @@ Check                            Status   Verification Evidence
 
 ## 8. Notebook Verification
 
-- Notebook [`notebooks/08_model_training.ipynb`](file:///c:/Users/ugesh/Desktop/College/College%20Files/CSBS_3rd_%20semester/Design%20thinking/Research/Anitgravity-Research-Paper/oulad_student_prediction/notebooks/08_model_training.ipynb) has been completely restored and pre-rendered.
+- Notebook [`notebooks/08_model_training.ipynb`](./oulad_student_prediction/notebooks/08_model_training.ipynb) has been completely restored and pre-rendered.
 - All four code cells have sequential execution counts (`1`, `2`, `3`, `4`).
 - Stream outputs and dataframe displays pre-render the full 5-fold CV summary table, Table XV comparison, and programmatic verification logs directly in GitHub and Jupyter interfaces.
 
