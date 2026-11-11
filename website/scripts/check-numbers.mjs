@@ -232,6 +232,8 @@ if (suppData) {
 // Also add derivable numbers
 validNumbers.add('4889'); // holdout total
 validNumbers.add('4859'); // sensitivity holdout total
+validNumbers.add('4875'); // local validation obs
+validNumbers.add('22859'); // local train obs
 validNumbers.add('4103'); // active holdout total
 validNumbers.add('756'); // unregistered by day 30
 validNumbers.add('2582'); // actual at risk

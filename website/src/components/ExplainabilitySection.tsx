@@ -179,6 +179,12 @@ export const ExplainabilitySection: React.FC = () => {
               <div className="text-[11px] text-slate-500 dark:text-slate-400 font-sans leading-relaxed border-t border-slate-100 dark:border-slate-700/50 pt-2">
                 <strong>Derived Average Share per Predictor:</strong> Per raw predictor, static intake averages 34.17 / 13 = 2.63 percentage points, academic milestones average 33.22 / 8 = 4.15 percentage points, and VLE engagement averages 32.61 / 8 = 4.08 percentage points.
               </div>
+              <div className="text-[11px] text-amber-800 dark:text-amber-300 bg-amber-50 dark:bg-amber-950/40 p-2.5 rounded-lg border border-amber-200 dark:border-amber-800/60 font-sans leading-relaxed">
+                A recomputation on a different local run (holdout N=4,859) gave different family shares and top predictors. See{' '}
+                <a href="#supplementary" className="underline font-semibold hover:text-amber-900 dark:hover:text-amber-100">
+                  Supplementary
+                </a>.
+              </div>
             </div>
           </div>
 
