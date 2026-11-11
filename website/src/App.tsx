@@ -12,12 +12,15 @@ import { ExplainabilitySection } from './components/ExplainabilitySection';
 import { SubgroupsSection } from './components/SubgroupsSection';
 import { RobustnessSection } from './components/RobustnessSection';
 import { DiscussionSection } from './components/DiscussionSection';
-import { ClaimsLedger } from './components/ClaimsLedger';
-import { ReproductionSection } from './components/ReproductionSection';
-import { SupplementarySection } from './components/SupplementarySection';
 import { ResourcesSection } from './components/ResourcesSection';
-import { PaperView } from './components/PaperView';
 import { Footer } from './components/Footer';
+import { PaperViewSkeleton, SectionSkeleton } from './components/Skeletons';
+
+// Real async code-splitting with React.lazy
+const PaperView = React.lazy(() => import('./components/PaperView'));
+const ClaimsLedger = React.lazy(() => import('./components/ClaimsLedger'));
+const ReproductionSection = React.lazy(() => import('./components/ReproductionSection'));
+const SupplementarySection = React.lazy(() => import('./components/SupplementarySection'));
 
 export const App: React.FC = () => {
   const [viewMode, setViewMode] = useState<'interactive' | 'paper'>('interactive');
@@ -116,7 +119,9 @@ export const App: React.FC = () => {
       {/* Main Content Area */}
       <main id="main-content" className="flex-1">
         {viewMode === 'paper' ? (
-          <PaperView onSwitchToInteractive={() => setViewMode('interactive')} />
+          <React.Suspense fallback={<PaperViewSkeleton />}>
+            <PaperView onSwitchToInteractive={() => setViewMode('interactive')} />
+          </React.Suspense>
         ) : (
           <>
             {/* For Judges 60-Second Summary */}
@@ -153,13 +158,19 @@ export const App: React.FC = () => {
             <DiscussionSection />
 
             {/* Claims Ledger & Provenance Matrix */}
-            <ClaimsLedger />
+            <React.Suspense fallback={<SectionSkeleton title="Loading Claims Ledger..." minHeight="min-h-[300px]" />}>
+              <ClaimsLedger />
+            </React.Suspense>
 
             {/* Reproduction Status */}
-            <ReproductionSection />
+            <React.Suspense fallback={<SectionSkeleton title="Loading Reproduction Status..." minHeight="min-h-[300px]" />}>
+              <ReproductionSection />
+            </React.Suspense>
 
             {/* Supplementary Repository Results */}
-            <SupplementarySection />
+            <React.Suspense fallback={<SectionSkeleton title="Loading Supplementary Tables..." minHeight="min-h-[400px]" />}>
+              <SupplementarySection />
+            </React.Suspense>
 
             {/* 11. Resources */}
             <ResourcesSection />

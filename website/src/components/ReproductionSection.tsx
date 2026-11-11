@@ -146,3 +146,5 @@ export const ReproductionSection: React.FC = () => {
     </section>
   );
 };
+
+export default ReproductionSection;

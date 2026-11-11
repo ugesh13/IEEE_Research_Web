@@ -196,3 +196,5 @@ export const ClaimsLedger: React.FC = () => {
     </section>
   );
 };
+
+export default ClaimsLedger;

@@ -358,3 +358,5 @@ export const SupplementarySection: React.FC = () => {
     </section>
   );
 };
+
+export default SupplementarySection;

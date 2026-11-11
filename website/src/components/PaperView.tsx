@@ -18,6 +18,16 @@ interface PaperViewProps {
 
 export const PaperView: React.FC<PaperViewProps> = ({ onSwitchToInteractive }) => {
   const [copiedType, setCopiedType] = useState<'text' | 'bibtex' | null>(null);
+  const [exportingTable, setExportingTable] = useState<string | null>(null);
+
+  const handleExport = (tableNum: string) => {
+    setExportingTable(tableNum);
+    try {
+      downloadTableCsv(tableNum);
+    } finally {
+      setTimeout(() => setExportingTable(null), 350);
+    }
+  };
 
   const plainCitation =
     'U. Kumar and R. Sharma, "Use of Machine Learning Techniques and Explainable AI for Predicting Student Performance: An Experimental Study With the Open University Learning Analytics Dataset (OULAD)," Manuscript, 2026.';
@@ -223,11 +233,12 @@ export const PaperView: React.FC<PaperViewProps> = ({ onSwitchToInteractive }) =
                 TABLE I: OUTCOME DISTRIBUTION OF THE BINARY TARGET (N=32,593)
               </h4>
               <button
-                onClick={() => downloadTableCsv('I')}
-                className="inline-flex items-center gap-1 px-2 py-1 rounded text-[11px] font-mono bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300"
+                disabled={exportingTable === 'I'}
+                onClick={() => handleExport('I')}
+                className="inline-flex items-center gap-1 px-2 py-1 rounded text-[11px] font-mono bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 disabled:opacity-60 transition-opacity"
               >
-                <Download className="w-3 h-3" />
-                <span>CSV</span>
+                <Download className={`w-3 h-3 ${exportingTable === 'I' ? 'animate-bounce' : ''}`} />
+                <span>{exportingTable === 'I' ? 'Exporting...' : 'CSV'}</span>
               </button>
             </div>
             <table className="w-full text-xs font-mono text-left">
@@ -266,64 +277,6 @@ export const PaperView: React.FC<PaperViewProps> = ({ onSwitchToInteractive }) =
             </table>
           </div>
         </div>
-
-        {/* Subsection III-C */}
-        <div className="mb-6">
-          <h3 className="text-sm font-bold font-sans text-slate-900 dark:text-white mb-2">
-            C. Temporal Feature Engineering
-          </h3>
-          {paperSections[2].subsections?.[2].paragraphs.map((p, idx) => (
-            <p key={idx} className="mb-3 text-justify leading-relaxed text-sm sm:text-base">
-              {p}
-            </p>
-          ))}
-
-          {/* Table II */}
-          <div className="my-6 p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm font-sans">
-            <div className="flex items-center justify-between mb-2">
-              <h4 className="text-xs font-mono font-bold text-slate-900 dark:text-white">
-                TABLE II: SUMMARY OF TEMPORAL INFORMATION SCENARIOS
-              </h4>
-              <button
-                onClick={() => downloadTableCsv('II')}
-                className="inline-flex items-center gap-1 px-2 py-1 rounded text-[11px] font-mono bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300"
-              >
-                <Download className="w-3 h-3" />
-                <span>CSV</span>
-              </button>
-            </div>
-            <table className="w-full text-xs font-mono text-left">
-              <thead className="border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/60">
-                <tr>
-                  <th className="py-2 px-3">Scenario</th>
-                  <th className="py-2 px-3">Description</th>
-                  <th className="py-2 px-3 text-center">Raw Predictors</th>
-                  <th className="py-2 px-3 text-center">Transformed Features</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
-                <tr>
-                  <td className="py-2 px-3 font-bold text-slate-800 dark:text-slate-200">S0</td>
-                  <td className="py-2 px-3">Intake Baseline</td>
-                  <td className="py-2 px-3 text-center">13</td>
-                  <td className="py-2 px-3 text-center">52</td>
-                </tr>
-                <tr>
-                  <td className="py-2 px-3 font-bold text-slate-800 dark:text-slate-200">S1</td>
-                  <td className="py-2 px-3">Early Academic Progression</td>
-                  <td className="py-2 px-3 text-center">21</td>
-                  <td className="py-2 px-3 text-center">60</td>
-                </tr>
-                <tr>
-                  <td className="py-2 px-3 font-bold text-slate-800 dark:text-slate-200">S2</td>
-                  <td className="py-2 px-3">Early Behavioral Progression</td>
-                  <td className="py-2 px-3 text-center">29</td>
-                  <td className="py-2 px-3 text-center">68</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
       </section>
 
       {/* Section IV: Methodology & Equations 3 - 12 */}
@@ -341,6 +294,55 @@ export const PaperView: React.FC<PaperViewProps> = ({ onSwitchToInteractive }) =
                 {renderParagraphWithCitations(p)}
               </p>
             ))}
+
+            {/* Table II in Section IV-C */}
+            {sub.letter === 'C' && (
+              <div className="my-6 p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm font-sans">
+                <div className="flex items-center justify-between mb-2">
+                  <h4 className="text-xs font-mono font-bold text-slate-900 dark:text-white">
+                    TABLE II: SUMMARY OF TEMPORAL INFORMATION SCENARIOS
+                  </h4>
+                  <button
+                    disabled={exportingTable === 'II'}
+                    onClick={() => handleExport('II')}
+                    className="inline-flex items-center gap-1 px-2 py-1 rounded text-[11px] font-mono bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 disabled:opacity-60 transition-opacity"
+                  >
+                    <Download className={`w-3 h-3 ${exportingTable === 'II' ? 'animate-bounce' : ''}`} />
+                    <span>{exportingTable === 'II' ? 'Exporting...' : 'CSV'}</span>
+                  </button>
+                </div>
+                <table className="w-full text-xs font-mono text-left">
+                  <thead className="border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/60">
+                    <tr>
+                      <th className="py-2 px-3">Scenario</th>
+                      <th className="py-2 px-3">Description</th>
+                      <th className="py-2 px-3 text-center">Raw Predictors</th>
+                      <th className="py-2 px-3 text-center">Transformed Features</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
+                    <tr>
+                      <td className="py-2 px-3 font-bold text-slate-800 dark:text-slate-200">S0</td>
+                      <td className="py-2 px-3">Intake Baseline</td>
+                      <td className="py-2 px-3 text-center">13</td>
+                      <td className="py-2 px-3 text-center">52</td>
+                    </tr>
+                    <tr>
+                      <td className="py-2 px-3 font-bold text-slate-800 dark:text-slate-200">S1</td>
+                      <td className="py-2 px-3">Early Academic Progression</td>
+                      <td className="py-2 px-3 text-center">21</td>
+                      <td className="py-2 px-3 text-center">60</td>
+                    </tr>
+                    <tr>
+                      <td className="py-2 px-3 font-bold text-slate-800 dark:text-slate-200">S2</td>
+                      <td className="py-2 px-3">Early Behavioral Progression</td>
+                      <td className="py-2 px-3 text-center">29</td>
+                      <td className="py-2 px-3 text-center">68</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            )}
 
             {/* Sigmoid formula & Fig 4 in Section IV-C / Model Architectures */}
             {sub.letter === 'C' && (
@@ -469,11 +471,12 @@ export const PaperView: React.FC<PaperViewProps> = ({ onSwitchToInteractive }) =
                       TABLE III: HOLDOUT TEST SET CONFUSION MATRIX (N=4,889)
                     </h4>
                     <button
-                      onClick={() => downloadTableCsv('III')}
-                      className="inline-flex items-center gap-1 px-2 py-1 rounded text-[11px] font-mono bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300"
+                      disabled={exportingTable === 'III'}
+                      onClick={() => handleExport('III')}
+                      className="inline-flex items-center gap-1 px-2 py-1 rounded text-[11px] font-mono bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 disabled:opacity-60 transition-opacity"
                     >
-                      <Download className="w-3 h-3" />
-                      <span>CSV</span>
+                      <Download className={`w-3 h-3 ${exportingTable === 'III' ? 'animate-bounce' : ''}`} />
+                      <span>{exportingTable === 'III' ? 'Exporting...' : 'CSV'}</span>
                     </button>
                   </div>
                   <table className="w-full text-xs font-mono text-center">
@@ -515,11 +518,12 @@ export const PaperView: React.FC<PaperViewProps> = ({ onSwitchToInteractive }) =
                       TABLE IV: HOLDOUT PERFORMANCE OF THE PRIMARY MODEL (HGB, S2, θ*=0.45)
                     </h4>
                     <button
-                      onClick={() => downloadTableCsv('IV')}
-                      className="inline-flex items-center gap-1 px-2 py-1 rounded text-[11px] font-mono bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300"
+                      disabled={exportingTable === 'IV'}
+                      onClick={() => handleExport('IV')}
+                      className="inline-flex items-center gap-1 px-2 py-1 rounded text-[11px] font-mono bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 disabled:opacity-60 transition-opacity"
                     >
-                      <Download className="w-3 h-3" />
-                      <span>CSV</span>
+                      <Download className={`w-3 h-3 ${exportingTable === 'IV' ? 'animate-bounce' : ''}`} />
+                      <span>{exportingTable === 'IV' ? 'Exporting...' : 'CSV'}</span>
                     </button>
                   </div>
                   <table className="w-full text-xs font-mono text-left">
@@ -608,11 +612,12 @@ export const PaperView: React.FC<PaperViewProps> = ({ onSwitchToInteractive }) =
               TABLE V: FEATURE FAMILY SHAP ATTRIBUTION SUMMARY
             </h4>
             <button
-              onClick={() => downloadTableCsv('V')}
-              className="inline-flex items-center gap-1 px-2 py-1 rounded text-[11px] font-mono bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300"
+              disabled={exportingTable === 'V'}
+              onClick={() => handleExport('V')}
+              className="inline-flex items-center gap-1 px-2 py-1 rounded text-[11px] font-mono bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 disabled:opacity-60 transition-opacity"
             >
-              <Download className="w-3 h-3" />
-              <span>CSV</span>
+              <Download className={`w-3 h-3 ${exportingTable === 'V' ? 'animate-bounce' : ''}`} />
+              <span>{exportingTable === 'V' ? 'Exporting...' : 'CSV'}</span>
             </button>
           </div>
           <table className="w-full text-xs font-mono text-left">
@@ -671,11 +676,12 @@ export const PaperView: React.FC<PaperViewProps> = ({ onSwitchToInteractive }) =
                 TABLE VI: DESCRIPTIVE SUBGROUP EVALUATION (HOLDOUT, θ*=0.45)
               </h4>
               <button
-                onClick={() => downloadTableCsv('VI')}
-                className="inline-flex items-center gap-1 px-2 py-1 rounded text-[11px] font-mono bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300"
+                disabled={exportingTable === 'VI'}
+                onClick={() => handleExport('VI')}
+                className="inline-flex items-center gap-1 px-2 py-1 rounded text-[11px] font-mono bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 disabled:opacity-60 transition-opacity"
               >
-                <Download className="w-3 h-3" />
-                <span>CSV</span>
+                <Download className={`w-3 h-3 ${exportingTable === 'VI' ? 'animate-bounce' : ''}`} />
+                <span>{exportingTable === 'VI' ? 'Exporting...' : 'CSV'}</span>
               </button>
             </div>
             <table className="w-full text-xs font-mono text-left">
@@ -795,3 +801,5 @@ export const PaperView: React.FC<PaperViewProps> = ({ onSwitchToInteractive }) =
     </article>
   );
 };
+
+export default PaperView;
