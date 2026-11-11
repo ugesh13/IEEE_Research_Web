@@ -97,6 +97,10 @@ export const SupplementarySection: React.FC = () => {
                 </tbody>
               </table>
             </div>
+
+            <div className="mt-4 p-3 rounded-lg bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/80 text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-sans">
+              Threshold for these validation metrics is not stated in the source table; recall of 80.86% for HGB is below the 0.82 target, so these are likely computed at the default 0.50 threshold. Not comparable to the θ* = 0.45 rule.
+            </div>
           </div>
 
           {/* Sub-item B: Per-Stratum Sample Sizes for Manuscript Table VI */}
@@ -289,7 +293,10 @@ export const SupplementarySection: React.FC = () => {
             </div>
 
             <div className="p-3.5 rounded-xl bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/60 mb-4 text-xs text-amber-950 dark:text-amber-200 font-mono">
-              <strong>Audit Finding:</strong> {day30_active_sensitivity.plain_statement}
+              <div><strong>Audit Finding:</strong> {day30_active_sensitivity.plain_statement}</div>
+              <div className="mt-2 font-sans text-xs text-amber-900/90 dark:text-amber-300">
+                The manuscript does not state whether enrollments unregistered before Day 30 were kept in the sample; this audit shows the headline metrics may depend on them.
+              </div>
             </div>
 
             <p className="text-xs text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">

@@ -54,7 +54,7 @@ export const ResourcesSection: React.FC = () => {
                 Research Paper PDF
               </h3>
               <p className="text-xs text-slate-600 dark:text-slate-300 mt-1 leading-relaxed">
-                Full manuscript draft formatted according to IEEE Transactions guidelines with complete proofs, figures, and tabular evaluations.
+                Full manuscript draft formatted per IEEE Transactions guidelines, with figures and tables.
               </p>
             </div>
             <div className="mt-6">
@@ -81,7 +81,7 @@ export const ResourcesSection: React.FC = () => {
                 GitHub Repository
               </h3>
               <p className="text-xs text-slate-600 dark:text-slate-300 mt-1 leading-relaxed">
-                Source code repository containing experimental notebooks, data splitting protocols, evaluation scripts, and static deployment website.
+                Source code, analysis outputs and this website. Note: the repository does not regenerate the manuscript's headline numbers (see Repository Supplement).
               </p>
             </div>
             <div className="mt-6">

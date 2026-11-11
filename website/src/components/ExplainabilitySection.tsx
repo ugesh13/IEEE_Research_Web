@@ -180,9 +180,9 @@ export const ExplainabilitySection: React.FC = () => {
                 <strong>Derived Average Share per Predictor:</strong> Per raw predictor, static intake averages 34.17 / 13 = 2.63 percentage points, academic milestones average 33.22 / 8 = 4.15 percentage points, and VLE engagement averages 32.61 / 8 = 4.08 percentage points.
               </div>
               <div className="text-[11px] text-amber-800 dark:text-amber-300 bg-amber-50 dark:bg-amber-950/40 p-2.5 rounded-lg border border-amber-200 dark:border-amber-800/60 font-sans leading-relaxed">
-                A recomputation on a different local run (holdout N=4,859) gave different family shares and top predictors. See{' '}
+                A recomputation on a different local run (holdout N=4,859) gave different family shares and top predictors (VLE share 26.48% vs 32.61% reported; top recomputed predictor is code_module). See{' '}
                 <a href="#supplementary" className="underline font-semibold hover:text-amber-900 dark:hover:text-amber-100">
-                  Supplementary
+                  Supplement C
                 </a>.
               </div>
             </div>

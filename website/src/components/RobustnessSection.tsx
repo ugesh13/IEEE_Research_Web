@@ -117,7 +117,7 @@ export const RobustnessSection: React.FC = () => {
                   <span>Methodological Decision Made:</span>
                 </div>
                 <p className="text-xs text-emerald-950 dark:text-emerald-200 leading-relaxed font-sans">
-                  {decision}
+                  {decision} This comparison was reported on the holdout set, so it is a sensitivity check, not a tuning step.
                 </p>
               </div>
             </div>

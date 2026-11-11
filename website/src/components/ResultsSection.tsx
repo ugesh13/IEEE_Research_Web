@@ -67,7 +67,7 @@ export const ResultsSection: React.FC = () => {
           </h2>
           <p className="mt-3 text-slate-600 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
             Evaluation of the primary HistGradientBoostingClassifier across incremental feature scenarios on validation data,
-            followed by single evaluation on the locked holdout partition at the validation-selected operational threshold.
+            followed by evaluation on the locked holdout partition at the validation-selected operational threshold.
           </p>
         </div>
 
@@ -96,7 +96,7 @@ export const ResultsSection: React.FC = () => {
               <div className="mt-5 space-y-2.5 text-xs text-slate-700 dark:text-slate-300">
                 <div className="p-3 rounded-xl bg-white/80 dark:bg-slate-800/80 border border-amber-200/80 dark:border-amber-800/50 font-mono text-xs leading-relaxed">
                   <div className="text-[11px] uppercase tracking-wider text-slate-400 mb-1 font-sans font-semibold">
-                    Pre-Specified Selection Rule:
+                    Selection Rule:
                   </div>
                   <code>{threshold.rule}</code>
                 </div>
@@ -223,6 +223,21 @@ export const ResultsSection: React.FC = () => {
             <div className="mt-4 pt-3 border-t border-slate-100 dark:border-slate-700/60 text-[11px] text-slate-500 dark:text-slate-400 flex items-center justify-between">
               <span>* Monotonic progression observed across validation iterations.</span>
               <span className="font-mono">Cumulative gain: +0.2217 ROC-AUC</span>
+            </div>
+
+            {/* Derived Scenario AUCs Table (Edit 8) */}
+            <div className="mt-4 p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs">
+              <div className="font-semibold text-slate-800 dark:text-slate-200 font-mono mb-2">
+                Derived, not reported in the manuscript:
+              </div>
+              <div className="space-y-1 font-mono text-slate-700 dark:text-slate-300">
+                <div>S2 = 0.8425 (Supplement Table XV)</div>
+                <div>S1 = 0.8425 − 0.0833 = 0.7592</div>
+                <div>S0 = 0.7592 − 0.1384 = 0.6208</div>
+              </div>
+              <div className="mt-2 text-[11px] text-slate-500 dark:text-slate-400 font-sans leading-relaxed">
+                Derived by subtraction from the supplement's validation AUC and the manuscript's increments; assumes the same model and split.
+              </div>
             </div>
           </div>
         </div>

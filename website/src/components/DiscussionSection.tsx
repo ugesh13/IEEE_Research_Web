@@ -68,6 +68,19 @@ export const DiscussionSection: React.FC = () => {
                   <span>{lim}</span>
                 </li>
               ))}
+              <li
+                className="p-3.5 rounded-xl bg-amber-50/60 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800/60 flex items-start gap-3 text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed"
+              >
+                <span className="w-5 h-5 rounded-md bg-amber-200 dark:bg-amber-900 text-amber-800 dark:text-amber-200 font-mono text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">
+                  6
+                </span>
+                <span>
+                  The manuscript does not state whether enrollments unregistered before Day 30 were kept in the sample; this audit shows the headline metrics may depend on them.{' '}
+                  <span className="font-mono text-[11px] text-amber-800 dark:text-amber-300 font-semibold">
+                    (website note, not from the manuscript)
+                  </span>
+                </span>
+              </li>
             </ul>
           </div>
         </div>

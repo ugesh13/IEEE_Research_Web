@@ -24,7 +24,7 @@ export const ExperimentalDesign: React.FC = () => {
     },
     {
       name: 'Holdout Test',
-      role: 'Single-use locked holdout (2,582 at-risk, 2,307 successful)',
+      role: 'Locked holdout (not used for model or threshold selection) (2,582 at-risk, 2,307 successful)',
       obs: partitions.holdout.observations,
       students: partitions.holdout.students,
       share: '15.00%',

@@ -233,9 +233,7 @@ export const DatasetSection: React.FC = () => {
                       {t.records !== null ? (
                         t.records.toLocaleString()
                       ) : (
-                        <span className="text-slate-400 font-normal italic">
-                          not reported in the manuscript
-                        </span>
+                        <span className="text-slate-400 font-normal">—</span>
                       )}
                     </td>
                     <td className="py-2.5 px-4 text-slate-600 dark:text-slate-300 font-sans text-xs">
@@ -251,6 +249,9 @@ export const DatasetSection: React.FC = () => {
                 ))}
               </tbody>
             </table>
+            <div className="p-3 bg-slate-50 dark:bg-slate-800/60 border-t border-slate-200 dark:border-slate-700 text-xs text-slate-500 dark:text-slate-400 font-sans">
+              — = record count not reported in the manuscript.
+            </div>
           </div>
         </div>
       </div>

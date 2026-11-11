@@ -12,7 +12,7 @@ export const Hero: React.FC = () => {
         {/* Status Badge */}
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono font-medium bg-amber-50 text-amber-800 border border-amber-200/80 dark:bg-amber-950/40 dark:text-amber-300 dark:border-amber-800/60 mb-6">
           <span className="w-2 h-2 rounded-full bg-amber-500" />
-          <span>{paper.status}</span>
+          <span>Manuscript, 2026</span>
         </div>
 
         {/* Title & Metadata */}
