@@ -105,9 +105,6 @@ export const PaperView: React.FC<PaperViewProps> = ({ onSwitchToInteractive }) =
 
       {/* Header Block */}
       <header className="border-b border-slate-300 dark:border-slate-700 pb-8 mb-8 text-center sm:text-left">
-        <div className="text-[11px] font-mono tracking-widest text-slate-400 uppercase mb-4">
-          {paperHeader.journalNotice}
-        </div>
         <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white leading-tight font-sans">
           {paperHeader.title}
         </h1>
@@ -117,11 +114,8 @@ export const PaperView: React.FC<PaperViewProps> = ({ onSwitchToInteractive }) =
         <div className="mt-1 text-xs font-sans text-slate-600 dark:text-slate-400">
           {paperHeader.affiliation}
         </div>
-        <div className="mt-1 text-xs font-mono text-slate-500">
-          Email: {paperHeader.emails.join('; ')}
-        </div>
         <div className="mt-3 text-[11px] font-mono text-slate-400 italic">
-          {paperHeader.statusNotice} (Corresponding author: {paperHeader.correspondingAuthor}.)
+          {paperHeader.statusNotice}
         </div>
       </header>
 

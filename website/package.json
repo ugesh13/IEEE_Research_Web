@@ -8,6 +8,7 @@
     "check": "tsc --noEmit && node scripts/check-numbers.mjs",
     "build": "npm run check:types && vite build && vite build --ssr src/App.tsx --outDir dist-ssr && node scripts/prerender.mjs && npm run check:numbers",
     "preview": "vite preview",
+    "verify-fixes": "node scripts/verify-verbatim.mjs && node scripts/verify-refs.mjs && node scripts/verify-figures.mjs && node scripts/verify-manuscript-numbers.mjs && node scripts/verify-banned.mjs && npm run build",
     "check:types": "tsc --noEmit",
     "check:numbers": "node scripts/check-numbers.mjs"
   },

@@ -37,7 +37,14 @@ export interface PaperTableCaption {
   title: string;
 }
 
-export const paperHeader = {
+export interface PaperHeader {
+  title: string;
+  authors: string[];
+  affiliation: string;
+  statusNotice: string;
+}
+
+export const paperHeader: PaperHeader = {
   title: 'Use of Machine Learning Techniques and Explainable AI for Predicting Student Performance: An Experimental Study With the Open University Learning Analytics Dataset (OULAD)',
   authors: ['Ugesh Kumar', 'Riya Sharma'],
   affiliation: 'Department of Computer Science and Engineering, JAIN (Deemed-to-be University), Bengaluru, India',
