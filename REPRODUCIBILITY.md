@@ -139,6 +139,8 @@ python src/threshold_calibration.py
 
 ### Step 6: SHAP Explainability & Attribution (Phase 13)
 Computes SHAP values using a 100-sample training background. Aggregates transformed importances to raw predictors and calculates feature family attribution.
+
+> **SHAP Pipeline Note**: SHAP importance values in `shap_analysis.py` are stored constants; they are not recomputed by the pipeline. For empirical recomputation using `TreeExplainer` on the holdout test set with 100 stratified background observations, see `src/shap_recompute.py` and `results/tables/shap_recomputed.csv`.
 ```bash
 python src/shap_analysis.py
 ```

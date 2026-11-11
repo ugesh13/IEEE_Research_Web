@@ -24,7 +24,7 @@ export const ExperimentalDesign: React.FC = () => {
     },
     {
       name: 'Holdout Test',
-      role: 'Unblinded single evaluation (2,582 at-risk, 2,307 successful)',
+      role: 'Single-use locked holdout (2,582 at-risk, 2,307 successful)',
       obs: partitions.holdout.observations,
       students: partitions.holdout.students,
       share: '15.00%',
@@ -95,7 +95,7 @@ export const ExperimentalDesign: React.FC = () => {
             </table>
           </div>
           <div className="mt-2 text-xs font-mono text-slate-500 dark:text-slate-400">
-            * Confirmed 0 student overlap across partitions: (Train ∩ Validation = ∅, Train ∩ Holdout = ∅, Validation ∩ Holdout = ∅).
+            * No student overlap (as stated in the manuscript): (Train ∩ Validation = ∅, Train ∩ Holdout = ∅, Validation ∩ Holdout = ∅).
           </div>
         </div>
 
@@ -104,7 +104,7 @@ export const ExperimentalDesign: React.FC = () => {
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
             <h3 className="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
               <Cpu className="w-4 h-4 text-brand-600 dark:text-brand-400" />
-              <span>Model Specifications & Hyperparameters (as written in the JSON)</span>
+              <span>Model Specifications & Hyperparameters</span>
             </h3>
             <span className="text-xs font-mono text-brand-600 dark:text-brand-400 font-semibold flex items-center gap-1 flex-wrap">
               <Award className="w-3.5 h-3.5" />
@@ -118,11 +118,10 @@ export const ExperimentalDesign: React.FC = () => {
               return (
                 <div
                   key={m.name}
-                  className={`min-w-0 p-5 rounded-xl border transition-all ${
-                    isPrimary
+                  className={`min-w-0 p-5 rounded-xl border transition-all ${isPrimary
                       ? 'bg-brand-50/50 dark:bg-brand-950/20 border-brand-300 dark:border-brand-700/80 ring-1 ring-brand-500/20 shadow-sm'
                       : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700'
-                  }`}
+                    }`}
                 >
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-xs font-mono font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">

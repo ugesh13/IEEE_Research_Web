@@ -33,7 +33,7 @@ export const ExplainabilitySection: React.FC = () => {
               Experimental, observational study. Attributions convey predictive association, not causal effects.
             </p>
             <p className="text-amber-800 dark:text-amber-300 text-xs mt-1">
-              {caveat} Artificially inducing student clicks or logging interactions will not increase subject mastery.
+              {caveat} <span className="font-semibold">[Website note (not from the manuscript): Artificially inducing student clicks or logging interactions will not increase subject mastery.]</span>
             </p>
           </div>
         </div>
@@ -166,11 +166,19 @@ export const ExplainabilitySection: React.FC = () => {
               </svg>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-slate-100 dark:border-slate-700/60 text-xs text-slate-600 dark:text-slate-300 flex items-center justify-between font-mono">
-              <span>Three individual families sum to total attribution share</span>
-              <span className="font-bold text-indigo-600 dark:text-indigo-400">
-                Dynamic Behavioral Share: {dynamic_combined_pct.toFixed(2)}%
-              </span>
+            <div className="mt-6 pt-4 border-t border-slate-100 dark:border-slate-700/60 text-xs text-slate-600 dark:text-slate-300 space-y-2 font-mono">
+              <div className="flex items-center justify-between">
+                <span>Dynamic Behavioral Share:</span>
+                <span className="font-bold text-indigo-600 dark:text-indigo-400">
+                  {dynamic_combined_pct.toFixed(2)}% (Academic + VLE)
+                </span>
+              </div>
+              <div className="text-[11px] text-slate-500 dark:text-slate-400 font-sans leading-relaxed">
+                <strong>Family Share Structure:</strong> The static intake family is the largest single family (34.17%) while the two dynamic families together are 65.83%.
+              </div>
+              <div className="text-[11px] text-slate-500 dark:text-slate-400 font-sans leading-relaxed border-t border-slate-100 dark:border-slate-700/50 pt-2">
+                <strong>Derived Average Share per Predictor:</strong> Per raw predictor, static intake averages 34.17 / 13 = 2.63 percentage points, academic milestones average 33.22 / 8 = 4.15 percentage points, and VLE engagement averages 32.61 / 8 = 4.08 percentage points.
+              </div>
             </div>
           </div>
 
@@ -182,12 +190,12 @@ export const ExplainabilitySection: React.FC = () => {
                 <span>Four Top Raw Predictors</span>
               </h3>
               <span className="text-xs font-mono text-slate-500 dark:text-slate-400">
-                Ranked by mean |SHAP|
+                Top Predictors
               </span>
             </div>
 
             <p className="text-xs text-slate-600 dark:text-slate-300 mb-4">
-              The four highest-ranked predictors identified by game-theoretic Shapley attribution on Day &le; 30 data:
+              The four highest-ranked predictors identified by Shapley attribution on Day &le; 30 data (descriptions from Table XXII in repository):
             </p>
 
             <div className="space-y-3">
@@ -203,11 +211,11 @@ export const ExplainabilitySection: React.FC = () => {
                     <div className="font-mono text-xs font-bold text-slate-900 dark:text-white truncate">
                       {predictorName}
                     </div>
-                    <div className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">
-                      {idx === 0 && 'Weighted average assessment score on submissions on or before Day 30.'}
-                      {idx === 1 && 'Number of distinct active calendar days with recorded VLE interactions.'}
-                      {idx === 2 && 'Aggregate volume of student digital interactions across all learning materials.'}
-                      {idx === 3 && 'Binary submission indicator for early continuous assessment assignment.'}
+                    <div className="text-[11px] text-slate-600 dark:text-slate-300 mt-0.5">
+                      {idx === 0 && 'Mean score across Day <= 30 graded assessment submissions (repository description)'}
+                      {idx === 1 && 'Number of distinct days student logged into VLE by Day 30 (repository description)'}
+                      {idx === 2 && 'Total raw digital click interactions recorded by Day 30 (repository description)'}
+                      {idx === 3 && 'Indicator whether any assessment was submitted by Day 30 (repository description)'}
                     </div>
                     <div className="mt-1 text-[10px] font-mono text-brand-600 dark:text-brand-400">
                       {idx === 0 || idx === 3 ? 'Academic Milestones Family' : 'VLE Digital Engagement Family'}

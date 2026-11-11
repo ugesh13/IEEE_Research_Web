@@ -11,7 +11,7 @@ export const Hero: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Status Badge */}
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono font-medium bg-amber-50 text-amber-800 border border-amber-200/80 dark:bg-amber-950/40 dark:text-amber-300 dark:border-amber-800/60 mb-6">
-          <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
+          <span className="w-2 h-2 rounded-full bg-amber-500" />
           <span>{paper.status}</span>
         </div>
 
@@ -90,7 +90,7 @@ export const Hero: React.FC = () => {
               95% CI: [{at_risk_recall_pct.ci[0].toFixed(2)}%–{at_risk_recall_pct.ci[1].toFixed(2)}%]
             </div>
             <div className="mt-3 text-[11px] text-slate-500 dark:text-slate-400 border-t border-slate-100 dark:border-slate-700/60 pt-2">
-              2,127 of 2,582 at-risk students flagged
+              2,127 of 2,582 at-risk enrollments flagged
             </div>
           </div>
 

@@ -7,17 +7,13 @@ export const ResourcesSection: React.FC = () => {
   const [copiedText, setCopiedText] = useState(false);
 
   const plainCitation =
-    'U. Kumar and R. Sharma, "Use of Machine Learning Techniques and Explainable AI for Predicting Student Performance: An Experimental Study With the Open University Learning Analytics Dataset (OULAD)," IEEE Transactions on Artificial Intelligence, vol. XX, no. XX, pp. 1–10, Month 2026.';
+    'U. Kumar and R. Sharma, "Use of Machine Learning Techniques and Explainable AI for Predicting Student Performance: An Experimental Study With the Open University Learning Analytics Dataset (OULAD)," Manuscript, 2026.';
 
-  const bibtexCitation = `@article{kumar2026oulad,
-  author    = {Kumar, Ugesh and Sharma, Riya},
-  title     = {Use of Machine Learning Techniques and Explainable AI for Predicting Student Performance: An Experimental Study With the Open University Learning Analytics Dataset (OULAD)},
-  journal   = {IEEE Transactions on Artificial Intelligence},
-  year      = {2026},
-  volume    = {XX},
-  number    = {XX},
-  pages     = {1--10},
-  note      = {Manuscript under review}
+  const bibtexCitation = `@misc{kumar_sharma_2026,
+  author = {Kumar, Ugesh and Sharma, Riya},
+  title  = {Use of Machine Learning Techniques and Explainable AI for Predicting Student Performance: An Experimental Study With the Open University Learning Analytics Dataset (OULAD)},
+  year   = {2026},
+  note   = {Manuscript}
 }`;
 
   const copyToClipboard = (text: string, isBibtex: boolean) => {
@@ -147,7 +143,7 @@ export const ResourcesSection: React.FC = () => {
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
               <BookOpen className="w-4 h-4 text-brand-600 dark:text-brand-400" />
-              <span>Clickable Reference Links (30 Published Citations)</span>
+              <span>Clickable Reference Links (30 references)</span>
             </h3>
             <span className="text-xs font-mono text-slate-500 dark:text-slate-400">
               From CLICKABLE REFERENCE LINKS in manuscript

@@ -1,0 +1,150 @@
+{
+  "label": "Supplementary repository results (not in the manuscript)",
+  "description": "These results were computed from the repository code and tables. They provide additional experimental context and were not included in the main manuscript text.",
+  "s2_validation_models": {
+    "source": "oulad_student_prediction/results/tables/Table_XV_model_comparison.md",
+    "partition": "Reserved Validation Partition (N = 4,889 observations, 4,318 students)",
+    "models": [
+      {
+        "model": "Logistic Regression",
+        "roc_auc": 0.8168,
+        "pr_auc": 0.8220,
+        "recall_pct": 78.65,
+        "precision_pct": 74.36,
+        "f1": 0.7645,
+        "brier": 0.1742
+      },
+      {
+        "model": "Random Forest",
+        "roc_auc": 0.8321,
+        "pr_auc": 0.8368,
+        "recall_pct": 79.74,
+        "precision_pct": 75.19,
+        "f1": 0.7740,
+        "brier": 0.1685
+      },
+      {
+        "model": "Gradient Boosting (HGB)",
+        "roc_auc": 0.8425,
+        "pr_auc": 0.8478,
+        "recall_pct": 80.86,
+        "precision_pct": 76.03,
+        "f1": 0.7837,
+        "brier": 0.1624
+      }
+    ]
+  },
+  "subgroup_sample_sizes": {
+    "source": "oulad_student_prediction/results/tables/Table_XXIV_subgroup_sample_sizes.md",
+    "partition": "Holdout Test Partition (N = 4,889 observations, 4,318 students)",
+    "strata": [
+      {
+        "attribute": "Gender",
+        "stratum": "Female",
+        "observations": 2216,
+        "unique_students": 1957,
+        "at_risk_count": 1148,
+        "successful_count": 1068,
+        "at_risk_prevalence_pct": 51.81
+      },
+      {
+        "attribute": "Gender",
+        "stratum": "Male",
+        "observations": 2673,
+        "unique_students": 2361,
+        "at_risk_count": 1434,
+        "successful_count": 1239,
+        "at_risk_prevalence_pct": 53.65
+      },
+      {
+        "attribute": "Disability",
+        "stratum": "No declared disability",
+        "observations": 4415,
+        "unique_students": 3899,
+        "at_risk_count": 2294,
+        "successful_count": 2121,
+        "at_risk_prevalence_pct": 51.96
+      },
+      {
+        "attribute": "Disability",
+        "stratum": "Declared disability",
+        "observations": 474,
+        "unique_students": 419,
+        "at_risk_count": 288,
+        "successful_count": 186,
+        "at_risk_prevalence_pct": 60.76
+      },
+      {
+        "attribute": "Prior attainment",
+        "stratum": "Lower Than A Level",
+        "observations": 1974,
+        "unique_students": 1743,
+        "at_risk_count": 1172,
+        "successful_count": 802,
+        "at_risk_prevalence_pct": 59.37
+      },
+      {
+        "attribute": "Prior attainment",
+        "stratum": "Higher Education",
+        "observations": 710,
+        "unique_students": 627,
+        "at_risk_count": 284,
+        "successful_count": 426,
+        "at_risk_prevalence_pct": 40.00
+      },
+      {
+        "attribute": "Socioeconomic (IMD)",
+        "stratum": "Most Deprived (0-10%)",
+        "observations": 496,
+        "unique_students": 438,
+        "at_risk_count": 298,
+        "successful_count": 198,
+        "at_risk_prevalence_pct": 60.08
+      },
+      {
+        "attribute": "Socioeconomic (IMD)",
+        "stratum": "Least Deprived (90-100%)",
+        "observations": 458,
+        "unique_students": 405,
+        "at_risk_count": 218,
+        "successful_count": 240,
+        "at_risk_prevalence_pct": 47.60
+      }
+    ]
+  },
+  "day30_active_sensitivity": {
+    "source": "oulad_student_prediction/results/tables/sensitivity_day30_active.csv",
+    "threshold": 0.45,
+    "unregistered_early_observations": 756,
+    "unregistered_early_share_pct": 15.56,
+    "unregistered_early_outcome": "All 756 Withdrawn (756 / 756, 100.00%)",
+    "cohorts": [
+      {
+        "cohort": "Full Holdout Test Set",
+        "observations": 4859,
+        "at_risk_prevalence_pct": 52.75,
+        "roc_auc": 0.8487,
+        "recall_pct": 76.12,
+        "precision_pct": 77.39,
+        "f1": 0.7675,
+        "tp": 1951,
+        "fn": 612,
+        "fp": 570,
+        "tn": 1726
+      },
+      {
+        "cohort": "Active at Day 30 (date_unreg missing or > 30)",
+        "observations": 4103,
+        "at_risk_prevalence_pct": 44.04,
+        "roc_auc": 0.7931,
+        "recall_pct": 67.24,
+        "precision_pct": 68.07,
+        "f1": 0.6765,
+        "tp": 1215,
+        "fn": 592,
+        "fp": 570,
+        "tn": 1726
+      }
+    ]
+  }
+}

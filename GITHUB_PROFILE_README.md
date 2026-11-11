@@ -29,7 +29,7 @@ Instructions:
 > - Formulated a **leakage-quarantined early-warning framework** strictly bounded to Day $\le 30$ across 32,593 registrations.  
 > - Outperformed baseline benchmarks with **Gradient Boosting (ROC-AUC: 0.8406, PR-AUC: 0.8459, Recall: 82.38%)**.  
 > - Audited model decisions using **game-theoretic SHAP attributions** and descriptive algorithmic fairness auditing.  
-> - Authored an IEEE Transactions camera-ready manuscript with verified reproducible pipelines.
+> - Authored an IEEE format research study with an experimental pipeline.
 
 ---
 

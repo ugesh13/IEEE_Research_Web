@@ -29,6 +29,7 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode }) => {
     { label: 'Subgroups', href: '#subgroups' },
     { label: 'Robustness', href: '#robustness' },
     { label: 'Discussion', href: '#discussion' },
+    { label: 'Supplement', href: '#supplementary' },
     { label: 'Resources', href: '#resources' },
   ];
 

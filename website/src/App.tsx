@@ -10,27 +10,36 @@ import { ExplainabilitySection } from './components/ExplainabilitySection';
 import { SubgroupsSection } from './components/SubgroupsSection';
 import { RobustnessSection } from './components/RobustnessSection';
 import { DiscussionSection } from './components/DiscussionSection';
+import { SupplementarySection } from './components/SupplementarySection';
 import { ResourcesSection } from './components/ResourcesSection';
 import { Footer } from './components/Footer';
 
 export const App: React.FC = () => {
   const [darkMode, setDarkMode] = useState<boolean>(() => {
     if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem('theme');
-      if (saved) return saved === 'dark';
-      return window.matchMedia('(prefers-color-scheme: dark)').matches;
+      try {
+        const saved = localStorage.getItem('theme');
+        if (saved) return saved === 'dark';
+        return window.matchMedia('(prefers-color-scheme: dark)').matches;
+      } catch {
+        return false;
+      }
     }
     return false;
   });
 
   useEffect(() => {
-    const root = document.documentElement;
-    if (darkMode) {
-      root.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      root.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
+    try {
+      const root = document.documentElement;
+      if (darkMode) {
+        root.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        root.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      }
+    } catch {
+      // In private browsing or sandboxed iframes, localStorage may throw
     }
   }, [darkMode]);
 
@@ -78,6 +87,9 @@ export const App: React.FC = () => {
 
         {/* 10. Discussion & Limitations */}
         <DiscussionSection />
+
+        {/* Supplementary Repository Results */}
+        <SupplementarySection />
 
         {/* 11. Resources */}
         <ResourcesSection />

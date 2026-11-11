@@ -2,7 +2,10 @@
   "_comment": "Single source of truth for the website. Every value below is copied from the manuscript 'Student_performance_perdiction_IEEE_Final.md'. The website must not contain any result number that is not in this file.",
   "paper": {
     "title": "Use of Machine Learning Techniques and Explainable AI for Predicting Student Performance: An Experimental Study With the Open University Learning Analytics Dataset (OULAD)",
-    "authors": ["Ugesh Kumar", "Riya Sharma"],
+    "authors": [
+      "Ugesh Kumar",
+      "Riya Sharma"
+    ],
     "affiliation": "Department of Computer Science and Engineering, JAIN (Deemed-to-be University), Bengaluru, India",
     "status": "Manuscript (journal volume, dates and acceptance fields are still placeholders: XX Month 2026)",
     "scope_statement": "Experimental and observational study. Attributions convey predictive association, not causal effects. Subgroup results are descriptive and are not fairness conclusions."
@@ -16,43 +19,125 @@
     "academic_years": "2013 and 2014",
     "repeat_enrollment_rate_pct": 11.7,
     "tables": [
-      {"file": "studentInfo.csv", "records": 32593},
-      {"file": "studentRegistration.csv", "records": 32593},
-      {"file": "studentAssessment.csv", "records": 173912},
-      {"file": "studentVle.csv", "records": 10655280},
-      {"file": "assessments.csv", "records": null},
-      {"file": "vle.csv", "records": null},
-      {"file": "courses.csv", "records": null}
+      {
+        "file": "studentInfo.csv",
+        "records": 32593
+      },
+      {
+        "file": "studentRegistration.csv",
+        "records": 32593
+      },
+      {
+        "file": "studentAssessment.csv",
+        "records": 173912
+      },
+      {
+        "file": "studentVle.csv",
+        "records": 10655280
+      },
+      {
+        "file": "assessments.csv",
+        "records": null
+      },
+      {
+        "file": "vle.csv",
+        "records": null
+      },
+      {
+        "file": "courses.csv",
+        "records": null
+      }
     ],
     "analytical_unit": "(code_module, code_presentation, id_student)",
     "target": "is_at_risk = 1 if Withdrawn or Fail; 0 if Pass or Distinction"
   },
   "outcome_distribution": {
-    "successful_total": {"count": 15385, "pct": 47.20},
-    "pass": {"count": 12361, "pct": 37.93},
-    "distinction": {"count": 3024, "pct": 9.28},
-    "at_risk_total": {"count": 17208, "pct": 52.80},
-    "withdrawn": {"count": 10156, "pct": 31.16},
-    "fail": {"count": 7052, "pct": 21.64}
+    "successful_total": {
+      "count": 15385,
+      "pct": 47.20
+    },
+    "pass": {
+      "count": 12361,
+      "pct": 37.93
+    },
+    "distinction": {
+      "count": 3024,
+      "pct": 9.28
+    },
+    "at_risk_total": {
+      "count": 17208,
+      "pct": 52.80
+    },
+    "withdrawn": {
+      "count": 10156,
+      "pct": 31.16
+    },
+    "fail": {
+      "count": 7052,
+      "pct": 21.64
+    }
   },
   "scenarios": [
-    {"id": "S0", "name": "Intake Baseline", "raw_predictors": 13, "transformed_features": 52},
-    {"id": "S1", "name": "Early Academic Progression", "raw_predictors": 21, "transformed_features": 60, "adds": "8 early academic/assessment features (Day <= 30)"},
-    {"id": "S2", "name": "Early Behavioral Progression", "raw_predictors": 29, "transformed_features": 68, "adds": "8 VLE clickstream features (Day <= 30)"}
+    {
+      "id": "S0",
+      "name": "Intake Baseline",
+      "raw_predictors": 13,
+      "transformed_features": 52
+    },
+    {
+      "id": "S1",
+      "name": "Early Academic Progression",
+      "raw_predictors": 21,
+      "transformed_features": 60,
+      "adds": "8 early academic/assessment features (Day <= 30)"
+    },
+    {
+      "id": "S2",
+      "name": "Early Behavioral Progression",
+      "raw_predictors": 29,
+      "transformed_features": 68,
+      "adds": "8 VLE clickstream features (Day <= 30)"
+    }
   ],
   "cutoff_day": 30,
-  "quarantined": ["post-Day-30 traces", "date_unregistration", "end-of-course examination data"],
+  "quarantined": [
+    "post-Day-30 traces",
+    "date_unregistration",
+    "end-of-course examination data"
+  ],
   "partitions": {
     "seed": 42,
     "cross_validation": "5-fold student-grouped",
-    "train": {"observations": 22815, "students": 20149},
-    "validation": {"observations": 4889, "students": 4318},
-    "holdout": {"observations": 4889, "students": 4318, "at_risk": 2582, "at_risk_pct": 52.81, "successful": 2307, "successful_pct": 47.19}
+    "train": {
+      "observations": 22815,
+      "students": 20149
+    },
+    "validation": {
+      "observations": 4889,
+      "students": 4318
+    },
+    "holdout": {
+      "observations": 4889,
+      "students": 4318,
+      "at_risk": 2582,
+      "at_risk_pct": 52.81,
+      "successful": 2307,
+      "successful_pct": 47.19
+    }
   },
   "models": [
-    {"name": "Logistic Regression", "note": "L2 penalty; standardized inputs"},
-    {"name": "Random Forest", "params": "200 trees, max_depth=15, min_samples_leaf=10 (as stated in the manuscript)"},
-    {"name": "HistGradientBoostingClassifier", "params": "learning_rate=0.05, max_iter=200, max_leaf_nodes=31, min_samples_leaf=20, class_weight=None"}
+    {
+      "name": "Logistic Regression",
+      "note": "L2 penalty; standardized inputs"
+    },
+    {
+      "name": "Random Forest",
+      "params": "200 trees, max_depth=15, min_samples_leaf=10 (as stated in the manuscript)"
+    },
+    {
+      "name": "HistGradientBoostingClassifier",
+      "params": "learning_rate=0.05, max_iter=200, max_leaf_nodes=31, min_samples_leaf=20, class_weight=None"
+    }
   ],
   "primary_model": "HistGradientBoostingClassifier, Scenario S2",
   "threshold": {
@@ -60,20 +145,82 @@
     "rule": "max{theta in [0.10, 0.90] : Recall >= 0.82 and Precision >= 0.70}, selected on the validation partition only",
     "logit": -0.201
   },
-  "validation_incremental_roc_auc_gain": {"S0_to_S1": 0.1384, "S1_to_S2": 0.0833},
+  "validation_incremental_roc_auc_gain": {
+    "S0_to_S1": 0.1384,
+    "S1_to_S2": 0.0833
+  },
   "holdout": {
-    "confusion_matrix": {"TP": 2127, "FN": 455, "FP": 721, "TN": 1586},
+    "confusion_matrix": {
+      "TP": 2127,
+      "FN": 455,
+      "FP": 721,
+      "TN": 1586
+    },
     "metrics": {
-      "roc_auc": {"value": 0.8406, "ci": [0.8298, 0.8512]},
-      "pr_auc": {"value": 0.8459, "ci": [0.8348, 0.8567]},
-      "accuracy_pct": {"value": 75.95, "ci": [74.74, 77.15]},
-      "at_risk_recall_pct": {"value": 82.38, "ci": [80.89, 83.82]},
-      "at_risk_precision_pct": {"value": 74.68, "ci": [73.08, 76.24]},
-      "f1": {"value": 0.7834, "ci": [0.7721, 0.7944]},
-      "specificity_pct": {"value": 68.75, "ci": [66.85, 70.61]},
-      "fpr_pct": {"value": 31.25, "ci": null},
-      "fnr_pct": {"value": 17.62, "ci": null},
-      "brier": {"value": 0.1638, "ci": [0.1565, 0.1712]}
+      "roc_auc": {
+        "value": 0.8406,
+        "ci": [
+          0.8298,
+          0.8512
+        ]
+      },
+      "pr_auc": {
+        "value": 0.8459,
+        "ci": [
+          0.8348,
+          0.8567
+        ]
+      },
+      "accuracy_pct": {
+        "value": 75.95,
+        "ci": [
+          74.74,
+          77.15
+        ]
+      },
+      "at_risk_recall_pct": {
+        "value": 82.38,
+        "ci": [
+          80.89,
+          83.82
+        ]
+      },
+      "at_risk_precision_pct": {
+        "value": 74.68,
+        "ci": [
+          73.08,
+          76.24
+        ]
+      },
+      "f1": {
+        "value": 0.7834,
+        "ci": [
+          0.7721,
+          0.7944
+        ]
+      },
+      "specificity_pct": {
+        "value": 68.75,
+        "ci": [
+          66.85,
+          70.61
+        ]
+      },
+      "fpr_pct": {
+        "value": 31.25,
+        "ci": null
+      },
+      "fnr_pct": {
+        "value": 17.62,
+        "ci": null
+      },
+      "brier": {
+        "value": 0.1638,
+        "ci": [
+          0.1565,
+          0.1712
+        ]
+      }
     },
     "ci_method": "student-level block-cluster bootstrap, 95%"
   },
@@ -95,18 +242,64 @@
     "caveat": "Attributions reflect observational association with model predictions and are not causal."
   },
   "subgroups_recall_at_threshold_0_45": [
-    {"attribute": "Gender", "stratum": "Female", "recall_pct": 81.79, "fpr_pct": null},
-    {"attribute": "Gender", "stratum": "Male", "recall_pct": 82.85, "fpr_pct": null},
-    {"attribute": "Disability", "stratum": "No declared disability", "recall_pct": 82.26, "fpr_pct": 30.55},
-    {"attribute": "Disability", "stratum": "Declared disability", "recall_pct": 83.33, "fpr_pct": 39.25},
-    {"attribute": "Prior attainment", "stratum": "Lower than A Level", "recall_pct": 84.13, "fpr_pct": null},
-    {"attribute": "Prior attainment", "stratum": "Higher education", "recall_pct": 78.87, "fpr_pct": null},
-    {"attribute": "Socioeconomic (IMD)", "stratum": "Most deprived", "recall_pct": 84.23, "fpr_pct": null},
-    {"attribute": "Socioeconomic (IMD)", "stratum": "Least deprived", "recall_pct": 80.28, "fpr_pct": null}
+    {
+      "attribute": "Gender",
+      "stratum": "Female",
+      "recall_pct": 81.79,
+      "fpr_pct": null
+    },
+    {
+      "attribute": "Gender",
+      "stratum": "Male",
+      "recall_pct": 82.85,
+      "fpr_pct": null
+    },
+    {
+      "attribute": "Disability",
+      "stratum": "No declared disability",
+      "recall_pct": 82.26,
+      "fpr_pct": 30.55
+    },
+    {
+      "attribute": "Disability",
+      "stratum": "Declared disability",
+      "recall_pct": 83.33,
+      "fpr_pct": 39.25
+    },
+    {
+      "attribute": "Prior attainment",
+      "stratum": "Lower than A Level",
+      "recall_pct": 84.13,
+      "fpr_pct": null
+    },
+    {
+      "attribute": "Prior attainment",
+      "stratum": "Higher education",
+      "recall_pct": 78.87,
+      "fpr_pct": null
+    },
+    {
+      "attribute": "Socioeconomic (IMD)",
+      "stratum": "Most deprived",
+      "recall_pct": 84.23,
+      "fpr_pct": null
+    },
+    {
+      "attribute": "Socioeconomic (IMD)",
+      "stratum": "Least deprived",
+      "recall_pct": 80.28,
+      "fpr_pct": null
+    }
   ],
   "subgroup_note": "Descriptive only. These values do not imply that the model is fair. A dash means the value is not reported in the manuscript.",
   "robustness": {
-    "partition_seeds": [7, 21, 42, 84, 123],
+    "partition_seeds": [
+      7,
+      21,
+      42,
+      84,
+      123
+    ],
     "seed_statement": "Performance was consistent across seeds (no per-seed numbers are reported in the manuscript).",
     "class_weighted_variant": {
       "roc_auc_change": -0.0002,
@@ -132,5 +325,35 @@
       "claim": "The class-weighted variant added 157 false positives",
       "reason": "Inconsistent with the manuscript's own specificity figures: 68.75% to 65.31% on 2,307 successful students implies about 79 extra false positives. Show only the specificity values."
     }
-  ]
+  ],
+  "derived": {
+    "flag_all_baseline": {
+      "recall_pct": 100.0,
+      "precision_pct": 52.81,
+      "f1": 0.6912,
+      "formula": "F1 = 2 * (0.5281 * 1.0) / (0.5281 + 1.0)"
+    },
+    "share_of_enrollments_flagged": {
+      "numerator": 2848,
+      "denominator": 4889,
+      "value_pct": 58.25,
+      "formula": "(TP + FP) / N = (2,127 + 721) / 4,889"
+    },
+    "precision_lift": {
+      "model_precision_pct": 74.68,
+      "baseline_precision_pct": 52.81,
+      "lift_multiplier": 1.41,
+      "formula": "74.68% / 52.81%"
+    },
+    "fpr_ci": {
+      "lower": 29.39,
+      "upper": 33.15,
+      "formula": "[100 - 70.61, 100 - 66.85]"
+    },
+    "fnr_ci": {
+      "lower": 16.18,
+      "upper": 19.11,
+      "formula": "[100 - 83.82, 100 - 80.89]"
+    }
+  }
 }

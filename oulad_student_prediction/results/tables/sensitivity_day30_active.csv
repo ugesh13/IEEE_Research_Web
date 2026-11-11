@@ -1,0 +1,3 @@
+cohort,n_observations,n_at_risk,n_successful,at_risk_prevalence_pct,roc_auc,recall_pct,precision_pct,f1_score,tp,fn,fp,tn
+Full Holdout Test Set,4859,2563,2296,52.75,0.8487,76.12,77.39,0.7675,1951,612,570,1726
+Active at Day 30 (date_unreg missing or > 30),4103,1807,2296,44.04,0.7931,67.24,68.07,0.6765,1215,592,570,1726

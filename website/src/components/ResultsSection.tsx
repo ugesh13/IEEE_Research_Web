@@ -31,27 +31,27 @@ export const ResultsSection: React.FC = () => {
   const cmCellDescriptions: Record<string, { title: string; desc: string; formula: string; calc: string }> = {
     TP: {
       title: 'True Positive (TP)',
-      desc: 'At-risk students correctly flagged by the model for proactive institutional advising outreach.',
+      desc: 'At-risk enrollments correctly flagged by the model for proactive institutional advising outreach.',
       formula: 'TP',
-      calc: `${TP.toLocaleString()} students`,
+      calc: `${TP.toLocaleString()} enrollments`,
     },
     FN: {
       title: 'False Negative (FN)',
-      desc: 'At-risk students missed by the model who did not receive an early alert notification.',
+      desc: 'At-risk enrollments missed by the model who did not receive an early alert notification.',
       formula: 'FN',
-      calc: `${FN.toLocaleString()} students`,
+      calc: `${FN.toLocaleString()} enrollments`,
     },
     FP: {
       title: 'False Positive (FP)',
-      desc: 'Successful students incorrectly flagged as at-risk, representing false alert advising workload.',
+      desc: 'Successful enrollments incorrectly flagged as at-risk, representing false alert advising workload.',
       formula: 'FP',
-      calc: `${FP.toLocaleString()} students`,
+      calc: `${FP.toLocaleString()} enrollments`,
     },
     TN: {
       title: 'True Negative (TN)',
-      desc: 'Successful students correctly classified as on-track with no unnecessary alert generated.',
+      desc: 'Successful enrollments correctly classified as on-track with no unnecessary alert generated.',
       formula: 'TN',
-      calc: `${TN.toLocaleString()} students`,
+      calc: `${TN.toLocaleString()} enrollments`,
     },
   };
 
@@ -67,7 +67,7 @@ export const ResultsSection: React.FC = () => {
           </h2>
           <p className="mt-3 text-slate-600 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
             Evaluation of the primary HistGradientBoostingClassifier across incremental feature scenarios on validation data,
-            followed by single unblinded evaluation on the locked holdout partition at the validation-selected operational threshold.
+            followed by single evaluation on the locked holdout partition at the validation-selected operational threshold.
           </p>
         </div>
 
@@ -275,7 +275,7 @@ export const ResultsSection: React.FC = () => {
                     type="button"
                     onMouseEnter={() => setHoveredCell('TP')}
                     onFocus={() => setHoveredCell('TP')}
-                    aria-label="True Positive cell: 2,127 correctly identified at-risk students"
+                    aria-label="True Positive cell: 2,127 correctly identified at-risk enrollments"
                     className={`p-4 rounded-xl border text-left transition-all ${
                       hoveredCell === 'TP'
                         ? 'ring-2 ring-emerald-500 bg-emerald-100/80 dark:bg-emerald-950/60 border-emerald-400 shadow'
@@ -298,7 +298,7 @@ export const ResultsSection: React.FC = () => {
                     type="button"
                     onMouseEnter={() => setHoveredCell('FN')}
                     onFocus={() => setHoveredCell('FN')}
-                    aria-label="False Negative cell: 455 missed at-risk students"
+                    aria-label="False Negative cell: 455 missed at-risk enrollments"
                     className={`p-4 rounded-xl border text-left transition-all ${
                       hoveredCell === 'FN'
                         ? 'ring-2 ring-rose-500 bg-rose-100/80 dark:bg-rose-950/60 border-rose-400 shadow'
@@ -328,7 +328,7 @@ export const ResultsSection: React.FC = () => {
                     type="button"
                     onMouseEnter={() => setHoveredCell('FP')}
                     onFocus={() => setHoveredCell('FP')}
-                    aria-label="False Positive cell: 721 false alarms on successful students"
+                    aria-label="False Positive cell: 721 false alarms on successful enrollments"
                     className={`p-4 rounded-xl border text-left transition-all ${
                       hoveredCell === 'FP'
                         ? 'ring-2 ring-amber-500 bg-amber-100/80 dark:bg-amber-950/60 border-amber-400 shadow'
@@ -351,7 +351,7 @@ export const ResultsSection: React.FC = () => {
                     type="button"
                     onMouseEnter={() => setHoveredCell('TN')}
                     onFocus={() => setHoveredCell('TN')}
-                    aria-label="True Negative cell: 1,586 correctly identified successful students"
+                    aria-label="True Negative cell: 1,586 correctly identified successful enrollments"
                     className={`p-4 rounded-xl border text-left transition-all ${
                       hoveredCell === 'TN'
                         ? 'ring-2 ring-blue-500 bg-blue-100/80 dark:bg-blue-950/60 border-blue-400 shadow'
@@ -423,7 +423,7 @@ export const ResultsSection: React.FC = () => {
             {/* Toggle button */}
             <button
               onClick={() => setShowFormula(!showFormula)}
-              aria-label={showFormula ? 'Hide metric formulas' : 'Show formula verification from confusion matrix'}
+              aria-label={showFormula ? 'Hide formulas' : 'Show formulas'}
               aria-expanded={showFormula}
               className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-mono font-medium transition-colors border ${
                 showFormula
@@ -432,8 +432,43 @@ export const ResultsSection: React.FC = () => {
               }`}
             >
               <Calculator className="w-3.5 h-3.5" />
-              <span>{showFormula ? 'Hide Arithmetic Formulas' : 'Show Formula Verification'}</span>
+              <span>{showFormula ? 'Hide formulas' : 'Show formulas'}</span>
             </button>
+          </div>
+
+          {/* Context Card: Flag-All Baseline & Share of Enrollments Flagged */}
+          <div className="mb-6 p-4 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-xs">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-slate-200 dark:border-slate-700">
+              <div className="font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                <Info className="w-4 h-4 text-brand-600 dark:text-brand-400" />
+                <span>Baseline Context & Operational Volume</span>
+              </div>
+              <span className="font-mono text-[11px] text-slate-500 dark:text-slate-400">
+                Derived from manuscript counts
+              </span>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-3 font-mono">
+              <div className="p-2.5 rounded-lg bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-700/60">
+                <div className="text-[10px] text-slate-500 uppercase tracking-wider">Flag-All Baseline Recall</div>
+                <div className="text-base font-bold text-slate-900 dark:text-white">100.00%</div>
+                <div className="text-[10px] text-slate-400 font-sans">Flags all 2,582 at-risk</div>
+              </div>
+              <div className="p-2.5 rounded-lg bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-700/60">
+                <div className="text-[10px] text-slate-500 uppercase tracking-wider">Flag-All Precision</div>
+                <div className="text-base font-bold text-slate-900 dark:text-white">52.81%</div>
+                <div className="text-[10px] text-slate-400 font-sans">Prevalence: 2,582 / 4,889</div>
+              </div>
+              <div className="p-2.5 rounded-lg bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-700/60">
+                <div className="text-[10px] text-slate-500 uppercase tracking-wider">Flag-All F1-Score</div>
+                <div className="text-base font-bold text-slate-900 dark:text-white">0.6912</div>
+                <div className="text-[10px] text-slate-400 font-sans">Model F1 = 0.7834 (+0.0922)</div>
+              </div>
+              <div className="p-2.5 rounded-lg bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-700/60">
+                <div className="text-[10px] text-slate-500 uppercase tracking-wider">Enrollments Flagged</div>
+                <div className="text-base font-bold text-slate-900 dark:text-white">58.25% (2,848/4,889)</div>
+                <div className="text-[10px] text-slate-400 font-sans">Precision lift: 1.41x (74.68% / 52.81%)</div>
+              </div>
+            </div>
           </div>
 
           <div className="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-sm">
@@ -625,8 +660,8 @@ export const ResultsSection: React.FC = () => {
                   <td className="py-3 px-4 text-center font-bold text-slate-900 dark:text-white">
                     {metrics.fpr_pct.value.toFixed(2)}%
                   </td>
-                  <td className="py-3 px-4 text-center text-slate-400 italic text-xs">
-                    not reported in the manuscript
+                  <td className="py-3 px-4 text-center text-slate-600 dark:text-slate-300">
+                    [{paperResults.derived.fpr_ci.lower.toFixed(2)}–{paperResults.derived.fpr_ci.upper.toFixed(2)}] <span className="text-[11px] text-slate-400 font-sans">(derived)</span>
                   </td>
                   {showFormula && (
                     <>
@@ -651,8 +686,8 @@ export const ResultsSection: React.FC = () => {
                   <td className="py-3 px-4 text-center font-bold text-slate-900 dark:text-white">
                     {metrics.fnr_pct.value.toFixed(2)}%
                   </td>
-                  <td className="py-3 px-4 text-center text-slate-400 italic text-xs">
-                    not reported in the manuscript
+                  <td className="py-3 px-4 text-center text-slate-600 dark:text-slate-300">
+                    [{paperResults.derived.fnr_ci.lower.toFixed(2)}–{paperResults.derived.fnr_ci.upper.toFixed(2)}] <span className="text-[11px] text-slate-400 font-sans">(derived)</span>
                   </td>
                   {showFormula && (
                     <>

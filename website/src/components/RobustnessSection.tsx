@@ -105,7 +105,7 @@ export const RobustnessSection: React.FC = () => {
                     {class_weighted_variant.specificity_pct_before.toFixed(2)}% → {class_weighted_variant.specificity_pct_after.toFixed(2)}%
                   </div>
                   <div className="text-[11px] text-amber-800 dark:text-amber-400 mt-0.5">
-                    Significant increase in false alarms
+                    Lower specificity (more false alarms)
                   </div>
                 </div>
               </div>

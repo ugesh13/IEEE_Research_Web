@@ -1,0 +1,30 @@
+rank,raw_feature,family,mean_abs_shap,pct_share
+1,code_module,Static Intake and Context,0.6607,18.72
+2,early_assessments_submitted_d30,Academic Milestones (Day <= 30),0.5999,16.99
+3,early_vle_incourse_clicks_d30,VLE Digital Engagement (Day <= 30),0.3802,10.77
+4,early_vle_active_days_d30,VLE Digital Engagement (Day <= 30),0.2787,7.89
+5,highest_education,Static Intake and Context,0.2313,6.55
+6,early_avg_score_d30,Academic Milestones (Day <= 30),0.1782,5.05
+7,imd_band,Static Intake and Context,0.1585,4.49
+8,early_avg_submission_delay_d30,Academic Milestones (Day <= 30),0.1431,4.05
+9,early_max_score_d30,Academic Milestones (Day <= 30),0.1256,3.56
+10,studied_credits,Static Intake and Context,0.1,2.83
+11,early_min_score_d30,Academic Milestones (Day <= 30),0.0907,2.57
+12,early_vle_sites_visited_d30,VLE Digital Engagement (Day <= 30),0.0851,2.41
+13,region,Static Intake and Context,0.0687,1.95
+14,early_vle_total_clicks_d30,VLE Digital Engagement (Day <= 30),0.0628,1.78
+15,num_of_prev_attempts,Static Intake and Context,0.0535,1.52
+16,date_registration,Static Intake and Context,0.0476,1.35
+17,has_early_vle_interaction_d30,VLE Digital Engagement (Day <= 30),0.0459,1.3
+18,module_presentation_length,Static Intake and Context,0.0393,1.11
+19,early_vle_clicks_per_active_day_d30,VLE Digital Engagement (Day <= 30),0.0314,0.89
+20,early_vle_precourse_ratio,VLE Digital Engagement (Day <= 30),0.0304,0.86
+21,gender,Static Intake and Context,0.0249,0.71
+22,disability,Static Intake and Context,0.0242,0.69
+23,code_presentation,Static Intake and Context,0.0214,0.61
+24,early_vle_precourse_clicks,VLE Digital Engagement (Day <= 30),0.0203,0.57
+25,early_banked_count_d30,Academic Milestones (Day <= 30),0.0108,0.31
+26,age_band,Static Intake and Context,0.0104,0.29
+27,early_std_score_d30,Academic Milestones (Day <= 30),0.0068,0.19
+28,date_registration_imputed_flag,Static Intake and Context,0.0,0.0
+29,has_early_assessment_submission_d30,Academic Milestones (Day <= 30),0.0,0.0

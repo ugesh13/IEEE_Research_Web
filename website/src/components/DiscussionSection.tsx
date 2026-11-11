@@ -43,6 +43,10 @@ export const DiscussionSection: React.FC = () => {
                 </li>
               ))}
             </ul>
+
+            <div className="mt-4 p-3 rounded-lg bg-blue-50/60 dark:bg-blue-950/30 border border-blue-200/60 dark:border-blue-800/40 text-[11px] text-blue-900 dark:text-blue-300">
+              * Note: Counts are enrollments; the holdout contains 4,889 enrollments from 4,318 students.
+            </div>
           </div>
 
           {/* Limitations */}

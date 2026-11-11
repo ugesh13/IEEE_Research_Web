@@ -39,12 +39,12 @@ export const SubgroupsSection: React.FC = () => {
               Subgroup results are descriptive and are not fairness conclusions.
             </p>
             <p className="text-amber-800 dark:text-amber-300 text-xs">
-              {subgroup_note}
+              {subgroup_note} No confidence interval or sample size is reported for these strata in the manuscript.
             </p>
           </div>
         </div>
 
-        {/* Subgroup Recall Bar Chart (Fig. 12) */}
+        {/* Subgroup Recall Bar Chart (Fig. 12) - Full 0-1.0 scale */}
         <div className="mt-10 p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
             <div>
@@ -53,7 +53,7 @@ export const SubgroupsSection: React.FC = () => {
                 <span>At-Risk Recall by Subgroup Stratum (θ = {threshold.value.toFixed(2)})</span>
               </h3>
               <p className="text-xs text-slate-500 dark:text-slate-400 font-mono">
-                Fig. 12 in manuscript (At-Risk recall; axis starts at 70% to illustrate stratum dispersion)
+                Full 0 to 1.0 (0–100 percentage points) axis scale across all eight manuscript strata (Fig. 12)
               </p>
             </div>
             <div className="text-xs font-mono text-slate-500 dark:text-slate-400">
@@ -61,13 +61,20 @@ export const SubgroupsSection: React.FC = () => {
             </div>
           </div>
 
+          {/* Axis Labels / Grid Guide Header */}
+          <div className="relative mb-2 h-4 border-b border-slate-200 dark:border-slate-700 text-[10px] font-mono text-slate-400 flex justify-between px-1">
+            <span>0%</span>
+            <span>25%</span>
+            <span>50%</span>
+            <span>75%</span>
+            <span>1.0 (100 pts)</span>
+          </div>
+
           {/* Accessible SVG Bar Chart for Subgroup Recalls */}
           <div className="space-y-3">
             {subgroups_recall_at_threshold_0_45.map((item) => {
-              // Scale from 70% to 90% (20% span)
-              const minVal = 70;
-              const maxVal = 90;
-              const widthPct = Math.max(0, Math.min(100, ((item.recall_pct - minVal) / (maxVal - minVal)) * 100));
+              // Full 0% to 100% bar scale
+              const widthPct = Math.max(0, Math.min(100, item.recall_pct));
 
               return (
                 <div key={`${item.attribute}-${item.stratum}`} className="space-y-1">
@@ -82,13 +89,17 @@ export const SubgroupsSection: React.FC = () => {
                   </div>
 
                   <div className="h-6 w-full bg-slate-100 dark:bg-slate-700/60 rounded-md overflow-hidden relative">
+                    {/* Gridlines at 25%, 50%, 75% */}
+                    <div className="absolute top-0 bottom-0 left-[25%] border-r border-slate-200/80 dark:border-slate-600/60 pointer-events-none" />
+                    <div className="absolute top-0 bottom-0 left-[50%] border-r border-slate-200/80 dark:border-slate-600/60 pointer-events-none" />
+                    <div className="absolute top-0 bottom-0 left-[75%] border-r border-slate-200/80 dark:border-slate-600/60 pointer-events-none" />
                     <div
                       className="h-full bg-gradient-to-r from-brand-600 to-brand-500 dark:from-brand-500 dark:to-brand-400 rounded-md transition-all duration-300"
                       style={{ width: `${widthPct}%` }}
                       role="progressbar"
                       aria-valuenow={item.recall_pct}
-                      aria-valuemin={70}
-                      aria-valuemax={90}
+                      aria-valuemin={0}
+                      aria-valuemax={100}
                       aria-label={`${item.stratum} recall: ${item.recall_pct.toFixed(2)}%`}
                     />
                   </div>
@@ -98,8 +109,8 @@ export const SubgroupsSection: React.FC = () => {
           </div>
 
           <div className="mt-4 flex items-center justify-between text-[11px] font-mono text-slate-500 dark:text-slate-400 border-t border-slate-100 dark:border-slate-700 pt-3">
-            <span>Baseline minimum axis: 70.00%</span>
-            <span>Scale maximum axis: 90.00%</span>
+            <span>Scale baseline axis: 0.00%</span>
+            <span>Scale maximum axis: 1.00 (100 percentage points)</span>
           </div>
         </div>
 
@@ -117,7 +128,7 @@ export const SubgroupsSection: React.FC = () => {
 
           <p className="text-xs text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
             While sensitivity (At-Risk Recall) remained comparable between students with declared disability (83.33%) and without (82.26%),
-            a notable empirical divergence occurs in False Positive Rate under the uniform θ* = 0.45 operational cutoff:
+            a descriptive difference appears in the reported False Positive Rates under the uniform θ* = 0.45 operational cutoff:
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -153,8 +164,7 @@ export const SubgroupsSection: React.FC = () => {
           </div>
 
           <div className="mt-4 p-3 rounded-lg bg-amber-100/60 dark:bg-amber-950/60 text-xs text-amber-950 dark:text-amber-200 leading-relaxed font-sans">
-            <strong>Operational Implication:</strong> Students with declared disabilities experience a higher false alert frequency (39.25% vs 30.55%).
-            This empirical disparity underscores why institutions must audit alert distributions rather than treating model outputs as normative truth.
+            <strong>Descriptive Note:</strong> In the holdout evaluation, students with declared disabilities have a reported false positive rate of 39.25% compared to 30.55% for students without declared disabilities. No confidence interval or sample size is reported for these strata in the manuscript.
           </div>
         </div>
 
