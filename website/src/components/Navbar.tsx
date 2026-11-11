@@ -10,6 +10,15 @@ interface NavbarProps {
 }
 
 export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode, viewMode, setViewMode }) => {
+  const handleViewChange = (mode: 'interactive' | 'paper') => {
+    if (typeof document !== 'undefined' && 'startViewTransition' in document) {
+      (document as any).startViewTransition(() => {
+        setViewMode(mode);
+      });
+    } else {
+      setViewMode(mode);
+    }
+  };
   return (
     <header className="sticky top-0 z-50 bg-white/85 dark:bg-slate-900/85 backdrop-blur-md border-b border-slate-200/80 dark:border-slate-800/80 transition-colors duration-200">
       <div className="layout-container">
@@ -44,7 +53,7 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode, viewMode,
                 type="button"
                 role="radio"
                 aria-checked={viewMode === 'interactive'}
-                onClick={() => setViewMode('interactive')}
+                onClick={() => handleViewChange('interactive')}
                 className={`relative z-10 px-3 py-1 rounded-md transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 ${
                   viewMode === 'interactive'
                     ? 'text-slate-900 dark:text-white font-semibold'
@@ -68,7 +77,7 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode, viewMode,
                 type="button"
                 role="radio"
                 aria-checked={viewMode === 'paper'}
-                onClick={() => setViewMode('paper')}
+                onClick={() => handleViewChange('paper')}
                 className={`relative z-10 px-3 py-1 rounded-md transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 ${
                   viewMode === 'paper'
                     ? 'text-slate-900 dark:text-white font-semibold'
