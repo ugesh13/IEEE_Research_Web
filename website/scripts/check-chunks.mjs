@@ -15,3 +15,4 @@ files.filter(f => f.endsWith('.js')).forEach(f => {
 });
 console.log('------------------------------------');
 console.log(`Main JS Chunk: ${mainChunkSize.toFixed(2)} KB (Limit: < 500 KB) -> ${mainChunkSize < 500 ? 'PASS' : 'FAIL'}`);
+

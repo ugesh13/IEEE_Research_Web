@@ -122,3 +122,4 @@ server.listen(PORT, async () => {
   console.log('-------------------------------------\n');
   console.log('[D6 PASSED] All 8 responsive and theme screenshots captured.');
 });
+

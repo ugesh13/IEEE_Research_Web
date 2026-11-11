@@ -60,3 +60,4 @@ export const SectionSkeleton: React.FC<{ minHeight?: string; title?: string }> =
     </div>
   );
 };
+
