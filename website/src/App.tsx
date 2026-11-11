@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
+import { MacDock } from './components/MacDock';
 import { JudgesSummary } from './components/JudgesSummary';
 import { Hero } from './components/Hero';
 import { ProblemApproach } from './components/ProblemApproach';
@@ -20,6 +21,7 @@ import { Footer } from './components/Footer';
 
 export const App: React.FC = () => {
   const [viewMode, setViewMode] = useState<'interactive' | 'paper'>('interactive');
+  const [scrollProgress, setScrollProgress] = useState(0);
   const [darkMode, setDarkMode] = useState<boolean>(() => {
     if (typeof window !== 'undefined') {
       try {
@@ -32,6 +34,44 @@ export const App: React.FC = () => {
     }
     return false;
   });
+
+  // Lenis smooth scrolling initialization
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    let lenisInstance: any = null;
+    let animId: number;
+
+    import('lenis').then(({ default: Lenis }) => {
+      lenisInstance = new Lenis({
+        lerp: 0.1,
+        smoothWheel: true,
+      });
+
+      function raf(time: number) {
+        lenisInstance?.raf(time);
+        animId = requestAnimationFrame(raf);
+      }
+      animId = requestAnimationFrame(raf);
+    }).catch(() => {
+      // Fallback silently if Lenis fails to load
+    });
+
+    const handleScroll = () => {
+      const total = document.documentElement.scrollHeight - window.innerHeight;
+      if (total > 0) {
+        setScrollProgress(Math.min(1, Math.max(0, window.scrollY / total)));
+      }
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      cancelAnimationFrame(animId);
+      lenisInstance?.destroy();
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   useEffect(() => {
     try {
@@ -57,6 +97,13 @@ export const App: React.FC = () => {
       >
         Skip to main content
       </a>
+
+      {/* Thin scroll-progress bar */}
+      <div
+        aria-hidden="true"
+        className="fixed top-0 left-0 right-0 h-1 bg-brand-600 dark:bg-brand-400 z-50 origin-left pointer-events-none transition-transform duration-75"
+        style={{ transform: `scaleX(${scrollProgress})` }}
+      />
 
       {/* Sticky Navigation */}
       <Navbar
@@ -119,6 +166,9 @@ export const App: React.FC = () => {
           </>
         )}
       </main>
+
+      {/* macOS Dock Navigation */}
+      <MacDock />
 
       {/* Footer */}
       <Footer />
