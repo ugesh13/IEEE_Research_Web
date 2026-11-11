@@ -18,7 +18,7 @@ export const Footer: React.FC = () => {
             All values are those reported in the manuscript (Kumar & Sharma, 2026).
           </div>
 
-          <div className="text-[11px] text-slate-400 dark:text-slate-500">
+          <div className="text-[11px] text-slate-600 dark:text-slate-400">
             Observational study. Attributions reflect predictive associations, not causal effects.
           </div>
         </div>

@@ -46,7 +46,7 @@ export const RobustnessSection: React.FC = () => {
                     key={seed}
                     className="px-3.5 py-2 rounded-xl bg-slate-100 dark:bg-slate-700/60 font-mono text-xs font-bold text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-600 flex items-center gap-1.5"
                   >
-                    <span className="text-slate-400 font-normal">Seed</span>
+                    <span className="text-slate-600 dark:text-slate-400 font-normal">Seed</span>
                     <span>{seed}</span>
                   </div>
                 ))}

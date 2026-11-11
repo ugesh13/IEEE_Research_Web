@@ -56,24 +56,24 @@ export const LeakageDesign: React.FC = () => {
               </div>
 
               {/* Day 30 Gate */}
-              <div className="p-4 rounded-xl bg-amber-50 dark:bg-amber-950/30 border-2 border-amber-500 dark:border-amber-500/80 relative">
-                <div className="absolute -top-11 left-6 w-6 h-6 rounded-full bg-amber-500 text-white font-mono text-xs font-bold flex items-center justify-center ring-4 ring-white dark:ring-slate-900">
+              <div className="p-4 rounded-xl bg-amber-50 dark:bg-amber-950/30 border-2 border-amber-600 dark:border-amber-500/80 relative">
+                <div className="absolute -top-11 left-6 w-6 h-6 rounded-full bg-amber-700 text-white font-mono text-xs font-bold flex items-center justify-center ring-4 ring-white dark:ring-slate-900">
                   30
                 </div>
                 <div className="text-sm font-bold text-amber-950 dark:text-amber-200 mb-1 flex items-center gap-1.5">
                   <span>Day 30 (Cutoff Boundary)</span>
                 </div>
-                <div className="text-xs font-mono text-amber-700 dark:text-amber-400 mb-2">
+                <div className="text-xs font-mono text-amber-800 dark:text-amber-300 mb-2">
                   Temporal Prediction Gate
                 </div>
-                <p className="text-xs text-amber-900 dark:text-amber-200">
+                <p className="text-xs text-amber-950 dark:text-amber-200">
                   Strict cutoff. Only early continuous assessment scores and high-frequency VLE clickstream interactions on or before Day 30 are retained.
                 </p>
               </div>
 
               {/* End of Presentation */}
               <div className="p-4 rounded-xl bg-red-50/50 dark:bg-red-950/20 border border-red-200 dark:border-red-900/60 relative">
-                <div className="absolute -top-11 left-6 w-6 h-6 rounded-full bg-red-500 text-white font-mono text-xs font-bold flex items-center justify-center ring-4 ring-white dark:ring-slate-900">
+                <div className="absolute -top-11 left-6 w-6 h-6 rounded-full bg-red-700 text-white font-mono text-xs font-bold flex items-center justify-center ring-4 ring-white dark:ring-slate-900">
                   End
                 </div>
                 <div className="text-sm font-bold text-red-950 dark:text-red-300 mb-1">

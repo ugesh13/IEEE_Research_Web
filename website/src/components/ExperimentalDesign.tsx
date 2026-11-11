@@ -20,7 +20,7 @@ export const ExperimentalDesign: React.FC = () => {
       obs: partitions.validation.observations,
       students: partitions.validation.students,
       share: '15.00%',
-      colorClass: 'text-amber-600 dark:text-amber-400',
+      colorClass: 'text-amber-800 dark:text-amber-300',
     },
     {
       name: 'Holdout Test',
@@ -28,7 +28,7 @@ export const ExperimentalDesign: React.FC = () => {
       obs: partitions.holdout.observations,
       students: partitions.holdout.students,
       share: '15.00%',
-      colorClass: 'text-emerald-600 dark:text-emerald-400',
+      colorClass: 'text-emerald-800 dark:text-emerald-300',
     },
   ];
 
@@ -124,7 +124,7 @@ export const ExperimentalDesign: React.FC = () => {
                     }`}
                 >
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-xs font-mono font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                    <span className="text-xs font-mono font-semibold uppercase tracking-wider text-slate-600 dark:text-slate-300">
                       {isPrimary ? 'Primary Selected Model' : 'Candidate Baseline'}
                     </span>
                     {isPrimary && (
@@ -139,7 +139,7 @@ export const ExperimentalDesign: React.FC = () => {
                   <div className="p-3 rounded-lg bg-slate-100 dark:bg-slate-900/60 font-mono text-xs text-slate-800 dark:text-slate-200 leading-relaxed break-words">
                     {m.params || m.note}
                   </div>
-                  <div className="mt-3 text-[11px] text-slate-500 dark:text-slate-400">
+                  <div className="mt-3 text-[11px] text-slate-600 dark:text-slate-300">
                     {m.name.includes('Logistic') && 'Standard linear baseline with regularized log-loss.'}
                     {m.name.includes('Forest') && 'Bagged ensemble of decorrelated decision trees.'}
                     {m.name.includes('HistGradient') && 'Histogram-binned gradient boosting with native missingness handling.'}

@@ -264,7 +264,7 @@ export const ResultsSection: React.FC = () => {
               <div className="inline-block min-w-[340px] w-full p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 shadow-sm">
                 <div className="grid grid-cols-3 gap-3 text-center">
                   {/* Top Left Header Cell */}
-                  <div className="p-3 text-xs font-mono text-slate-400 flex items-center justify-center">
+                  <div className="p-3 text-xs font-mono text-slate-600 dark:text-slate-300 flex items-center justify-center">
                     Actual \ Pred.
                   </div>
 
@@ -282,7 +282,7 @@ export const ResultsSection: React.FC = () => {
                   <div className="p-3 rounded-lg bg-slate-200/70 dark:bg-slate-700/70 font-mono text-xs font-bold text-slate-800 dark:text-slate-200 flex items-center justify-center">
                     Actual At-Risk
                     <br />
-                    <span className="text-[10px] text-slate-500 font-normal mt-0.5">({actualAtRisk.toLocaleString()})</span>
+                    <span className="text-[10px] text-slate-700 dark:text-slate-300 font-normal mt-0.5">({actualAtRisk.toLocaleString()})</span>
                   </div>
 
                   {/* Cell: TP */}
@@ -290,7 +290,6 @@ export const ResultsSection: React.FC = () => {
                     type="button"
                     onMouseEnter={() => setHoveredCell('TP')}
                     onFocus={() => setHoveredCell('TP')}
-                    aria-label="True Positive cell: 2,127 correctly identified at-risk enrollments"
                     className={`p-4 rounded-xl border text-left transition-all ${
                       hoveredCell === 'TP'
                         ? 'ring-2 ring-emerald-500 bg-emerald-100/80 dark:bg-emerald-950/60 border-emerald-400 shadow'
@@ -313,7 +312,6 @@ export const ResultsSection: React.FC = () => {
                     type="button"
                     onMouseEnter={() => setHoveredCell('FN')}
                     onFocus={() => setHoveredCell('FN')}
-                    aria-label="False Negative cell: 455 missed at-risk enrollments"
                     className={`p-4 rounded-xl border text-left transition-all ${
                       hoveredCell === 'FN'
                         ? 'ring-2 ring-rose-500 bg-rose-100/80 dark:bg-rose-950/60 border-rose-400 shadow'
@@ -335,7 +333,7 @@ export const ResultsSection: React.FC = () => {
                   <div className="p-3 rounded-lg bg-slate-200/70 dark:bg-slate-700/70 font-mono text-xs font-bold text-slate-800 dark:text-slate-200 flex items-center justify-center">
                     Actual Successful
                     <br />
-                    <span className="text-[10px] text-slate-500 font-normal mt-0.5">({actualSuccessful.toLocaleString()})</span>
+                    <span className="text-[10px] text-slate-700 dark:text-slate-300 font-normal mt-0.5">({actualSuccessful.toLocaleString()})</span>
                   </div>
 
                   {/* Cell: FP */}
@@ -343,7 +341,6 @@ export const ResultsSection: React.FC = () => {
                     type="button"
                     onMouseEnter={() => setHoveredCell('FP')}
                     onFocus={() => setHoveredCell('FP')}
-                    aria-label="False Positive cell: 721 false alarms on successful enrollments"
                     className={`p-4 rounded-xl border text-left transition-all ${
                       hoveredCell === 'FP'
                         ? 'ring-2 ring-amber-500 bg-amber-100/80 dark:bg-amber-950/60 border-amber-400 shadow'
@@ -366,7 +363,6 @@ export const ResultsSection: React.FC = () => {
                     type="button"
                     onMouseEnter={() => setHoveredCell('TN')}
                     onFocus={() => setHoveredCell('TN')}
-                    aria-label="True Negative cell: 1,586 correctly identified successful enrollments"
                     className={`p-4 rounded-xl border text-left transition-all ${
                       hoveredCell === 'TN'
                         ? 'ring-2 ring-blue-500 bg-blue-100/80 dark:bg-blue-950/60 border-blue-400 shadow'
@@ -464,24 +460,24 @@ export const ResultsSection: React.FC = () => {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-3 font-mono">
               <div className="p-2.5 rounded-lg bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-700/60">
-                <div className="text-[10px] text-slate-500 uppercase tracking-wider">Flag-All Baseline Recall</div>
+                <div className="text-[10px] text-slate-600 dark:text-slate-400 uppercase tracking-wider">Flag-All Baseline Recall</div>
                 <div className="text-base font-bold text-slate-900 dark:text-white">100.00%</div>
-                <div className="text-[10px] text-slate-400 font-sans">Flags all 2,582 at-risk</div>
+                <div className="text-[10px] text-slate-600 dark:text-slate-400 font-sans">Flags all 2,582 at-risk</div>
               </div>
               <div className="p-2.5 rounded-lg bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-700/60">
-                <div className="text-[10px] text-slate-500 uppercase tracking-wider">Flag-All Precision</div>
+                <div className="text-[10px] text-slate-600 dark:text-slate-400 uppercase tracking-wider">Flag-All Precision</div>
                 <div className="text-base font-bold text-slate-900 dark:text-white">52.81%</div>
-                <div className="text-[10px] text-slate-400 font-sans">Prevalence: 2,582 / 4,889</div>
+                <div className="text-[10px] text-slate-600 dark:text-slate-400 font-sans">Prevalence: 2,582 / 4,889</div>
               </div>
               <div className="p-2.5 rounded-lg bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-700/60">
-                <div className="text-[10px] text-slate-500 uppercase tracking-wider">Flag-All F1-Score</div>
+                <div className="text-[10px] text-slate-600 dark:text-slate-400 uppercase tracking-wider">Flag-All F1-Score</div>
                 <div className="text-base font-bold text-slate-900 dark:text-white">0.6912</div>
-                <div className="text-[10px] text-slate-400 font-sans">Model F1 = 0.7834 (+0.0922)</div>
+                <div className="text-[10px] text-slate-600 dark:text-slate-400 font-sans">Model F1 = 0.7834 (+0.0922)</div>
               </div>
               <div className="p-2.5 rounded-lg bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-700/60">
-                <div className="text-[10px] text-slate-500 uppercase tracking-wider">Enrollments Flagged</div>
+                <div className="text-[10px] text-slate-600 dark:text-slate-400 uppercase tracking-wider">Enrollments Flagged</div>
                 <div className="text-base font-bold text-slate-900 dark:text-white">58.25% (2,848/4,889)</div>
-                <div className="text-[10px] text-slate-400 font-sans">Precision lift: 1.41x (74.68% / 52.81%)</div>
+                <div className="text-[10px] text-slate-600 dark:text-slate-400 font-sans">Precision lift: 1.41x (74.68% / 52.81%)</div>
               </div>
             </div>
           </div>
@@ -676,7 +672,7 @@ export const ResultsSection: React.FC = () => {
                     {metrics.fpr_pct.value.toFixed(2)}%
                   </td>
                   <td className="py-3 px-4 text-center text-slate-600 dark:text-slate-300">
-                    [{paperResults.derived.fpr_ci.lower.toFixed(2)}–{paperResults.derived.fpr_ci.upper.toFixed(2)}] <span className="text-[11px] text-slate-400 font-sans">(derived)</span>
+                    [{paperResults.derived.fpr_ci.lower.toFixed(2)}–{paperResults.derived.fpr_ci.upper.toFixed(2)}] <span className="text-[11px] text-slate-600 dark:text-slate-400 font-sans">(derived)</span>
                   </td>
                   {showFormula && (
                     <>
@@ -702,7 +698,7 @@ export const ResultsSection: React.FC = () => {
                     {metrics.fnr_pct.value.toFixed(2)}%
                   </td>
                   <td className="py-3 px-4 text-center text-slate-600 dark:text-slate-300">
-                    [{paperResults.derived.fnr_ci.lower.toFixed(2)}–{paperResults.derived.fnr_ci.upper.toFixed(2)}] <span className="text-[11px] text-slate-400 font-sans">(derived)</span>
+                    [{paperResults.derived.fnr_ci.lower.toFixed(2)}–{paperResults.derived.fnr_ci.upper.toFixed(2)}] <span className="text-[11px] text-slate-600 dark:text-slate-400 font-sans">(derived)</span>
                   </td>
                   {showFormula && (
                     <>

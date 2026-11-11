@@ -62,7 +62,7 @@ export const SubgroupsSection: React.FC = () => {
           </div>
 
           {/* Axis Labels / Grid Guide Header */}
-          <div className="relative mb-2 h-4 border-b border-slate-200 dark:border-slate-700 text-[10px] font-mono text-slate-400 flex justify-between px-1">
+          <div className="relative mb-2 h-4 border-b border-slate-200 dark:border-slate-700 text-[10px] font-mono text-slate-600 dark:text-slate-400 flex justify-between px-1">
             <span>0%</span>
             <span>25%</span>
             <span>50%</span>
@@ -80,7 +80,7 @@ export const SubgroupsSection: React.FC = () => {
                 <div key={`${item.attribute}-${item.stratum}`} className="space-y-1">
                   <div className="flex items-center justify-between text-xs font-mono">
                     <span className="font-medium text-slate-800 dark:text-slate-200">
-                      <span className="text-slate-400 dark:text-slate-500 mr-2 font-sans font-normal">[{item.attribute}]</span>
+                      <span className="text-slate-600 dark:text-slate-400 mr-2 font-sans font-normal">[{item.attribute}]</span>
                       {item.stratum}
                     </span>
                     <span className="font-bold text-slate-900 dark:text-white">
@@ -202,7 +202,7 @@ export const SubgroupsSection: React.FC = () => {
                           {row.fpr_pct.toFixed(2)}%
                         </span>
                       ) : (
-                        <span className="text-slate-400 font-normal italic">
+                        <span className="text-slate-600 dark:text-slate-400 font-normal italic">
                           not reported in the manuscript
                         </span>
                       )}
