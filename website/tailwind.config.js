@@ -15,14 +15,22 @@ export default {
           300: '#7cc5fb',
           400: '#36a5f7',
           500: '#0c87eb',
-          600: '#006bc9',
+          600: '#0969da',
           700: '#0155a3',
           800: '#054885',
           900: '#0a3d6e',
           950: '#072749',
+        },
+        surface: {
+          bg: 'var(--surface-bg)',
+          card: 'var(--surface-card)',
+          raised: 'var(--surface-raised)',
+          sunken: 'var(--surface-sunken)',
+          border: 'var(--surface-border)',
         }
       },
       fontFamily: {
+        serif: ['"IBM Plex Serif"', 'Georgia', 'serif'],
         sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
         mono: ['JetBrains Mono', 'Fira Code', 'Menlo', 'monospace']
       }

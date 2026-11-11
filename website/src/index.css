@@ -1,48 +1,310 @@
 @import 'katex/dist/katex.min.css';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+@import '@fontsource/ibm-plex-serif/400.css';
+@import '@fontsource/ibm-plex-serif/600.css';
+@import '@fontsource/ibm-plex-serif/700.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* ==========================================================================
+   D1. DESIGN TOKENS (CSS Variables - 8px scale, radius, warm neutrals)
+   ========================================================================== */
 :root {
   color-scheme: light dark;
+
+  /* 8px Spacing Scale */
+  --space-0-5: 4px;
+  --space-1: 8px;
+  --space-1-5: 12px;
+  --space-2: 16px;
+  --space-2-5: 20px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 40px;
+  --space-6: 48px;
+  --space-8: 64px;
+  --space-10: 80px;
+  --space-12: 96px;
+
+  /* Radius Scale */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
+  --radius-full: 9999px;
+
+  /* Restrained Warm Palette (Light Mode) */
+  --surface-bg: #faf9f6;          /* warm paper neutral */
+  --surface-card: #ffffff;
+  --surface-raised: #f4f2ed;
+  --surface-sunken: #edeae2;
+  --surface-border: #e2ded5;
+  --surface-border-subtle: #eae7df;
+
+  --text-primary: #181d24;
+  --text-secondary: #4a5462;
+  --text-muted: #748092;
+
+  /* Single Accent */
+  --accent: #0969da;
+  --accent-hover: #0756b3;
+  --accent-subtle: #edf5ff;
+  --accent-border: #bfe0ff;
+
+  /* Semantic - outcomes only */
+  --semantic-success: #1a7f37;
+  --semantic-success-subtle: #ebfbee;
+  --semantic-danger: #cf222e;
+  --semantic-danger-subtle: #ffebe9;
+  --semantic-warning: #9a6700;
+  --semantic-warning-subtle: #fff8c5;
+
+  /* Skeuomorphic tactile shadow tokens */
+  --shadow-keycap: 0 1px 0 rgba(0,0,0,0.08), 0 2px 0 rgba(0,0,0,0.04), 0 3px 6px rgba(0,0,0,0.05);
+  --shadow-plate: inset 0 1px 0 rgba(255,255,255,0.8), 0 1px 3px rgba(0,0,0,0.05), 0 4px 12px rgba(0,0,0,0.03);
+  --shadow-dock: 0 12px 36px -4px rgba(0, 0, 0, 0.15), 0 4px 12px rgba(0, 0, 0, 0.08), inset 0 1px 1px rgba(255, 255, 255, 0.8);
 }
 
-body {
+.dark {
+  /* Restrained Warm Palette (Dark Mode - fully designed, not simple inversion) */
+  --surface-bg: #0f141c;          /* deep warm slate/graphite */
+  --surface-card: #161d27;
+  --surface-raised: #1e2633;
+  --surface-sunken: #0b0f15;
+  --surface-border: #293444;
+  --surface-border-subtle: #212b39;
+
+  --text-primary: #f0f4f9;
+  --text-secondary: #9cb0c6;
+  --text-muted: #6f8094;
+
+  /* Single Accent (Dark) */
+  --accent: #58a6ff;
+  --accent-hover: #79b8ff;
+  --accent-subtle: rgba(56, 139, 253, 0.12);
+  --accent-border: rgba(56, 139, 253, 0.35);
+
+  /* Semantic - outcomes only */
+  --semantic-success: #3fb950;
+  --semantic-success-subtle: rgba(46, 160, 67, 0.15);
+  --semantic-danger: #f85149;
+  --semantic-danger-subtle: rgba(248, 81, 73, 0.15);
+  --semantic-warning: #d29922;
+  --semantic-warning-subtle: rgba(187, 128, 9, 0.15);
+
+  /* Dark tactile shadows */
+  --shadow-keycap: 0 1px 0 rgba(255,255,255,0.06), 0 2px 4px rgba(0,0,0,0.4);
+  --shadow-plate: inset 0 1px 0 rgba(255,255,255,0.08), 0 2px 6px rgba(0,0,0,0.3);
+  --shadow-dock: 0 16px 40px -4px rgba(0, 0, 0, 0.6), 0 4px 16px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+/* ==========================================================================
+   GLOBAL LAYOUT & OVERFLOW PROTECTION
+   ========================================================================== */
+html, body {
+  overflow-x: clip;
+  max-width: 100vw;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
 }
 
-/* Custom scrollbar */
+#root {
+  overflow-x: clip;
+  max-width: 100vw;
+}
+
+section {
+  scroll-margin-top: 80px;
+}
+
+/* Main single layout container with max 1200px */
+.layout-container {
+  max-width: 1200px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(16px, 4vw, 32px);
+  padding-right: clamp(16px, 4vw, 32px);
+}
+
+/* ==========================================================================
+   TYPOGRAPHY
+   ========================================================================== */
+h1, h2, h3, .heading-serif {
+  font-family: 'IBM Plex Serif', Georgia, serif;
+  font-feature-settings: 'kern' 1, 'liga' 1;
+  letter-spacing: -0.015em;
+}
+
+/* Monospace is used ONLY for numbers and code */
+.num-mono, .code-mono {
+  font-family: 'JetBrains Mono', 'Fira Code', Menlo, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ==========================================================================
+   D2. SKEUOMORPHIC COMPONENT LAYER
+   ========================================================================== */
+/* Skeuomorphic tactile cards */
+.skeuo-card {
+  background: var(--surface-card);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-lg);
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    0 4px 14px rgba(0, 0, 0, 0.03);
+  transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.dark .skeuo-card {
+  background: var(--surface-card);
+  border-color: var(--surface-border);
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 2px 6px rgba(0, 0, 0, 0.35),
+    0 8px 20px rgba(0, 0, 0, 0.25);
+}
+.skeuo-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 4px 8px rgba(0, 0, 0, 0.06),
+    0 12px 24px rgba(0, 0, 0, 0.05);
+}
+.dark .skeuo-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 6px 14px rgba(0, 0, 0, 0.45),
+    0 16px 28px rgba(0, 0, 0, 0.35);
+}
+
+/* Skeuomorphic instrument panel plate */
+.skeuo-plate {
+  background: var(--surface-raised);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-plate);
+}
+
+/* Skeuomorphic raised keycap button */
+.skeuo-button {
+  background: var(--surface-card);
+  border: 1px solid var(--surface-border);
+  border-bottom-width: 2px;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-keycap);
+  transition: transform 100ms ease, box-shadow 100ms ease;
+  user-select: none;
+}
+.skeuo-button:active {
+  transform: translateY(1px);
+  border-bottom-width: 1px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+.dark .skeuo-button:active {
+  transform: translateY(1px);
+  border-bottom-width: 1px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Skeuomorphic debossed chips */
+.skeuo-chip {
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--radius-sm);
+  padding: 2px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  border: 1px solid var(--surface-border-subtle);
+  background: var(--surface-sunken);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+.dark .skeuo-chip {
+  background: var(--surface-sunken);
+  border-color: var(--surface-border);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+/* Segmented control with sliding raised knob */
+.skeuo-segmented-switch {
+  display: inline-flex;
+  position: relative;
+  background: var(--surface-sunken);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-md);
+  padding: 3px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+.dark .skeuo-segmented-switch {
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* ==========================================================================
+   TABLE OVERFLOW & STICKY COLUMN
+   ========================================================================== */
+.table-scroll-container {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--surface-border);
+  background: var(--surface-card);
+}
+.table-scroll-container table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+.table-scroll-container th:first-child,
+.table-scroll-container td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 10;
+  background: inherit;
+}
+
+/* Custom scrollbars */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 ::-webkit-scrollbar-track {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(156, 163, 175, 0.4);
+  background: rgba(140, 150, 165, 0.35);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(156, 163, 175, 0.6);
+  background: rgba(140, 150, 165, 0.6);
 }
 
-/* WCAG Focus Ring Enhancement */
+/* Focus styles for keyboard accessibility */
 *:focus-visible {
-  outline: 2px solid #4f46e5;
+  outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 
-/* Skip to main content link */
+/* Skip link */
 .skip-link {
   position: absolute;
   top: -40px;
   left: 0;
-  background: #4f46e5;
+  background: var(--accent);
   color: white;
   padding: 8px 16px;
   z-index: 100;
   transition: top 0.2s;
+  font-weight: 600;
 }
 .skip-link:focus {
   top: 0;
@@ -50,7 +312,7 @@ body {
 
 /* Print Stylesheet */
 @media print {
-  .no-print, nav, footer, button, .sticky {
+  .no-print, nav, footer, button, .sticky, .dock-container {
     display: none !important;
   }
   body {
@@ -58,12 +320,4 @@ body {
     color: black !important;
     font-size: 11pt !important;
   }
-  article, section {
-    page-break-inside: avoid;
-  }
-  a {
-    text-decoration: underline;
-    color: black !important;
-  }
 }
-
