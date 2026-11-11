@@ -357,6 +357,16 @@ h1, h2, h3, .heading-serif {
   }
 }
 
+/* Mobile Touch Target Standards (>=44px) */
+@media (max-width: 768px) {
+  button:not(.no-touch-expand),
+  .skeuo-button,
+  [data-dock-item] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
 /* Print Stylesheet */
 @media print {
   .no-print, nav, footer, button, .sticky, .dock-container {
