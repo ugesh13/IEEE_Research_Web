@@ -18,7 +18,7 @@ export const SubgroupsSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
           <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 mb-3">
-            Section 8
+            Section VII-A · Section 8
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white tracking-tight">
             Descriptive Subgroup Performance

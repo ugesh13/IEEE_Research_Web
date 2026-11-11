@@ -1,3 +1,4 @@
+@import 'katex/dist/katex.min.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -24,5 +25,45 @@ body {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(156, 163, 175, 0.6);
+}
+
+/* WCAG Focus Ring Enhancement */
+*:focus-visible {
+  outline: 2px solid #4f46e5;
+  outline-offset: 2px;
+}
+
+/* Skip to main content link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #4f46e5;
+  color: white;
+  padding: 8px 16px;
+  z-index: 100;
+  transition: top 0.2s;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* Print Stylesheet */
+@media print {
+  .no-print, nav, footer, button, .sticky {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 11pt !important;
+  }
+  article, section {
+    page-break-inside: avoid;
+  }
+  a {
+    text-decoration: underline;
+    color: black !important;
+  }
 }
 

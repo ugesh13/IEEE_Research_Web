@@ -4,9 +4,11 @@ import { Moon, Sun, Menu, X, FileText, Github } from 'lucide-react';
 interface NavbarProps {
   darkMode: boolean;
   setDarkMode: (val: boolean) => void;
+  viewMode: 'interactive' | 'paper';
+  setViewMode: (val: 'interactive' | 'paper') => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode }) => {
+export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode, viewMode, setViewMode }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -29,6 +31,8 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode }) => {
     { label: 'Subgroups', href: '#subgroups' },
     { label: 'Robustness', href: '#robustness' },
     { label: 'Discussion', href: '#discussion' },
+    { label: 'Claims', href: '#claims' },
+    { label: 'Reproduction', href: '#reproduction' },
     { label: 'Supplement', href: '#supplementary' },
     { label: 'Resources', href: '#resources' },
   ];
@@ -75,6 +79,30 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode }) => {
 
           {/* Actions */}
           <div className="flex items-center gap-2">
+            {/* View Mode Toggle */}
+            <div className="flex items-center p-0.5 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-mono">
+              <button
+                onClick={() => setViewMode('interactive')}
+                className={`px-2.5 py-1 rounded-md font-semibold transition-all ${
+                  viewMode === 'interactive'
+                    ? 'bg-white dark:bg-slate-700 text-brand-600 dark:text-brand-300 shadow-xs'
+                    : 'text-slate-600 dark:text-slate-400 hover:text-slate-900'
+                }`}
+              >
+                Interactive
+              </button>
+              <button
+                onClick={() => setViewMode('paper')}
+                className={`px-2.5 py-1 rounded-md font-semibold transition-all ${
+                  viewMode === 'paper'
+                    ? 'bg-white dark:bg-slate-700 text-brand-600 dark:text-brand-300 shadow-xs'
+                    : 'text-slate-600 dark:text-slate-400 hover:text-slate-900'
+                }`}
+              >
+                Paper View
+              </button>
+            </div>
+
             <a
               href="/paper.pdf"
               target="_blank"

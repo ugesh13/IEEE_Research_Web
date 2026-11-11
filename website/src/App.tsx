@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
+import { JudgesSummary } from './components/JudgesSummary';
 import { Hero } from './components/Hero';
 import { ProblemApproach } from './components/ProblemApproach';
 import { DatasetSection } from './components/DatasetSection';
@@ -10,11 +11,15 @@ import { ExplainabilitySection } from './components/ExplainabilitySection';
 import { SubgroupsSection } from './components/SubgroupsSection';
 import { RobustnessSection } from './components/RobustnessSection';
 import { DiscussionSection } from './components/DiscussionSection';
+import { ClaimsLedger } from './components/ClaimsLedger';
+import { ReproductionSection } from './components/ReproductionSection';
 import { SupplementarySection } from './components/SupplementarySection';
 import { ResourcesSection } from './components/ResourcesSection';
+import { PaperView } from './components/PaperView';
 import { Footer } from './components/Footer';
 
 export const App: React.FC = () => {
+  const [viewMode, setViewMode] = useState<'interactive' | 'paper'>('interactive');
   const [darkMode, setDarkMode] = useState<boolean>(() => {
     if (typeof window !== 'undefined') {
       try {
@@ -48,51 +53,71 @@ export const App: React.FC = () => {
       {/* Skip to main content link for keyboard accessibility */}
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-50 px-4 py-2 bg-brand-600 text-white rounded-md text-xs font-medium shadow-md"
+        className="skip-link"
       >
         Skip to main content
       </a>
 
       {/* Sticky Navigation */}
-      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+      <Navbar
+        darkMode={darkMode}
+        setDarkMode={setDarkMode}
+        viewMode={viewMode}
+        setViewMode={setViewMode}
+      />
 
-      {/* Main Content Sections */}
+      {/* Main Content Area */}
       <main id="main-content" className="flex-1">
-        {/* 1. Hero */}
-        <Hero />
+        {viewMode === 'paper' ? (
+          <PaperView onSwitchToInteractive={() => setViewMode('interactive')} />
+        ) : (
+          <>
+            {/* For Judges 60-Second Summary */}
+            <JudgesSummary />
 
-        {/* 2. Problem and Approach */}
-        <ProblemApproach />
+            {/* 1. Hero */}
+            <Hero />
 
-        {/* 3. Dataset */}
-        <DatasetSection />
+            {/* 2. Problem and Approach */}
+            <ProblemApproach />
 
-        {/* 4. Leakage-Safe Design */}
-        <LeakageDesign />
+            {/* 3. Dataset */}
+            <DatasetSection />
 
-        {/* 5. Experimental Design */}
-        <ExperimentalDesign />
+            {/* 4. Leakage-Safe Design */}
+            <LeakageDesign />
 
-        {/* 6. Results */}
-        <ResultsSection />
+            {/* 5. Experimental Design */}
+            <ExperimentalDesign />
 
-        {/* 7. Explainability */}
-        <ExplainabilitySection />
+            {/* 6. Results */}
+            <ResultsSection />
 
-        {/* 8. Subgroups */}
-        <SubgroupsSection />
+            {/* 7. Explainability */}
+            <ExplainabilitySection />
 
-        {/* 9. Robustness */}
-        <RobustnessSection />
+            {/* 8. Subgroups */}
+            <SubgroupsSection />
 
-        {/* 10. Discussion & Limitations */}
-        <DiscussionSection />
+            {/* 9. Robustness */}
+            <RobustnessSection />
 
-        {/* Supplementary Repository Results */}
-        <SupplementarySection />
+            {/* 10. Discussion & Limitations */}
+            <DiscussionSection />
 
-        {/* 11. Resources */}
-        <ResourcesSection />
+            {/* Claims Ledger & Provenance Matrix */}
+            <ClaimsLedger />
+
+            {/* Reproduction Status */}
+            <ReproductionSection />
+
+            {/* Supplementary Repository Results */}
+            <SupplementarySection />
+
+            {/* 11. Resources */}
+            <ResourcesSection />
+          </>
+        )}
       </main>
 
       {/* Footer */}
@@ -102,4 +127,3 @@ export const App: React.FC = () => {
 };
 
 export default App;
-

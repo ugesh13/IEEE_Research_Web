@@ -81,3 +81,4 @@ for (const fig of requiredFigures) {
 
 console.log('[PASS] All 5 figures verified against manuscript captions.');
 process.exit(0);
+
