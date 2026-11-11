@@ -169,10 +169,10 @@ if (paperData.derived) {
     console.log(`[PASS] Derived flag-all baseline: recall=${d.flag_all_baseline.recall_pct}%, precision=${d.flag_all_baseline.precision_pct}%, f1=${d.flag_all_baseline.f1}`);
   }
   if (d.share_of_enrollments_flagged) {
-    console.log(`[PASS] Derived share flagged: ${d.share_of_enrollments_flagged.value}`);
+    console.log(`[PASS] Derived share flagged: ${d.share_of_enrollments_flagged.pct}% (${d.share_of_enrollments_flagged.count}/${d.share_of_enrollments_flagged.total})`);
   }
   if (d.precision_lift) {
-    console.log(`[PASS] Derived precision lift: ${d.precision_lift.value}`);
+    console.log(`[PASS] Derived precision lift: ${d.precision_lift.ratio_vs_prevalence}x`);
   }
 }
 

@@ -112,12 +112,97 @@
       }
     ]
   },
+  "recomputed_shap": {
+    "warning": "Different run (holdout N=4,859); not comparable to the manuscript (N=4,889)",
+    "source": "oulad_student_prediction/results/tables/shap_recomputed.csv",
+    "background_observations": 100,
+    "holdout_observations": 4859,
+    "comparison": [
+      {
+        "family": "Academic Milestones",
+        "raw_predictors": 8,
+        "manuscript_share_pct": 33.22,
+        "recomputed_mean_abs_shap": 1.1551,
+        "recomputed_share_pct": 32.72,
+        "diff_pp": -0.50
+      },
+      {
+        "family": "VLE Digital Engagement",
+        "raw_predictors": 8,
+        "manuscript_share_pct": 32.61,
+        "recomputed_mean_abs_shap": 0.9347,
+        "recomputed_share_pct": 26.48,
+        "diff_pp": -6.13
+      },
+      {
+        "family": "Static Intake and Context",
+        "raw_predictors": 13,
+        "manuscript_share_pct": 34.17,
+        "recomputed_mean_abs_shap": 1.4405,
+        "recomputed_share_pct": 40.80,
+        "diff_pp": 6.63
+      },
+      {
+        "family": "Combined Dynamic (Academic + VLE)",
+        "raw_predictors": 16,
+        "manuscript_share_pct": 65.83,
+        "recomputed_mean_abs_shap": 2.0898,
+        "recomputed_share_pct": 59.20,
+        "diff_pp": -6.63
+      }
+    ],
+    "recomputed_top_5_features": [
+      {
+        "rank": 1,
+        "raw_feature": "code_module",
+        "family": "Static Intake and Context",
+        "mean_abs_shap": 0.6607,
+        "share_pct": 18.72
+      },
+      {
+        "rank": 2,
+        "raw_feature": "early_assessments_submitted_d30",
+        "family": "Academic Milestones (Day <= 30)",
+        "mean_abs_shap": 0.5999,
+        "share_pct": 16.99
+      },
+      {
+        "rank": 3,
+        "raw_feature": "early_vle_incourse_clicks_d30",
+        "family": "VLE Digital Engagement (Day <= 30)",
+        "mean_abs_shap": 0.3802,
+        "share_pct": 10.77
+      },
+      {
+        "rank": 4,
+        "raw_feature": "early_vle_active_days_d30",
+        "family": "VLE Digital Engagement (Day <= 30)",
+        "mean_abs_shap": 0.2787,
+        "share_pct": 7.89
+      },
+      {
+        "rank": 5,
+        "raw_feature": "highest_education",
+        "family": "Static Intake and Context",
+        "mean_abs_shap": 0.2313,
+        "share_pct": 6.55
+      }
+    ],
+    "manuscript_top_raw_predictors": [
+      "early_avg_score_d30",
+      "early_vle_active_days_d30",
+      "early_vle_total_clicks_d30",
+      "has_early_assessment_submission_d30"
+    ]
+  },
   "day30_active_sensitivity": {
+    "warning": "Different run (holdout N=4,859); not comparable to the manuscript (N=4,889)",
     "source": "oulad_student_prediction/results/tables/sensitivity_day30_active.csv",
     "threshold": 0.45,
     "unregistered_early_observations": 756,
     "unregistered_early_share_pct": 15.56,
     "unregistered_early_outcome": "All 756 Withdrawn (756 / 756, 100.00%)",
+    "plain_statement": "Excluding the 756 early-unregistered enrollments (all Withdrawn) lowers AUC 0.8487 -> 0.7931 and recall 76.12% -> 67.24% in that run.",
     "cohorts": [
       {
         "cohort": "Full Holdout Test Set",

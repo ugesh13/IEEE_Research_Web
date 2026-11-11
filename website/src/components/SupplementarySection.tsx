@@ -1,9 +1,9 @@
 import React from 'react';
 import supplementaryData from '../data/supplementary.json';
-import { Database, FileCode, Users, Activity, AlertCircle } from 'lucide-react';
+import { Database, FileCode, Users, Activity, AlertCircle, Sparkles } from 'lucide-react';
 
 export const SupplementarySection: React.FC = () => {
-  const { s2_validation_models, subgroup_sample_sizes, day30_active_sensitivity } = supplementaryData;
+  const { s2_validation_models, subgroup_sample_sizes, recomputed_shap, day30_active_sensitivity } = supplementaryData;
 
   return (
     <section id="supplementary" className="py-16 bg-slate-100/80 dark:bg-slate-950 border-y-2 border-dashed border-slate-300 dark:border-slate-800">
@@ -155,28 +155,134 @@ export const SupplementarySection: React.FC = () => {
             </div>
           </div>
 
-          {/* Sub-item C: Part A4 Sensitivity Result */}
+          {/* Sub-item C: Recomputed SHAP Family Shares & Top Features */}
+          <div className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+              <div>
+                <h3 className="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                  <Sparkles className="w-4 h-4 text-amber-600 dark:text-amber-400" />
+                  <span>C. Recomputed SHAP Attribution Analysis</span>
+                </h3>
+                <p className="text-xs text-slate-500 dark:text-slate-400 font-mono mt-0.5">
+                  Source: <code>{recomputed_shap.source}</code> (100 background observations)
+                </p>
+              </div>
+              <div className="px-2.5 py-1 rounded-md text-xs font-mono font-bold bg-amber-100 text-amber-900 dark:bg-amber-950/70 dark:text-amber-300 border border-amber-300 dark:border-amber-800">
+                {recomputed_shap.warning}
+              </div>
+            </div>
+
+            <p className="text-xs text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
+              Comparison between the manuscript stored constants and an empirical recomputation using <code>shap.TreeExplainer</code> on the holdout partition in the repository.
+              The differences are reported directly without smoothing.
+            </p>
+
+            {/* Side-by-side SHAP Family Shares */}
+            <div className="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-800 mb-6">
+              <table className="w-full text-left text-xs sm:text-sm font-mono">
+                <thead className="bg-slate-50 dark:bg-slate-800/60 text-slate-700 dark:text-slate-300 font-semibold border-b border-slate-200 dark:border-slate-700">
+                  <tr>
+                    <th className="py-2.5 px-4 font-sans">Feature Family</th>
+                    <th className="py-2.5 px-4 text-center">Raw Predictors</th>
+                    <th className="py-2.5 px-4 text-center">Manuscript Stored Share</th>
+                    <th className="py-2.5 px-4 text-center">Recomputed Mean |SHAP|</th>
+                    <th className="py-2.5 px-4 text-center">Recomputed Share</th>
+                    <th className="py-2.5 px-4 text-center">Difference</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
+                  {recomputed_shap.comparison.map((row) => (
+                    <tr key={row.family} className="hover:bg-slate-50/50 dark:hover:bg-slate-800/30">
+                      <td className="py-2.5 px-4 font-bold text-slate-900 dark:text-white font-sans">
+                        {row.family}
+                      </td>
+                      <td className="py-2.5 px-4 text-center text-slate-600 dark:text-slate-400">
+                        {row.raw_predictors}
+                      </td>
+                      <td className="py-2.5 px-4 text-center font-bold text-slate-900 dark:text-white">
+                        {row.manuscript_share_pct.toFixed(2)}%
+                      </td>
+                      <td className="py-2.5 px-4 text-center text-slate-600 dark:text-slate-400">
+                        {row.recomputed_mean_abs_shap.toFixed(4)}
+                      </td>
+                      <td className="py-2.5 px-4 text-center font-bold text-amber-700 dark:text-amber-300">
+                        {row.recomputed_share_pct.toFixed(2)}%
+                      </td>
+                      <td className={`py-2.5 px-4 text-center font-bold ${row.diff_pp >= 0 ? 'text-blue-700 dark:text-blue-300' : 'text-slate-600 dark:text-slate-400'}`}>
+                        {row.diff_pp > 0 ? `+${row.diff_pp.toFixed(2)}` : row.diff_pp.toFixed(2)} pp
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            {/* Recomputed Top-5 Features */}
+            <h4 className="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-2 font-mono">
+              Recomputed Top-5 Raw Features by Mean |SHAP|:
+            </h4>
+            <div className="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-800">
+              <table className="w-full text-left text-xs font-mono">
+                <thead className="bg-slate-50 dark:bg-slate-800/60 text-slate-700 dark:text-slate-300 font-semibold border-b border-slate-200 dark:border-slate-700">
+                  <tr>
+                    <th className="py-2 px-3 text-center">Rank</th>
+                    <th className="py-2 px-3 font-sans">Raw Predictor</th>
+                    <th className="py-2 px-3 font-sans">Feature Family</th>
+                    <th className="py-2 px-3 text-center">Mean |SHAP|</th>
+                    <th className="py-2 px-3 text-center">Share</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
+                  {recomputed_shap.recomputed_top_5_features.map((feat) => (
+                    <tr key={feat.rank} className="hover:bg-slate-50/50 dark:hover:bg-slate-800/30">
+                      <td className="py-2 px-3 text-center font-bold text-slate-700 dark:text-slate-300">
+                        #{feat.rank}
+                      </td>
+                      <td className="py-2 px-3 font-bold text-brand-700 dark:text-brand-300">
+                        <code>{feat.raw_feature}</code>
+                      </td>
+                      <td className="py-2 px-3 text-slate-600 dark:text-slate-400 font-sans">
+                        {feat.family}
+                      </td>
+                      <td className="py-2 px-3 text-center text-slate-800 dark:text-slate-200">
+                        {feat.mean_abs_shap.toFixed(4)}
+                      </td>
+                      <td className="py-2 px-3 text-center font-bold text-slate-900 dark:text-white">
+                        {feat.share_pct.toFixed(2)}%
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* Sub-item D: Day-30 Active Registration Sensitivity Result */}
           <div className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
               <div>
                 <h3 className="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
                   <Activity className="w-4 h-4 text-amber-600 dark:text-amber-400" />
-                  <span>C. Sensitivity Audit: Predictions for Students Active at Day 30</span>
+                  <span>D. Sensitivity Audit: Predictions for Enrollments Active at Day 30</span>
                 </h3>
                 <p className="text-xs text-slate-500 dark:text-slate-400 font-mono mt-0.5">
                   Source: <code>{day30_active_sensitivity.source}</code> (evaluated at θ* = 0.45)
                 </p>
               </div>
-              <span className="text-xs font-mono text-slate-500 dark:text-slate-400">
-                Filter: date_unregistration &gt; 30 or missing
-              </span>
+              <div className="px-2.5 py-1 rounded-md text-xs font-mono font-bold bg-amber-100 text-amber-900 dark:bg-amber-950/70 dark:text-amber-300 border border-amber-300 dark:border-amber-800">
+                {day30_active_sensitivity.warning}
+              </div>
+            </div>
+
+            <div className="p-3.5 rounded-xl bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/60 mb-4 text-xs text-amber-950 dark:text-amber-200 font-mono">
+              <strong>Audit Finding:</strong> {day30_active_sensitivity.plain_statement}
             </div>
 
             <p className="text-xs text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
-              In the holdout dataset, <strong>{day30_active_sensitivity.unregistered_early_observations.toLocaleString()}</strong> enrollments ({day30_active_sensitivity.unregistered_early_share_pct}%)
+              In this run, <strong>{day30_active_sensitivity.unregistered_early_observations.toLocaleString()}</strong> enrollments ({day30_active_sensitivity.unregistered_early_share_pct}%)
               were officially unregistered on or before Day 30 ({day30_active_sensitivity.unregistered_early_outcome}).
-              Because these students had minimal or zero activity by Day 30, they are readily detected.
-              Evaluating the frozen model solely on students actively enrolled at Day 30 provides an informative sensitivity boundary:
+              Because these enrollments ceased activity by Day 30, they are readily flagged as at-risk.
+              Evaluating solely on enrollments actively registered at Day 30 shows the effect of removing these early departures:
             </p>
 
             <div className="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-800">
@@ -231,4 +337,3 @@ export const SupplementarySection: React.FC = () => {
     </section>
   );
 };
-
