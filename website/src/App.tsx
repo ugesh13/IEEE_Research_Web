@@ -25,18 +25,8 @@ const SupplementarySection = React.lazy(() => import('./components/Supplementary
 export const App: React.FC = () => {
   const [viewMode, setViewMode] = useState<'interactive' | 'paper'>('interactive');
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [darkMode, setDarkMode] = useState<boolean>(() => {
-    if (typeof window !== 'undefined') {
-      try {
-        const saved = localStorage.getItem('theme');
-        if (saved) return saved === 'dark';
-        return window.matchMedia('(prefers-color-scheme: dark)').matches;
-      } catch {
-        return false;
-      }
-    }
-    return false;
-  });
+  // Theme is in-memory only; always starts false (light) on load, never reads or writes localStorage
+  const [darkMode, setDarkMode] = useState<boolean>(false);
 
   // Lenis smooth scrolling initialization
   useEffect(() => {
@@ -77,22 +67,20 @@ export const App: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    try {
-      const root = document.documentElement;
-      if (darkMode) {
-        root.classList.add('dark');
-        localStorage.setItem('theme', 'dark');
-      } else {
-        root.classList.remove('dark');
-        localStorage.setItem('theme', 'light');
-      }
-    } catch {
-      // In private browsing or sandboxed iframes, localStorage may throw
+    const root = document.documentElement;
+    if (darkMode) {
+      root.classList.add('dark');
+      root.setAttribute('data-theme', 'dark');
+      root.style.colorScheme = 'dark';
+    } else {
+      root.classList.remove('dark');
+      root.setAttribute('data-theme', 'light');
+      root.style.colorScheme = 'light';
     }
   }, [darkMode]);
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 flex flex-col font-sans transition-colors duration-200">
+    <div className="min-h-screen bg-white text-[#111827] flex flex-col font-sans transition-colors duration-200">
       {/* Skip to main content link for keyboard accessibility */}
       <a
         href="#main-content"

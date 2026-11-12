@@ -2,12 +2,12 @@ import React from 'react';
 
 export const ShimmerBlock: React.FC<{ className?: string; style?: React.CSSProperties }> = ({ className = '', style }) => (
   <div
-    className={`relative overflow-hidden rounded bg-slate-200/70 dark:bg-slate-800/70 ${className}`}
+    className={`relative overflow-hidden rounded bg-slate-100 dark:bg-slate-800/50 ${className}`}
     style={style}
   >
     <div
       aria-hidden="true"
-      className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 dark:via-white/10 to-transparent animate-[shimmer_1.6s_infinite]"
+      className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 dark:via-white/10 to-transparent animate-[shimmer_1.6s_infinite]"
     />
   </div>
 );
