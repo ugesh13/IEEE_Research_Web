@@ -260,29 +260,29 @@ export const ResultsSection: React.FC = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             {/* Confusion Matrix Interactive Grid */}
-            <div className="lg:col-span-7 overflow-x-auto">
-              <div className="inline-block min-w-[340px] w-full p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 shadow-sm">
-                <div className="grid grid-cols-3 gap-3 text-center">
+            <div className="lg:col-span-7 overflow-x-auto w-full">
+              <div className="inline-block min-w-full xs:min-w-[300px] p-3 sm:p-6 rounded-2xl bg-white border border-[#E5E7EB] shadow-sm">
+                <div className="grid grid-cols-3 gap-2 sm:gap-3 text-center">
                   {/* Top Left Header Cell */}
-                  <div className="p-3 text-xs font-mono text-slate-600 dark:text-slate-300 flex items-center justify-center">
+                  <div className="p-2 sm:p-3 text-[11px] sm:text-xs font-mono text-slate-600 flex items-center justify-center">
                     Actual \ Pred.
                   </div>
 
                   {/* Col Header 1 */}
-                  <div className="p-3 rounded-lg bg-slate-200/70 dark:bg-slate-700/70 font-mono text-xs font-bold text-slate-800 dark:text-slate-200">
+                  <div className="p-2 sm:p-3 rounded-lg bg-slate-100 font-mono text-[11px] sm:text-xs font-bold text-slate-800">
                     Predicted At-Risk
                   </div>
 
                   {/* Col Header 2 */}
-                  <div className="p-3 rounded-lg bg-slate-200/70 dark:bg-slate-700/70 font-mono text-xs font-bold text-slate-800 dark:text-slate-200">
+                  <div className="p-2 sm:p-3 rounded-lg bg-slate-100 font-mono text-[11px] sm:text-xs font-bold text-slate-800">
                     Predicted Successful
                   </div>
 
                   {/* Row 1: Actual At-Risk */}
-                  <div className="p-3 rounded-lg bg-slate-200/70 dark:bg-slate-700/70 font-mono text-xs font-bold text-slate-800 dark:text-slate-200 flex items-center justify-center">
+                  <div className="p-2 sm:p-3 rounded-lg bg-slate-100 font-mono text-[11px] sm:text-xs font-bold text-slate-800 flex items-center justify-center">
                     Actual At-Risk
                     <br />
-                    <span className="text-[10px] text-slate-700 dark:text-slate-300 font-normal mt-0.5">({actualAtRisk.toLocaleString()})</span>
+                    <span className="text-[10px] text-slate-600 font-normal mt-0.5">({actualAtRisk.toLocaleString()})</span>
                   </div>
 
                   {/* Cell: TP */}
@@ -290,19 +290,19 @@ export const ResultsSection: React.FC = () => {
                     type="button"
                     onMouseEnter={() => setHoveredCell('TP')}
                     onFocus={() => setHoveredCell('TP')}
-                    className={`p-4 rounded-xl border text-left transition-all ${
+                    className={`p-2.5 sm:p-4 rounded-xl border text-left transition-all min-h-[44px] ${
                       hoveredCell === 'TP'
-                        ? 'ring-2 ring-emerald-500 bg-emerald-100/80 dark:bg-emerald-950/60 border-emerald-400 shadow'
-                        : 'bg-emerald-50/70 dark:bg-emerald-950/30 border-emerald-200 dark:border-emerald-800/60 hover:bg-emerald-100/50'
+                        ? 'ring-2 ring-emerald-500 bg-emerald-100/90 border-emerald-400 shadow'
+                        : 'bg-emerald-50/80 border-emerald-200 hover:bg-emerald-100/60'
                     }`}
                   >
-                    <div className="text-[11px] font-mono font-bold text-emerald-800 dark:text-emerald-300 uppercase tracking-wider">
+                    <div className="text-[10px] sm:text-[11px] font-mono font-bold text-emerald-800 uppercase tracking-wider">
                       TP (True Positive)
                     </div>
-                    <div className="text-2xl font-extrabold font-mono text-emerald-900 dark:text-emerald-100 mt-1">
+                    <div className="text-xl sm:text-2xl font-extrabold font-mono text-emerald-900 mt-1">
                       {TP.toLocaleString()}
                     </div>
-                    <div className="text-[11px] font-mono text-emerald-700 dark:text-emerald-400 mt-1">
+                    <div className="text-[10px] sm:text-[11px] font-mono text-emerald-700 mt-1">
                       Recall: {recomputed.at_risk_recall_pct.toFixed(2)}%
                     </div>
                   </button>
@@ -312,28 +312,28 @@ export const ResultsSection: React.FC = () => {
                     type="button"
                     onMouseEnter={() => setHoveredCell('FN')}
                     onFocus={() => setHoveredCell('FN')}
-                    className={`p-4 rounded-xl border text-left transition-all ${
+                    className={`p-2.5 sm:p-4 rounded-xl border text-left transition-all min-h-[44px] ${
                       hoveredCell === 'FN'
-                        ? 'ring-2 ring-rose-500 bg-rose-100/80 dark:bg-rose-950/60 border-rose-400 shadow'
-                        : 'bg-rose-50/70 dark:bg-rose-950/30 border-rose-200 dark:border-rose-800/60 hover:bg-rose-100/50'
+                        ? 'ring-2 ring-rose-500 bg-rose-100/90 border-rose-400 shadow'
+                        : 'bg-rose-50/80 border-rose-200 hover:bg-rose-100/60'
                     }`}
                   >
-                    <div className="text-[11px] font-mono font-bold text-rose-800 dark:text-rose-300 uppercase tracking-wider">
+                    <div className="text-[10px] sm:text-[11px] font-mono font-bold text-rose-800 uppercase tracking-wider">
                       FN (False Negative)
                     </div>
-                    <div className="text-2xl font-extrabold font-mono text-rose-900 dark:text-rose-100 mt-1">
+                    <div className="text-xl sm:text-2xl font-extrabold font-mono text-rose-900 mt-1">
                       {FN.toLocaleString()}
                     </div>
-                    <div className="text-[11px] font-mono text-rose-700 dark:text-rose-400 mt-1">
+                    <div className="text-[10px] sm:text-[11px] font-mono text-rose-700 mt-1">
                       FNR: {recomputed.fnr_pct.toFixed(2)}%
                     </div>
                   </button>
 
                   {/* Row 2: Actual Successful */}
-                  <div className="p-3 rounded-lg bg-slate-200/70 dark:bg-slate-700/70 font-mono text-xs font-bold text-slate-800 dark:text-slate-200 flex items-center justify-center">
+                  <div className="p-2 sm:p-3 rounded-lg bg-slate-100 font-mono text-[11px] sm:text-xs font-bold text-slate-800 flex items-center justify-center">
                     Actual Successful
                     <br />
-                    <span className="text-[10px] text-slate-700 dark:text-slate-300 font-normal mt-0.5">({actualSuccessful.toLocaleString()})</span>
+                    <span className="text-[10px] text-slate-600 font-normal mt-0.5">({actualSuccessful.toLocaleString()})</span>
                   </div>
 
                   {/* Cell: FP */}
@@ -341,19 +341,19 @@ export const ResultsSection: React.FC = () => {
                     type="button"
                     onMouseEnter={() => setHoveredCell('FP')}
                     onFocus={() => setHoveredCell('FP')}
-                    className={`p-4 rounded-xl border text-left transition-all ${
+                    className={`p-2.5 sm:p-4 rounded-xl border text-left transition-all min-h-[44px] ${
                       hoveredCell === 'FP'
-                        ? 'ring-2 ring-amber-500 bg-amber-100/80 dark:bg-amber-950/60 border-amber-400 shadow'
-                        : 'bg-amber-50/70 dark:bg-amber-950/30 border-amber-200 dark:border-amber-800/60 hover:bg-amber-100/50'
+                        ? 'ring-2 ring-amber-500 bg-amber-100/90 border-amber-400 shadow'
+                        : 'bg-amber-50/80 border-amber-200 hover:bg-amber-100/60'
                     }`}
                   >
-                    <div className="text-[11px] font-mono font-bold text-amber-800 dark:text-amber-300 uppercase tracking-wider">
+                    <div className="text-[10px] sm:text-[11px] font-mono font-bold text-amber-800 uppercase tracking-wider">
                       FP (False Positive)
                     </div>
-                    <div className="text-2xl font-extrabold font-mono text-amber-900 dark:text-amber-100 mt-1">
+                    <div className="text-xl sm:text-2xl font-extrabold font-mono text-amber-900 mt-1">
                       {FP.toLocaleString()}
                     </div>
-                    <div className="text-[11px] font-mono text-amber-700 dark:text-amber-400 mt-1">
+                    <div className="text-[10px] sm:text-[11px] font-mono text-amber-700 mt-1">
                       FPR: {recomputed.fpr_pct.toFixed(2)}%
                     </div>
                   </button>
@@ -363,19 +363,19 @@ export const ResultsSection: React.FC = () => {
                     type="button"
                     onMouseEnter={() => setHoveredCell('TN')}
                     onFocus={() => setHoveredCell('TN')}
-                    className={`p-4 rounded-xl border text-left transition-all ${
+                    className={`p-2.5 sm:p-4 rounded-xl border text-left transition-all min-h-[44px] ${
                       hoveredCell === 'TN'
-                        ? 'ring-2 ring-blue-500 bg-blue-100/80 dark:bg-blue-950/60 border-blue-400 shadow'
-                        : 'bg-blue-50/70 dark:bg-blue-950/30 border-blue-200 dark:border-blue-800/60 hover:bg-blue-100/50'
+                        ? 'ring-2 ring-blue-500 bg-blue-100/90 border-blue-400 shadow'
+                        : 'bg-blue-50/80 border-blue-200 hover:bg-blue-100/60'
                     }`}
                   >
-                    <div className="text-[11px] font-mono font-bold text-blue-800 dark:text-blue-300 uppercase tracking-wider">
+                    <div className="text-[10px] sm:text-[11px] font-mono font-bold text-blue-800 uppercase tracking-wider">
                       TN (True Negative)
                     </div>
-                    <div className="text-2xl font-extrabold font-mono text-blue-900 dark:text-blue-100 mt-1">
+                    <div className="text-xl sm:text-2xl font-extrabold font-mono text-blue-900 mt-1">
                       {TN.toLocaleString()}
                     </div>
-                    <div className="text-[11px] font-mono text-blue-700 dark:text-blue-400 mt-1">
+                    <div className="text-[10px] sm:text-[11px] font-mono text-blue-700 mt-1">
                       Specificity: {recomputed.specificity_pct.toFixed(2)}%
                     </div>
                   </button>

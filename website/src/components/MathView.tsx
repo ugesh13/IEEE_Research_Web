@@ -22,8 +22,8 @@ export const MathView: React.FC<MathViewProps> = ({ math, block = false, classNa
 
   if (block) {
     return (
-      <div className={`overflow-x-auto py-2 my-1 ${className}`} title={title}>
-        <div dangerouslySetInnerHTML={{ __html: html }} />
+      <div className={`overflow-x-auto max-w-full py-2 my-1 ${className}`} title={title}>
+        <div className="min-w-fit" dangerouslySetInnerHTML={{ __html: html }} />
       </div>
     );
   }

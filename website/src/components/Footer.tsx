@@ -2,23 +2,26 @@ import React from 'react';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="py-12 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
-          <div className="flex items-center gap-2">
-            <span className="w-6 h-6 rounded-md bg-brand-600 text-white font-mono text-xs font-bold flex items-center justify-center">
+    <footer className="py-12 bg-white border-t border-[#E5E7EB] text-xs text-[#4B5563]">
+      <div className="layout-container">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center text-center md:text-left">
+          {/* Brand Block */}
+          <div className="flex items-center justify-center md:justify-start gap-2.5">
+            <span className="w-6 h-6 rounded-md bg-[#0B63CE] text-white font-mono text-xs font-bold flex items-center justify-center flex-shrink-0 shadow-sm">
               OU
             </span>
-            <span className="font-semibold text-slate-800 dark:text-slate-200">
+            <span className="font-semibold text-[#111827] text-sm">
               OULAD Early Student Performance Prediction
             </span>
           </div>
 
-          <div className="font-mono text-slate-600 dark:text-slate-400 font-medium">
-            All values are those reported in the manuscript (Kumar & Sharma, 2026).
+          {/* Academic Statement */}
+          <div className="font-mono text-[#4B5563] text-xs text-center">
+            All values are those reported in the manuscript (Kumar &amp; Sharma, 2026).
           </div>
 
-          <div className="text-[11px] text-slate-600 dark:text-slate-400">
+          {/* Scope / Legal Notice */}
+          <div className="text-[12px] text-[#4B5563] text-center md:text-right leading-relaxed">
             Observational study. Attributions reflect predictive associations, not causal effects.
           </div>
         </div>
