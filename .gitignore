@@ -79,5 +79,7 @@ docs/l-before/
 docs/l-after/
 website/docs/l-before/
 website/docs/l-after/
+docs/lighthouse*.json
+website/scripts/lighthouse*.json
 
 
