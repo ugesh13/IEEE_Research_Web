@@ -96,19 +96,21 @@ export const App: React.FC = () => {
         style={{ transform: `scaleX(${scrollProgress})` }}
       />
 
-      {/* Sticky Navigation */}
+      {/* Top Right Floating Theme Toggle (Small, In-Memory) */}
       <Navbar
         darkMode={darkMode}
         setDarkMode={setDarkMode}
-        viewMode={viewMode}
-        setViewMode={setViewMode}
       />
 
       {/* Main Content Area */}
       <main id="main-content" className="flex-1">
         {viewMode === 'paper' ? (
           <React.Suspense fallback={<PaperViewSkeleton />}>
-            <PaperView onSwitchToInteractive={() => setViewMode('interactive')} />
+            <PaperView
+              viewMode={viewMode}
+              setViewMode={setViewMode}
+              onSwitchToInteractive={() => setViewMode('interactive')}
+            />
           </React.Suspense>
         ) : (
           <>
@@ -116,7 +118,7 @@ export const App: React.FC = () => {
             <JudgesSummary />
 
             {/* 1. Hero */}
-            <Hero />
+            <Hero viewMode={viewMode} setViewMode={setViewMode} />
 
             {/* 2. Problem and Approach */}
             <ProblemApproach />

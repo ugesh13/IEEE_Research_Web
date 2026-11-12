@@ -11,12 +11,19 @@ import {
   Figure8FeasibleRegion,
 } from './PaperFigures';
 import { downloadTableCsv } from '../utils/csvExport';
+import { ViewSwitch } from './ViewSwitch';
 
 interface PaperViewProps {
+  viewMode?: 'interactive' | 'paper';
+  setViewMode?: (mode: 'interactive' | 'paper') => void;
   onSwitchToInteractive: () => void;
 }
 
-export const PaperView: React.FC<PaperViewProps> = ({ onSwitchToInteractive }) => {
+export const PaperView: React.FC<PaperViewProps> = ({
+  viewMode = 'paper',
+  setViewMode = () => {},
+  onSwitchToInteractive
+}) => {
   const [copiedType, setCopiedType] = useState<'text' | 'bibtex' | null>(null);
   const [exportingTable, setExportingTable] = useState<string | null>(null);
 
@@ -70,8 +77,17 @@ export const PaperView: React.FC<PaperViewProps> = ({ onSwitchToInteractive }) =
 
   return (
     <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 font-serif text-slate-800 dark:text-slate-200">
+      {/* Top Academic Centered View Switch directly at the top of paper content */}
+      <div className="no-print mb-8">
+        <ViewSwitch
+          id="paper-view-switch"
+          viewMode={viewMode}
+          setViewMode={setViewMode}
+        />
+      </div>
+
       {/* Top Academic Toolbar */}
-      <div className="no-print sticky top-16 z-30 mb-8 p-3.5 rounded-xl bg-white/95 dark:bg-slate-900/95 backdrop-blur border border-slate-200 dark:border-slate-800 shadow-sm flex flex-wrap items-center justify-between gap-3 font-sans text-xs">
+      <div className="no-print mb-8 p-3.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-wrap items-center justify-between gap-3 font-sans text-xs">
         <div className="flex items-center gap-2">
           <span className="px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-950 text-brand-700 dark:text-brand-300 font-mono font-bold">
             Paper View
