@@ -71,7 +71,7 @@ export const Hero: React.FC<HeroProps> = ({ viewMode = 'interactive', setViewMod
         <div
           id="metric-cards-row"
           data-testid="metric-cards-row"
-          className="grid grid-cols-1 md:grid-cols-3 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {/* Card 1: ROC-AUC */}
           <div className="skeuo-card relative p-6 bg-white border border-[#E5E7EB]">
