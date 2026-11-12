@@ -140,7 +140,7 @@ export const PaperView: React.FC<PaperViewProps> = ({
         <div className="mt-1 text-xs font-sans text-slate-600 dark:text-slate-400">
           {paperHeader.affiliation}
         </div>
-        <div className="mt-3 text-[11px] font-mono text-slate-400 italic">
+        <div className="mt-3 text-[11px] font-mono text-slate-600 dark:text-slate-400 italic">
           {paperHeader.statusNotice}
         </div>
       </header>
@@ -216,7 +216,7 @@ export const PaperView: React.FC<PaperViewProps> = ({
           </p>
           <div className="flex items-center justify-between p-3 my-2 bg-slate-50 dark:bg-slate-900/60 rounded-xl border border-slate-200 dark:border-slate-800">
             <MathView math="u = (\text{code\_module}, \text{code\_presentation}, \text{id\_student})" block />
-            <span className="font-mono text-xs text-slate-400 pl-4">(1)</span>
+            <span className="font-mono text-xs text-slate-600 dark:text-slate-400 pl-4">(1)</span>
           </div>
           <p className="mt-3 text-justify leading-relaxed text-sm sm:text-base">
             {paperSections[2].subsections?.[0].paragraphs[1]}
@@ -236,7 +236,7 @@ export const PaperView: React.FC<PaperViewProps> = ({
               math="y_u = \begin{cases} 1, & \text{if outcome is Withdrawn or Fail} \\ 0, & \text{if outcome is Pass or Distinction} \end{cases}"
               block
             />
-            <span className="font-mono text-xs text-slate-400 pl-4">(2)</span>
+            <span className="font-mono text-xs text-slate-600 dark:text-slate-400 pl-4">(2)</span>
           </div>
           <p className="mt-3 text-justify leading-relaxed text-sm sm:text-base">
             {paperSections[2].subsections?.[1].paragraphs[1]}
@@ -365,7 +365,7 @@ export const PaperView: React.FC<PaperViewProps> = ({
               <div className="my-4">
                 <div className="flex items-center justify-between p-3 my-2 bg-slate-50 dark:bg-slate-900/60 rounded-xl border border-slate-200 dark:border-slate-800">
                   <MathView math="P(y=1 \mid x) = \sigma(w^\top x + b) = \frac{1}{1 + \exp[-(w^\top x + b)]}" block />
-                  <span className="font-mono text-xs text-slate-400 pl-4">(3)</span>
+                  <span className="font-mono text-xs text-slate-600 dark:text-slate-400 pl-4">(3)</span>
                 </div>
                 <div className="my-6">
                   <Figure4Sigmoid />
@@ -379,31 +379,31 @@ export const PaperView: React.FC<PaperViewProps> = ({
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 my-4">
                   <div className="p-3 bg-slate-50 dark:bg-slate-900/60 rounded-xl border border-slate-200 dark:border-slate-800 flex items-center justify-between">
                     <MathView math="\text{Recall} = \frac{\text{TP}}{\text{TP} + \text{FN}}" block />
-                    <span className="font-mono text-xs text-slate-400 pl-2">(4)</span>
+                    <span className="font-mono text-xs text-slate-600 dark:text-slate-400 pl-2">(4)</span>
                   </div>
                   <div className="p-3 bg-slate-50 dark:bg-slate-900/60 rounded-xl border border-slate-200 dark:border-slate-800 flex items-center justify-between">
                     <MathView math="\text{Precision} = \frac{\text{TP}}{\text{TP} + \text{FP}}" block />
-                    <span className="font-mono text-xs text-slate-400 pl-2">(5)</span>
+                    <span className="font-mono text-xs text-slate-600 dark:text-slate-400 pl-2">(5)</span>
                   </div>
                   <div className="p-3 bg-slate-50 dark:bg-slate-900/60 rounded-xl border border-slate-200 dark:border-slate-800 flex items-center justify-between">
                     <MathView math="\text{Specificity} = \frac{\text{TN}}{\text{TN} + \text{FP}}" block />
-                    <span className="font-mono text-xs text-slate-400 pl-2">(6)</span>
+                    <span className="font-mono text-xs text-slate-600 dark:text-slate-400 pl-2">(6)</span>
                   </div>
                   <div className="p-3 bg-slate-50 dark:bg-slate-900/60 rounded-xl border border-slate-200 dark:border-slate-800 flex items-center justify-between">
                     <MathView math="F_1 = \frac{2 \cdot (\text{Precision} \cdot \text{Recall})}{\text{Precision} + \text{Recall}}" block />
-                    <span className="font-mono text-xs text-slate-400 pl-2">(7)</span>
+                    <span className="font-mono text-xs text-slate-600 dark:text-slate-400 pl-2">(7)</span>
                   </div>
                   <div className="p-3 bg-slate-50 dark:bg-slate-900/60 rounded-xl border border-slate-200 dark:border-slate-800 flex items-center justify-between">
                     <MathView math="\text{Accuracy} = \frac{\text{TP} + \text{TN}}{\text{TP} + \text{TN} + \text{FP} + \text{FN}}" block />
-                    <span className="font-mono text-xs text-slate-400 pl-2">(8)</span>
+                    <span className="font-mono text-xs text-slate-600 dark:text-slate-400 pl-2">(8)</span>
                   </div>
                   <div className="p-3 bg-slate-50 dark:bg-slate-900/60 rounded-xl border border-slate-200 dark:border-slate-800 flex items-center justify-between">
                     <MathView math="\text{FPR} = \frac{\text{FP}}{\text{FP} + \text{TN}}" block />
-                    <span className="font-mono text-xs text-slate-400 pl-2">(9)</span>
+                    <span className="font-mono text-xs text-slate-600 dark:text-slate-400 pl-2">(9)</span>
                   </div>
                   <div className="p-3 bg-slate-50 dark:bg-slate-900/60 rounded-xl border border-slate-200 dark:border-slate-800 flex items-center justify-between sm:col-span-2">
                     <MathView math="\text{FNR} = \frac{\text{FN}}{\text{FN} + \text{TP}}" block />
-                    <span className="font-mono text-xs text-slate-400 pl-2">(10)</span>
+                    <span className="font-mono text-xs text-slate-600 dark:text-slate-400 pl-2">(10)</span>
                   </div>
                 </div>
 
@@ -414,7 +414,7 @@ export const PaperView: React.FC<PaperViewProps> = ({
                 {/* Brier Score Eq 11 */}
                 <div className="flex items-center justify-between p-3 my-2 bg-slate-50 dark:bg-slate-900/60 rounded-xl border border-slate-200 dark:border-slate-800">
                   <MathView math="\text{BS} = \frac{1}{N} \sum_{i=1}^N (p_i - y_i)^2" block />
-                  <span className="font-mono text-xs text-slate-400 pl-4">(11)</span>
+                  <span className="font-mono text-xs text-slate-600 dark:text-slate-400 pl-4">(11)</span>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
@@ -432,7 +432,7 @@ export const PaperView: React.FC<PaperViewProps> = ({
                     math="\theta^* = \max \{ \theta \in [0.10, 0.90] : \text{Recall}(\theta) \ge 0.82 \land \text{Precision}(\theta) \ge 0.70 \}"
                     block
                   />
-                  <span className="font-mono text-xs text-slate-400 pl-4">(12)</span>
+                  <span className="font-mono text-xs text-slate-600 dark:text-slate-400 pl-4">(12)</span>
                 </div>
                 <div className="my-6">
                   <Figure8FeasibleRegion />
@@ -506,15 +506,15 @@ export const PaperView: React.FC<PaperViewProps> = ({
                     </thead>
                     <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
                       <tr>
-                        <td className="py-2 px-3 text-left font-semibold text-red-600 dark:text-red-400">Actual At-Risk</td>
-                        <td className="py-2 px-3 font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-50/50 dark:bg-emerald-950/20">TP = 2,127</td>
-                        <td className="py-2 px-3 font-bold text-red-600 dark:text-red-400">FN = 455</td>
+                        <td className="py-2 px-3 text-left font-semibold text-red-700 dark:text-red-400">Actual At-Risk</td>
+                        <td className="py-2 px-3 font-bold text-emerald-800 dark:text-emerald-300 bg-emerald-50/50 dark:bg-emerald-950/20">TP = 2,127</td>
+                        <td className="py-2 px-3 font-bold text-red-700 dark:text-red-400">FN = 455</td>
                         <td className="py-2 px-3 font-bold">2,582 (52.81%)</td>
                       </tr>
                       <tr>
-                        <td className="py-2 px-3 text-left font-semibold text-emerald-600 dark:text-emerald-400">Actual Successful</td>
-                        <td className="py-2 px-3 font-bold text-amber-600 dark:text-amber-400">FP = 721</td>
-                        <td className="py-2 px-3 font-bold text-blue-600 dark:text-blue-400 bg-blue-50/50 dark:bg-blue-950/20">TN = 1,586</td>
+                        <td className="py-2 px-3 text-left font-semibold text-emerald-800 dark:text-emerald-300">Actual Successful</td>
+                        <td className="py-2 px-3 font-bold text-amber-800 dark:text-amber-300">FP = 721</td>
+                        <td className="py-2 px-3 font-bold text-blue-800 dark:text-blue-300 bg-blue-50/50 dark:bg-blue-950/20">TN = 1,586</td>
                         <td className="py-2 px-3 font-bold">2,307 (47.19%)</td>
                       </tr>
                       <tr className="bg-slate-50/50 dark:bg-slate-800/30 font-bold">
@@ -653,12 +653,12 @@ export const PaperView: React.FC<PaperViewProps> = ({
               <tr>
                 <td className="py-2 px-3 font-semibold text-slate-900 dark:text-white font-sans">Academic Milestones</td>
                 <td className="py-2 px-3 text-center text-slate-600 dark:text-slate-400">8</td>
-                <td className="py-2 px-3 text-right font-bold text-indigo-600 dark:text-indigo-400">33.22%</td>
+                <td className="py-2 px-3 text-right font-bold text-indigo-700 dark:text-indigo-400">33.22%</td>
               </tr>
               <tr>
                 <td className="py-2 px-3 font-semibold text-slate-900 dark:text-white font-sans">VLE Digital Engagement</td>
                 <td className="py-2 px-3 text-center text-slate-600 dark:text-slate-400">8</td>
-                <td className="py-2 px-3 text-right font-bold text-sky-600 dark:text-sky-400">32.61%</td>
+                <td className="py-2 px-3 text-right font-bold text-sky-800 dark:text-sky-400">32.61%</td>
               </tr>
               <tr className="bg-slate-50/60 dark:bg-slate-800/40 font-bold border-t border-slate-200 dark:border-slate-700">
                 <td className="py-2 px-3 text-slate-900 dark:text-white font-sans">Dynamic Combined (Academic + VLE)</td>
