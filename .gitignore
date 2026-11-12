@@ -74,3 +74,10 @@ dist-ssr/
 oulad_student_prediction/results/run_logs/
 oulad_student_prediction/results/splits/student_partition_assignment.csv
 
+# Screenshots / UI test artifacts
+docs/l-before/
+docs/l-after/
+website/docs/l-before/
+website/docs/l-after/
+
+
