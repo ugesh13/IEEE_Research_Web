@@ -186,8 +186,34 @@ export const MacDock: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // ResizeObserver to update --dock-h CSS variable on document.documentElement
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const updateDockHeight = () => {
+      const el = dockRef.current;
+      if (el) {
+        const height = el.getBoundingClientRect().height;
+        document.documentElement.style.setProperty('--dock-h', `${Math.ceil(height)}px`);
+      }
+    };
+
+    updateDockHeight();
+    const observer = new ResizeObserver(() => {
+      updateDockHeight();
+    });
+
+    if (dockRef.current) {
+      observer.observe(dockRef.current);
+    }
+
+    window.addEventListener('resize', updateDockHeight);
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('resize', updateDockHeight);
+    };
+  }, []);
+
   const handleClick = (e: React.MouseEvent, item: DockItemData, idx: number) => {
-    if (item.isExternal) return;
     e.preventDefault();
     setBouncingIdx(idx);
     setTimeout(() => setBouncingIdx(null), 500);
@@ -228,9 +254,9 @@ export const MacDock: React.FC = () => {
         ref={dockRef}
         onMouseMove={(e) => mouseX.set(e.pageX)}
         onMouseLeave={() => mouseX.set(Infinity)}
-        className="pointer-events-auto flex items-end gap-1.5 p-2 rounded-2xl bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-slate-200/90 dark:border-slate-700/80 shadow-2xl max-w-[98vw] overflow-x-auto md:overflow-visible scrollbar-none"
+        className="pointer-events-auto flex items-end gap-1 sm:gap-1.5 p-1.5 sm:p-2 rounded-2xl bg-white/85 dark:bg-slate-900/85 backdrop-blur-xl border border-slate-200/90 dark:border-slate-700/80 shadow-2xl max-w-[98vw] max-h-[56px] landscape:max-h-[52px] sm:max-h-none overflow-x-auto md:overflow-visible scrollbar-none"
         style={{
-          boxShadow: '0 20px 40px -6px rgba(0,0,0,0.25), inset 0 1px 1px rgba(255,255,255,0.7)'
+          boxShadow: '0 8px 24px -4px rgba(0, 0, 0, 0.12), inset 0 1px 1px rgba(255, 255, 255, 0.8)'
         }}
       >
         {DOCK_ITEMS.map((item, idx) => {

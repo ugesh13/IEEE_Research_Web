@@ -2,7 +2,7 @@ import React from 'react';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="py-12 bg-white border-t border-[#E5E7EB] text-xs text-[#4B5563]">
+    <footer className="py-12 bg-white border-t border-[#E5E7EB] text-xs text-[#4B5563] page-dock-clearance">
       <div className="layout-container">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center text-center md:text-left">
           {/* Brand Block */}

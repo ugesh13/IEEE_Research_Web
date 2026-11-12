@@ -16,6 +16,7 @@
    ========================================================================== */
 :root {
   color-scheme: light;
+  --dock-h: 68px;
 
   /* 8px Spacing Scale */
   --space-0-5: 4px;
@@ -114,11 +115,18 @@ html, body {
   padding: 0;
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  scroll-padding-bottom: calc(var(--dock-h, 68px) + env(safe-area-inset-bottom, 0px) + 24px);
 }
 
 #root {
   overflow-x: clip;
   max-width: 100vw;
+  padding-bottom: calc(var(--dock-h, 68px) + env(safe-area-inset-bottom, 0px) + 24px);
+}
+
+/* Page clearance wrapper so the footer's last line sits >=16px above dock */
+.page-dock-clearance {
+  padding-bottom: calc(var(--dock-h, 68px) + env(safe-area-inset-bottom, 0px) + 32px);
 }
 
 section {

@@ -76,7 +76,7 @@ export const PaperView: React.FC<PaperViewProps> = ({
   };
 
   return (
-    <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 font-serif text-slate-800 dark:text-slate-200">
+    <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 font-serif text-slate-800 dark:text-slate-200 [max-width:72ch] page-dock-clearance">
       {/* Top Academic Centered View Switch directly at the top of paper content */}
       <div className="no-print mb-8">
         <ViewSwitch
@@ -779,7 +779,7 @@ export const PaperView: React.FC<PaperViewProps> = ({
       </section>
 
       {/* References */}
-      <section className="mb-16 border-t border-slate-300 dark:border-slate-700 pt-8" id="paper-references">
+      <section className="mb-8 border-t border-slate-300 dark:border-slate-700 pt-8" id="paper-references">
         <h2 className="text-lg font-bold font-sans text-slate-900 dark:text-white uppercase tracking-wider mb-6">
           References
         </h2>
@@ -789,14 +789,14 @@ export const PaperView: React.FC<PaperViewProps> = ({
               <span className="font-mono font-bold text-brand-600 dark:text-brand-400 min-w-[2.5rem]">
                 [{ref.id}]
               </span>
-              <div className="flex-1 text-slate-700 dark:text-slate-300 leading-relaxed font-serif">
+              <div className="flex-1 text-slate-700 dark:text-slate-300 leading-relaxed font-serif break-words [overflow-wrap:anywhere]">
                 <span>{ref.citation}</span>
                 {ref.url && (
                   <a
                     href={ref.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="ml-2 inline-flex items-center text-brand-600 hover:underline font-mono text-[11px]"
+                    className="ml-2 inline-flex items-center text-brand-600 hover:underline font-mono text-[11px] break-all [overflow-wrap:anywhere]"
                   >
                     <span>[Link]</span>
                     <ExternalLink className="w-3 h-3 ml-0.5 opacity-70" />
